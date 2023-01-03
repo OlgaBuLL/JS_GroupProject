@@ -1,4 +1,4 @@
-// ----------- MOMENT------------
+// ------- библиотека MOMENT ---------
 // Russia
 const momentTz = require("moment-timezone");
 
@@ -25,3 +25,14 @@ let nowRS = moment();
 
 moment.locale("sr");
 dateRS.innerHTML = nowRS.format("LLLL");
+
+// ------- библиотека INTERACT ------
+
+// const interact = require("interactjs");
+
+// ------------- ANIME------------------
+// const anime = require("animejs");
+
+import BudgetTracker from "./BudgetTracker.js";
+// import { BudgetTracker } from "./BudgetTracker.js";
+new BudgetTracker("#app");
