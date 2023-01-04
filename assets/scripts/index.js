@@ -34,5 +34,199 @@ dateRS.innerHTML = nowRS.format("LLLL");
 // const anime = require("animejs");
 
 import BudgetTracker from "./BudgetTracker.js";
-// import { BudgetTracker } from "./BudgetTracker.js";
 new BudgetTracker("#app");
+
+// ДНИ НЕДЕЛИ
+
+let weekDaysJson = `[
+    {
+    "day": "Monday",
+    "date": "input 04.01.2023",
+    "summ": {
+        "card": "input",
+        "cash": "input"},
+    "income": {
+        "input": "input",
+        "input": "input",
+        "input": "input"},
+    "expense":{
+        "food": "input",
+        "transport": "input",
+        "clothes": "input",
+        "appliance": "input",
+        "hygiene": "input",
+        "leisure": "input",
+        "utilities": "input",
+        "another": "input"},
+    "total": "total",
+    "card": {
+        "spent": "spent",
+        "spent": "input",
+        "balance": "balance",
+        "balance": "input"},
+    "cash": {
+        "spent": "spent",
+        "spent": "input",
+        "balance": "balance",
+        "balance": "input"}
+    }
+]`;
+document.addEventListener("DOMContentLoaded", function (event) {
+  let weekDays = JSON.parse(weekDaysJson);
+  console.log(weekDays);
+
+  //   let weekDaysContent = "";
+  //   for (let weekDay of weekDays) {
+  //     weekDaysContent += `<div class="weekDay">
+  //       <p><span>Day:</span> ${weekDay.day}</p>
+  //       <p><span>Date:</span> ${weekDay.date}</p>
+  //       <p><span>Current Amount:</span> ${weekDay.summ}</p>
+  //       <p><span>Expense:</span> ${weekDay.expense}</p>
+  //       <p><span>Total:</span> ${weekDay.total}</p>
+  //       <p><span>Card:</span> ${weekDay.card}</p>
+  //       <p><span>Cash:</span>${weekDay.cash}</p>
+  //       </div>`;
+  //   }
+
+  let weekDaysContent = "";
+  for (let weekDay of weekDays) {
+    weekDaysContent += `<div class="weekDay">
+    <div class="date-info">
+        <div class="date"><span>Day:</span>${weekDay.day}</div>
+        <div class="date"><span>Date:</span><input type="date"></div>
+    </div>
+
+    <div class="current-amount">
+        <h3>Current Amount</h3>
+        <div>
+            <img src="./assets/images/card-icon.png" alt="Card">
+            <input type="number" placeholder="Money on my card">
+        </div>
+        <div>
+            <img src="./assets/images/cash-icon.png" alt="Cash">
+            <input type="number" placeholder="Money in my pocket">
+        </div>
+    </div>
+
+    <div class="income">
+        <h3>Income</h3>
+        <input type="number" placeholder="The amount of money">
+        <input type="number" placeholder="The amount of money">
+        <input type="number" placeholder="The amount of money">
+    </div>
+
+    <div class="expense">
+        <h3>Expense</h3>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="food">Food</label>
+                <input type="number" id="food">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="transport">Transport</label>
+                <input type="number" id="transport"></div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="clothes">Clothes</label>
+                <input type="number" id="clothes">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="appliance">Appliance</label>
+                <input type="number" id="appliance">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="hygiene">Hygiene</label>
+                <input type="number" id="hygiene">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="leisure">Leisure</label>
+                <input type="number" id="leisure">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="utilities">Utilities</label>
+                <input type="number" id="utilities">
+            </div>
+        </div>
+        <div>
+            <div class='payment'>
+                <div>Card<input type="checkbox" value="card"></div>
+                <div>Cash<input type="checkbox" value="cash"></div>
+            </div>
+            <div>
+                <label for="another">Another</label>
+                <input type="number" id="another">
+            </div>
+        </div>
+    </div>
+    <div class="total-sum">
+        <h3>Total</h3>
+        <div class="total-card">
+            <img src="./assets/images/card-icon.png" alt="Card">
+            <div>
+                <div>
+                    <label for="spent">Spent</label>
+                    <input type="number" id="spent">
+                </div>
+                <div>
+                    <label for="balance">Balance</label>
+                    <input type="number" id="balance">
+                </div>
+            </div>
+        </div>
+        <div class="total-cash">
+            <img src="./assets/images/cash-icon.png" alt="Cash">
+            <div>
+                <div>
+                    <label for="spent">Spent</label>
+                    <input type="number" id="spent">
+                </div>
+                <div>
+                    <label for="balance">Balance</label>
+                    <input type="number" id="balance">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`;
+  }
+  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
+});
