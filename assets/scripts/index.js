@@ -106,56 +106,73 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     <div class="income">
         <h3>Income</h3>
+        <div>
+        <img src="./assets/images/income-icon.png" alt="Income">
         <input type="number" placeholder="The amount of money">
+        </div>
+        <div>
+        <img src="./assets/images/income-icon.png" alt="Income">
         <input type="number" placeholder="The amount of money">
+        </div>
+        <div>
+        <img src="./assets/images/income-icon.png" alt="Income">
         <input type="number" placeholder="The amount of money">
+        </div>
     </div>
 
     <div class="expense">
         <h3>Expense</h3>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="food">Food</label>
                 <input type="number" id="food">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="transport">Transport</label>
                 <input type="number" id="transport"></div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="clothes">Clothes</label>
                 <input type="number" id="clothes">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="appliance">Appliance</label>
                 <input type="number" id="appliance">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="hygiene">Hygiene</label>
                 <input type="number" id="hygiene">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="leisure">Leisure</label>
                 <input type="number" id="leisure">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="utilities">Utilities</label>
                 <input type="number" id="utilities">
             </div>
         </div>
         <div>
             <div>
+            <img src="./assets/images/card-icon.png" alt="Expense">
                 <label for="another">Another</label>
                 <input type="number" id="another">
             </div>
