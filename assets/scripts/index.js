@@ -50,43 +50,10 @@ new BudgetTracker("#app");
 
 // let weekDaysJson = `[
 //     {
-//     "day": "Monday",
-//     "date": "04.01.2023",
-//     "summ": {
-//         "card": "input",
-//         "cash": "input"},
-//     "income": {
-//         "input": "input",
-//         "input": "input",
-//         "input": "input"},
-//     "expense":{
-//         "food": "input",
-//         "transport": "input",
-//         "clothes": "input",
-//         "appliance": "input",
-//         "hygiene": "input",
-//         "leisure": "input",
-//         "utilities": "input",
-//         "another": "input"},
-//     "total": "total",
-//     "card": {
-//         "spent": "spent",
-//         "spent": "input",
-//         "balance": "balance",
-//         "balance": "input"},
-//     "cash": {
-//         "spent": "spent",
-//         "spent": "input",
-//         "balance": "balance",
-//         "balance": "input"}
+//     "day": "Tuesday",
+//     "date": "05.01.2023"
 //     }
 // ]`;
-let weekDaysJson = `[
-    {
-    "day": "Tuesday",
-    "date": "05.01.2023"
-    }
-]`;
 // document.addEventListener("DOMContentLoaded", function (event) {
 //   let weekDays = JSON.parse(weekDaysJson);
 //   console.log(weekDays);
