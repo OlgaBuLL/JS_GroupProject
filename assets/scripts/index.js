@@ -114,79 +114,47 @@ document.addEventListener("DOMContentLoaded", function (event) {
     <div class="expense">
         <h3>Expense</h3>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="food">Food</label>
                 <input type="number" id="food">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="transport">Transport</label>
                 <input type="number" id="transport"></div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="clothes">Clothes</label>
                 <input type="number" id="clothes">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="appliance">Appliance</label>
                 <input type="number" id="appliance">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="hygiene">Hygiene</label>
                 <input type="number" id="hygiene">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="leisure">Leisure</label>
                 <input type="number" id="leisure">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="utilities">Utilities</label>
                 <input type="number" id="utilities">
             </div>
         </div>
         <div>
-            <div class='payment'>
-                <div>Card<input type="checkbox" value="card"></div>
-                <div>Cash<input type="checkbox" value="cash"></div>
-            </div>
             <div>
                 <label for="another">Another</label>
                 <input type="number" id="another">
@@ -195,19 +163,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     </div>
     <div class="total-sum">
         <h3>Total</h3>
-        <div class="total-card">
-            <img src="./assets/images/card-icon.png" alt="Card">
-            <div>
-                <div>
-                    <label for="spent">Spent</label>
-                    <input type="number" id="spent">
-                </div>
-                <div>
-                    <label for="balance">Balance</label>
-                    <input type="number" id="balance">
-                </div>
-            </div>
-        </div>
         <div class="total-cash">
             <img src="./assets/images/cash-icon.png" alt="Cash">
             <div>
