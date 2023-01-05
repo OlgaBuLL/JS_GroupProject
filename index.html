@@ -68,9 +68,9 @@
                 <form action="" class="form">
                     <h2>Registration</h2>
                     <label for="userName">Your name:</label>
-                    <input type="text" id="userName" placeholder="Your name">
-                    <label for="avatar">Link of avatar:</label>
-                    <input type="text" id="avatar" placeholder="Place here the URL">
+                    <input type="text" id="userName" placeholder="Your name...">
+                    <label for="avatar">Avatar link:</label>
+                    <input type="text" id="avatar" placeholder="Place here the URL...">
                     <button>Submit</button>
                 </form>
 
@@ -89,148 +89,106 @@
             <div class="weekday-info">
                 <!-- ПОНЕДЕЛЬНИК -->
 
-                <!-- <div class="weekDay">
+                <div class="weekDay">
                     <div class="date-info">
                         <div class="date"><span>Day:</span>${weekDay.day}</div>
-                        <div class="date"><span>Date:</span><input type="date"></div>
+                        <div class="date"><input id="date" type="date"></div>
                     </div>
 
                     <div class="current-amount">
                         <h3>Current Amount</h3>
-                        <div>
-                            <img src="./assets/images/card-icon.png" alt="Card">
-                            <input type="number" placeholder="Money on my card">
-                        </div>
+
                         <div>
                             <img src="./assets/images/cash-icon.png" alt="Cash">
-                            <input type="number" placeholder="Money in my pocket">
+                            <input type="number" id="cash-money" placeholder="Money in my pocket...">
                         </div>
                     </div>
 
                     <div class="income">
                         <h3>Income</h3>
-                        <input type="number" placeholder="The amount of money">
-                        <input type="number" placeholder="The amount of money">
-                        <input type="number" placeholder="The amount of money">
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income1" placeholder="The amount of money">
+                        </div>
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income2" placeholder="The amount of money">
+                        </div>
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income3" placeholder="The amount of money">
+                        </div>
                     </div>
 
                     <div class="expense">
                         <h3>Expense</h3>
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="food">Food</label>
-                                <input type="number" id="food">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Food</label>
+                            <input type="number" id="food">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="transport">Transport</label>
-                                <input type="number" id="transport"></div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Transport</label>
+                            <input type="number" id="transport">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="clothes">Clothes</label>
-                                <input type="number" id="clothes">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Clothes</label>
+                            <input type="number" id="clothes">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="appliance">Appliance</label>
-                                <input type="number" id="appliance">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Appliance</label>
+                            <input type="number" id="appliance">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="hygiene">Hygiene</label>
-                                <input type="number" id="hygiene">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Hygiene</label>
+                            <input type="number" id="hygiene">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="leisure">Leisure</label>
-                                <input type="number" id="leisure">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Leisure</label>
+                            <input type="number" id="leisure">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="utilities">Utilities</label>
-                                <input type="number" id="utilities">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Utilities</label>
+                            <input type="number" id="utilities">
                         </div>
+
                         <div>
-                            <div class='payment'>
-                                <div>Card<input type="checkbox" value="card"></div>
-                                <div>Cash<input type="checkbox" value="cash"></div>
-                            </div>
-                            <div>
-                                <label for="another">Another</label>
-                                <input type="number" id="another">
-                            </div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Another</label>
+                            <input type="number" id="another">
                         </div>
+                        <button>Count</button>
+
                     </div>
+
                     <div class="total-sum">
                         <h3>Total</h3>
-                        <div class="total-card">
-                            <img src="./assets/images/card-icon.png" alt="Card">
-                            <div>
-                                <div>
-                                    <label for="spent">Spent</label>
-                                    <input type="number" id="spent">
-                                </div>
-                                <div>
-                                    <label for="balance">Balance</label>
-                                    <input type="number" id="balance">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="total-cash">
+                        <div>
                             <img src="./assets/images/cash-icon.png" alt="Cash">
                             <div>
-                                <div>
-                                    <label for="spent">Spent</label>
-                                    <input type="number" id="spent">
-                                </div>
-                                <div>
-                                    <label for="balance">Balance</label>
-                                    <input type="number" id="balance">
-                                </div>
+                                <div>Spent <span id="spent">сумма...</span></div>
+                                <div>Balance <span id="balance">сумма...</span></div>
                             </div>
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <!-- Конец ПОНЕДЕЛЬНИКА -->
 
-                <!-- ВТОРНИК -->
-            </div>
+                <!-- ВТОРНИК... -->
 
+            </div>
 
             <div class="calculator">
                 <h2>Calculator</h2>

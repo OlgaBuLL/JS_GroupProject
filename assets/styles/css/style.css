@@ -812,6 +812,12 @@ span {
   padding: 1rem;
 }
 
+h2 {
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -900,6 +906,13 @@ h1 {
   border-radius: 6px;
 }
 
+.form > button {
+  width: 50%;
+  min-height: 34px;
+  align-self: center;
+  margin: 1rem auto;
+}
+
 .weekday-info {
   display: flex;
   flex-direction: column;
@@ -907,9 +920,20 @@ h1 {
   row-gap: 2rem;
 }
 
+.weekDay {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
 .date-info {
   display: flex;
+  align-items: center;
+  justify-content: center;
   column-gap: 2rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
 }
 
 .date {
@@ -917,45 +941,68 @@ h1 {
   flex-direction: column;
 }
 
-.expense > div {
-  display: flex;
-}
-
-.payment {
-  display: flex;
-  flex-direction: column;
-  max-width: 100px;
-}
-
 h3 {
-  margin: 1rem auto;
+  font-weight: bold;
+  text-align: center;
+}
+
+input {
+  text-align: center;
+  height: 28px;
+  font-weight: bold;
+}
+
+input::placeholder {
+  font-weight: lighter;
 }
 
 .current-amount,
 .income,
-.expense,
 .total-sum {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  row-gap: 1rem;
   padding: 1rem 1.5rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 6px;
 }
 
-.date-info {
+.expense {
   display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+.current-amount > div,
+.income > div,
+.expense > div,
+.total-sum > div {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  column-gap: 1.5rem;
 }
 
-.total-card,
-.total-cash {
+.expense > div > img {
+  max-width: 30px;
+}
+
+.expense > button {
+  width: 50%;
+  min-height: 34px;
+  align-self: center;
+  margin: 1rem auto;
+}
+
+.total-sum > div > div {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
 }
 
 .calculator {
@@ -974,6 +1021,12 @@ h3 {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
+}
+
+.calculate-buttons > button,
+#result-button {
+  min-width: 34px;
+  min-height: 34px;
 }
 
 /*# sourceMappingURL=style.css.map */
