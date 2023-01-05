@@ -1,4 +1,23 @@
+// Изменить шрифт
+
+let font = document.getElementById("font");
+let body = document.querySelector(".body");
+let h1 = document.querySelector(".h1");
+font.addEventListener("change", () => {
+  body.style.fontFamily = font.value;
+});
+
 // ------- библиотека MOMENT ---------
+
+// Default - dateUser;
+const moment = require("moment");
+
+const dateUser = document.querySelector(".date-user");
+let nowUser = moment();
+
+moment.locale("en");
+dateUser.innerHTML = nowUser.format("lll");
+
 // Russia
 const momentTz = require("moment-timezone");
 
@@ -16,32 +35,23 @@ const dateSr = document.querySelector(".date-sr");
 require("moment/locale/sr");
 dateSr.innerHTML = momentTz.tz("Europe/Belgrade").format("LLLL");
 
-// Default-Serbia
-const moment = require("moment");
-require("moment/locale/sr");
-
-const dateRS = document.querySelector(".default-serbia");
-let nowRS = moment();
-
-moment.locale("sr");
-dateRS.innerHTML = nowRS.format("LLLL");
-
-// ------- библиотека INTERACT ------
-
-// const interact = require("interactjs");
-
-// ------------- ANIME------------------
-// const anime = require("animejs");
+// ----- BudgetTracker-----
 
 import BudgetTracker from "./BudgetTracker.js";
 new BudgetTracker("#app");
+
+// ------- библиотека INTERACT ------
+// const interact = require("interactjs");
+
+// ------- библиотека ANIME-----------
+// const anime = require("animejs");
 
 // ДНИ НЕДЕЛИ
 
 let weekDaysJson = `[
     {
     "day": "Monday",
-    "date": "input 04.01.2023",
+    "date": "04.01.2023",
     "summ": {
         "card": "input",
         "cash": "input"},
@@ -75,10 +85,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   let weekDays = JSON.parse(weekDaysJson);
   console.log(weekDays);
 
-  //   let weekDaysContent = "";
-  //   for (let weekDay of weekDays) {
-  //     weekDaysContent += `<div class="weekDay">
-  //       <p><span>Day:</span> ${weekDay.day}</p>
   //       <p><span>Date:</span> ${weekDay.date}</p>
   //       <p><span>Current Amount:</span> ${weekDay.summ}</p>
   //       <p><span>Expense:</span> ${weekDay.expense}</p>
