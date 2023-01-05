@@ -4,7 +4,7 @@ let font = document.getElementById("font");
 let body = document.querySelector(".body");
 let h1 = document.querySelector(".h1");
 font.addEventListener("change", () => {
-  body.style.fontFamily = font.value;
+    body.style.fontFamily = font.value;
 });
 
 // ------- библиотека MOMENT ---------
@@ -53,7 +53,6 @@ let weekDaysJson = `[
     "day": "Monday",
     "date": "04.01.2023",
     "summ": {
-        "card": "input",
         "cash": "input"},
     "income": {
         "input": "input",
@@ -69,11 +68,6 @@ let weekDaysJson = `[
         "utilities": "input",
         "another": "input"},
     "total": "total",
-    "card": {
-        "spent": "spent",
-        "spent": "input",
-        "balance": "balance",
-        "balance": "input"},
     "cash": {
         "spent": "spent",
         "spent": "input",
@@ -82,21 +76,21 @@ let weekDaysJson = `[
     }
 ]`;
 document.addEventListener("DOMContentLoaded", function (event) {
-  let weekDays = JSON.parse(weekDaysJson);
-  console.log(weekDays);
+    let weekDays = JSON.parse(weekDaysJson);
+    console.log(weekDays);
 
-  //       <p><span>Date:</span> ${weekDay.date}</p>
-  //       <p><span>Current Amount:</span> ${weekDay.summ}</p>
-  //       <p><span>Expense:</span> ${weekDay.expense}</p>
-  //       <p><span>Total:</span> ${weekDay.total}</p>
-  //       <p><span>Card:</span> ${weekDay.card}</p>
-  //       <p><span>Cash:</span>${weekDay.cash}</p>
-  //       </div>`;
-  //   }
+    //       <p><span>Date:</span> ${weekDay.date}</p>
+    //       <p><span>Current Amount:</span> ${weekDay.summ}</p>
+    //       <p><span>Expense:</span> ${weekDay.expense}</p>
+    //       <p><span>Total:</span> ${weekDay.total}</p>
+    //       <p><span>Card:</span> ${weekDay.card}</p>
+    //       <p><span>Cash:</span>${weekDay.cash}</p>
+    //       </div>`;
+    //   }
 
-  let weekDaysContent = "";
-  for (let weekDay of weekDays) {
-    weekDaysContent += `<div class="weekDay">
+    let weekDaysContent = "";
+    for (let weekDay of weekDays) {
+        weekDaysContent += `<div class="weekDay">
     <div class="date-info">
         <div class="date"><span>Day:</span>${weekDay.day}</div>
         <div class="date"><span>Date:</span><input type="date"></div>
@@ -104,10 +98,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     <div class="current-amount">
         <h3>Current Amount</h3>
-        <div>
-            <img src="./assets/images/card-icon.png" alt="Card">
-            <input type="number" placeholder="Money on my card">
-        </div>
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
             <input type="number" placeholder="Money in my pocket">
@@ -233,6 +223,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 </div>`;
-  }
-  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
+    }
+    document.querySelector(".weekday-info").innerHTML = weekDaysContent;
 });
