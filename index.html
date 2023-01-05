@@ -11,18 +11,57 @@
 
 </head>
 
-<body>
-    <div class="container">
-        <h1>Finance organizer💰</h1>
-        <div class="moment">
-            <div class="date-ru"></div>
-            <div class="date-en"></div>
-            <div class="date-sr"></div>
-            <div class="default-serbia"></div>
+<body class="body">
+    <header>
+        <div>Some icon or animation</div>
+        <h1 class="h1">Finance organizer</h1>
+        <div class="settings">Settings
+            <!-- Выбор шрифта -->
+            <select name="font" id="font">
+                <option value="default" disabled selected hidden>Choose Font</option>
+                <option value="Arial">Arial</option>
+                <option value="Red Hat Display">Red Hat Display</option>
+                <option value="Montserrat">Montserrat</option>
+                <option value="Lexend">Lexend</option>
+                <option value="Anybody">Anybody</option>
+                <option value="Space Grotesk">Space Grotesk</option>
+                <option value="Architects Daughter">Architects Daughter</option>
+                <option value="Koulen">Koulen</option>
+                <option value="Vollkorn SC">Vollkorn SC</option>
+            </select>
         </div>
+    </header>
+    <main class="container">
 
+        <div class="user">
+            <div class="userData">
+                <img src="" id="userAvatar" alt="My avatar">
+                <p id="userName"></p>
+            </div>
+            <!-- moment js -->
+            <div class="moment">
+                <h2>World Clock🕒</h2>
+                <div>
+                    <span>Local time: </span>
+                    <div class="date-user"></div>
+                </div>
+                <div>
+                    <span>Moscow, Russia: </span>
+                    <div class="date-ru"></div>
+                </div>
+                <div>
+                    <span>Toronto, Canada: </span>
+                    <div class="date-en"></div>
+                </div>
+                <div>
+                    <span>Belgrade, Serbia: </span>
+                    <div class="date-sr"></div>
+                </div>
+            </div>
+        </div>
         <hr>
         <div id="app"></div>
+        <hr>
 
         <div class="content">
             <div class="left-wrapper">
@@ -207,15 +246,15 @@
                 <input type="number" id="result" class="calculator-number" placeholder="Result">
             </div>
 
-
-            <footer class="footer">
-                <!-- <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
+    </main>
+    <footer class="footer">
+        <!-- <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
-            </footer>
-        </div>
-        <!-- <script type="module" src="./assets/scripts/index.js"></script> -->
+    </footer>
+    </div>
+    <!-- <script type="module" src="./assets/scripts/index.js"></script> -->
 
-        <script src="./assets/scripts/dist/bundle.js"></script>
+    <script src="./assets/scripts/dist/bundle.js"></script>
 
 </body>
 

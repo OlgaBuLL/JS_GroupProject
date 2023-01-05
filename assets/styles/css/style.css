@@ -2,6 +2,8 @@
    v2.0-modified | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&family=Space+Grotesk:wght@300;400;500;600&family=Vollkorn+SC:wght@600&display=swap");
 html,
 body,
 div,
@@ -735,24 +737,60 @@ template {
 
 @font-face {
   font-family: "Red Hat Display";
-  src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-VariableFont_wght.ttf);
+  src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-VariableFont_wght.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "Red Hat Display";
-  src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-Italic-VariableFont_wght.ttf);
+  src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-Italic-VariableFont_wght.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
-body {
-  font-family: "Red Hat Display";
+@font-face {
+  font-family: "Casus Pro";
+  src: url(/JavaScript-GroupProject/assets/fonts/CasusPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lexend";
+  src: url(/JavaScript-GroupProject/assets/fonts/Lexend-VariableFont_wght.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Koulen";
+  src: url(/JavaScript-GroupProject/assets/fonts/Koulen-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Architects Daughter";
+  src: url(/JavaScript-GroupProject/assets/fonts/ArchitectsDaughter-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url(/JavaScript-GroupProject/assets/fonts/Montserrat-VariableFont_wght.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Anybody";
+  src: url(/JavaScript-GroupProject/assets/fonts/Anybody-VariableFont_wdth\,wght.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+.body {
   height: 100%;
 }
 
-h1 {
-  background: #8adacb;
-  text-align: center;
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .moment {
@@ -761,6 +799,11 @@ h1 {
   color: #009578;
   text-align: right;
   row-gap: 10px;
+  font-size: small;
+}
+
+span {
+  font-weight: bold;
 }
 
 .content {
@@ -772,7 +815,17 @@ h1 {
 .container {
   max-width: 1170px;
   margin: 0 auto;
-  border: 1px solid orangered;
+  border: 1px solid #8adacb;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  background: #8adacb;
 }
 
 .budget-tracker {
@@ -831,6 +884,22 @@ h1 {
   text-align: right;
 }
 
+.left-wrapper,
+.form,
+.financial-literacy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.form,
+.financial-literacy {
+  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+}
+
 .weekday-info {
   display: flex;
   flex-direction: column;
@@ -887,22 +956,6 @@ h3 {
 .total-card,
 .total-cash {
   display: flex;
-}
-
-.left-wrapper,
-.form,
-.financial-literacy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  row-gap: 2rem;
-}
-
-.form,
-.financial-literacy {
-  box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
-  padding: 1rem 1.5rem;
-  border-radius: 6px;
 }
 
 .calculator {
