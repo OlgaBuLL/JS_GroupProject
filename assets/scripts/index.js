@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let totalBalance = document.querySelector("#balance");
 
     totalSpent.innerHTML = +expenses + " ＄";
-    totalBalance.innerHTML = +money.value + +incomes + " ＄";
+    totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
 
     // let moneyArray = [];
 
