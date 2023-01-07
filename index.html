@@ -50,26 +50,29 @@
         </div>
     </header>
     <main class="container">
+
         <div class="user">
-            <div class="userData"><img src="" id="userAvatar" alt="My avatar">
+            <div class="userData">
+                <img src="" id="userAvatar" alt="My avatar">
                 <p id="userName"></p>
             </div>
             <!-- moment js -->
             <div class="moment">
                 <h2>World Clock🕒</h2>
-                <div><span>Local time: </span>
+                <div>
+                    <span>Local time: </span>
                     <div class="date-user"></div>
                 </div>
-                <div><span>Moscow,
-                        Russia: </span>
+                <div>
+                    <span>Moscow, Russia: </span>
                     <div class="date-ru"></div>
                 </div>
-                <div><span>Toronto,
-                        Canada: </span>
+                <div>
+                    <span>Toronto, Canada: </span>
                     <div class="date-en"></div>
                 </div>
-                <div><span>Belgrade,
-                        Serbia: </span>
+                <div>
+                    <span>Belgrade, Serbia: </span>
                     <div class="date-sr"></div>
                 </div>
             </div>
@@ -77,80 +80,124 @@
         <hr>
         <div id="app"></div>
         <hr>
+
         <div class="content">
             <div class="left-wrapper">
-                <form action="" class="form animatebackground">
-                    <h2>Registration</h2><label for="userName">Your name:</label><input type="text" id="userName"
-                        placeholder="Your name..."><label for="avatar">Avatar link:</label><input type="text"
-                        id="avatar" placeholder="Place here the URL..."><button>Submit</button>
+                <form action="" class="form">
+                    <h2>Registration</h2>
+                    <label for="userName">Your name:</label>
+                    <input type="text" id="userName" placeholder="Your name...">
+                    <label for="avatar">Avatar link:</label>
+                    <input type="text" id="avatar" placeholder="Place here the URL...">
+                    <button>Submit</button>
                 </form>
-                <div class="financial-literacy animatebackground">
+
+                <div class="financial-literacy">
                     <h2>What is Financial Literacy for?</h2>
-                    <div class="gallery"></div>
-                    <div class="gallery-buttons"><button>⟵</button><button>⟶</button></div>
+                    <div class="gallery">
+
+                    </div>
+                    <div class="gallery-buttons">
+                        <button>⟵</button>
+                        <button>⟶</button>
+                    </div>
                 </div>
             </div>
 
             <div class="weekday-info">
                 <!-- ПОНЕДЕЛЬНИК -->
-                <!-- <div class="weekDay">
-                            <div class="date-info">
-                                <div class="date"><span>Day:</span>$ {
-                                    weekDay.day
-                                    }
 
-                                </div>
-                                <div class="date"><input id="date" type="date"></div>
-                            </div>
-                            <div class="current-amount">
-                                <h3>Current Amount</h3>
-                                <div><img src="./assets/images/cash-icon.png" alt="Cash"><input type="number" id="money"
-                                        placeholder="Money in my pocket..."></div>
-                            </div>
-                            <div class="income">
-                                <h3>Income</h3>
-                                <div><img src="./assets/images/income-icon.png" alt="Income"><input type="number"
-                                        id="income1" class="income-input" placeholder="The amount of money"></div>
-                                <div><img src="./assets/images/income-icon.png" alt="Income"><input type="number"
-                                        id="income2" class="income-input" placeholder="The amount of money"></div>
-                                <div><img src="./assets/images/income-icon.png" alt="Income"><input type="number"
-                                        id="income3" class="income-input" placeholder="The amount of money"></div>
-                            </div>
-                            <div class="expense">
-                                <h3>Expense</h3>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Food</label><input type="number" id="food" class="expense-input">
-                                </div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Transport</label><input type="number" id="transport"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Clothes</label><input type="number" id="clothes"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Appliance</label><input type="number" id="appliance"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Hygiene</label><input type="number" id="hygiene"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Leisure</label><input type="number" id="leisure"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Utilities</label><input type="number" id="utilities"
-                                        class="expense-input"></div>
-                                <div><img src="./assets/images/card-icon.png" alt="Card"><label
-                                        for="food">Another</label><input type="number" id="another"
-                                        class="expense-input"></div><button id="count">Count</button>
-                            </div>
-                            <div class="total-sum">
-                                <h3>Total</h3>
-                                <div><img src="./assets/images/cash-icon.png" alt="Cash">
-                                    <div>
-                                        <div>Spent: <span id="spent">... </span></div>
-                                        <div>Balance: <span id="balance">... </span></div>
-                                    </div>
-                                </div>
+                <!-- <div class="weekDay">
+                    <div class="date-info">
+                        <div class="date"><span>Day:</span>${weekDay.day}</div>
+                        <div class="date"><input id="date" type="date"></div>
+                    </div>
+                
+                    <div class="current-amount">
+                        <h3>Current Amount</h3>
+                
+                        <div>
+                            <img src="./assets/images/cash-icon.png" alt="Cash">
+                            <input type="number" id="money" placeholder="Money in my pocket...">
+                        </div>
+                    </div>
+                
+                    <div class="income">
+                        <h3>Income</h3>
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income1" class="income-input" placeholder="The amount of money">
+                        </div>
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income2" class="income-input" placeholder="The amount of money">
+                        </div>
+                        <div>
+                            <img src="./assets/images/income-icon.png" alt="Income">
+                            <input type="number" id="income3" class="income-input" placeholder="The amount of money">
+                        </div>
+                    </div>
+                
+                    <div class="expense">
+                        <h3>Expense</h3>
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Food</label>
+                            <input type="number" id="food" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Transport</label>
+                            <input type="number" id="transport" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Clothes</label>
+                            <input type="number" id="clothes" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Appliance</label>
+                            <input type="number" id="appliance" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Hygiene</label>
+                            <input type="number" id="hygiene" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Leisure</label>
+                            <input type="number" id="leisure" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Utilities</label>
+                            <input type="number" id="utilities" class="expense-input">
+                        </div>
+                
+                        <div>
+                            <img src="./assets/images/card-icon.png" alt="Card">
+                            <label for="food">Another</label>
+                            <input type="number" id="another" class="expense-input">
+                        </div>
+                        <button id="count">Count</button>
+                
+                    </div>
+                
+                    <div class="total-sum">
+                        <h3>Total</h3>
+                        <div>
+                            <img src="./assets/images/cash-icon.png" alt="Cash">
+                            <div>
+                                <div>Spent: <span id="spent"> ... </span></div>
+                                <div>Balance: <span id="balance"> ... </span></div>
                             </div>
                         </div>
                     </div>
@@ -158,25 +205,33 @@
                 <!-- Конец ПОНЕДЕЛЬНИКА -->
 
                 <!-- ВТОРНИК... -->
+
             </div>
 
             <div class="calculator">
-                <h2>Calculator</h2><input type="number" class="calculator-number" placeholder="First number">
-                <div class="calculate-buttons"><button id="sum">+</button><button id="minus">-</button><button
-                        id="multiplication">*</button><button id="division">/</button></div><input type="number"
-                    class="calculator-number" placeholder="Second number"><button id="result-button">=</button><input
-                    type="number" id="result" class="calculator-number" placeholder="Result">
+                <h2>Calculator</h2>
+                <input type="number" class="calculator-number" placeholder="First number">
+                <div class="calculate-buttons">
+                    <button id="sum">+</button>
+                    <button id="minus">-</button>
+                    <button id="multiplication">*</button>
+                    <button id="division">/</button>
+                </div>
+                <input type="number" class="calculator-number" placeholder="Second number">
+                <button id="result-button">=</button>
+                <input type="number" id="result" class="calculator-number" placeholder="Result">
             </div>
-        </div>
+
     </main>
     <footer class="footer">
-        <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik </a>from <a
-                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
+        <!-- <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
+            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
     </footer>
+    </div>
+    <!-- <script type="module" src="./assets/scripts/index.js"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-    <!--script type="module" src="./assets/scripts/index.js"></script-->
     <script src="./assets/scripts/dist/bundle.js"></script>
+
 </body>
 
 </html>
