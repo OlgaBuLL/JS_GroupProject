@@ -15,7 +15,9 @@
 <body class="body">
     <header>
         <div>Some icon or animation</div>
-        <h1 class="h1">Finance organizer</h1>
+        <div>
+            <h1 class="h1">Finance organizer</h1>
+        </div>
         <div class="settings">Settings
             <!-- Выбор шрифта -->
             <select name="font" id="font">
@@ -48,6 +50,7 @@
                 <label for="bubble-gum">Bubble Gum</label>
             </div>
         </div>
+        <div><button style="height: 3.5rem;" class="play-background">Animate Background</button></div>
     </header>
     <main class="container">
 
@@ -83,7 +86,7 @@
 
         <div class="content">
             <div class="left-wrapper">
-                <form action="" class="form">
+                <form action="" class="form animatebackground">
                     <h2>Registration</h2>
                     <label for="userName">Your name:</label>
                     <input type="text" id="userName" placeholder="Your name...">
@@ -92,7 +95,7 @@
                     <button>Submit</button>
                 </form>
 
-                <div class="financial-literacy">
+                <div class="financial-literacy animatebackground">
                     <h2>What is Financial Literacy for?</h2>
                     <div class="gallery">
 
@@ -221,6 +224,7 @@
                 <button id="result-button">=</button>
                 <input type="number" id="result" class="calculator-number" placeholder="Result">
             </div>
+        </div>
 
     </main>
     <footer class="footer">
@@ -229,7 +233,7 @@
     </footer>
     </div>
     <!-- <script type="module" src="./assets/scripts/index.js"></script> -->
-
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="./assets/scripts/dist/bundle.js"></script>
 
 </body>
