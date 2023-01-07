@@ -94,6 +94,24 @@ dateSr.innerHTML = momentTz.tz("Europe/Belgrade").format("LLLL");
 
 let weekDaysJson = `[
     {
+        "day": "Monday",
+        "date": "input",
+        "summ": "input",
+        "income": ["input", "input", "input"],
+        "expense": {
+            "food": "input",
+            "transport": "input",
+            "clothes": "input",
+            "appliance": "input",
+            "hygiene": "input",
+            "leisure": "input",
+            "utilities": "input",
+            "another": "input"},
+        "total": {
+              "spent": "input",
+              "balance": "input"}
+        },
+    {
       "day": "Tuesday",
       "date": "input",
       "summ": "input",
@@ -110,7 +128,97 @@ let weekDaysJson = `[
       "total": {
             "spent": "input",
             "balance": "input"}
-      }
+      },
+      {
+        "day": "Wendesday",
+        "date": "input",
+        "summ": "input",
+        "income": ["input", "input", "input"],
+        "expense": {
+            "food": "input",
+            "transport": "input",
+            "clothes": "input",
+            "appliance": "input",
+            "hygiene": "input",
+            "leisure": "input",
+            "utilities": "input",
+            "another": "input"},
+        "total": {
+              "spent": "input",
+              "balance": "input"}
+        },
+        {
+            "day": "Tuersday",
+            "date": "input",
+            "summ": "input",
+            "income": ["input", "input", "input"],
+            "expense": {
+                "food": "input",
+                "transport": "input",
+                "clothes": "input",
+                "appliance": "input",
+                "hygiene": "input",
+                "leisure": "input",
+                "utilities": "input",
+                "another": "input"},
+            "total": {
+                  "spent": "input",
+                  "balance": "input"}
+            },
+            {
+                "day": "Friday",
+                "date": "input",
+                "summ": "input",
+                "income": ["input", "input", "input"],
+                "expense": {
+                    "food": "input",
+                    "transport": "input",
+                    "clothes": "input",
+                    "appliance": "input",
+                    "hygiene": "input",
+                    "leisure": "input",
+                    "utilities": "input",
+                    "another": "input"},
+                "total": {
+                      "spent": "input",
+                      "balance": "input"}
+                },
+                {
+                    "day": "Subbsday",
+                    "date": "input",
+                    "summ": "input",
+                    "income": ["input", "input", "input"],
+                    "expense": {
+                        "food": "input",
+                        "transport": "input",
+                        "clothes": "input",
+                        "appliance": "input",
+                        "hygiene": "input",
+                        "leisure": "input",
+                        "utilities": "input",
+                        "another": "input"},
+                    "total": {
+                          "spent": "input",
+                          "balance": "input"}
+                    },
+                    {
+                        "day": "Sunday",
+                        "date": "input",
+                        "summ": "input",
+                        "income": ["input", "input", "input"],
+                        "expense": {
+                            "food": "input",
+                            "transport": "input",
+                            "clothes": "input",
+                            "appliance": "input",
+                            "hygiene": "input",
+                            "leisure": "input",
+                            "utilities": "input",
+                            "another": "input"},
+                        "total": {
+                              "spent": "input",
+                              "balance": "input"}
+                        }
   ]`;
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -242,6 +350,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         totalSpent.innerHTML = +expenses + " ＄";
         totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
+
+        //let divide = (Number(money.value) + Number(incomes) - Number(expenses));
+        //balance.innerHTML = sum;
 
         // let moneyArray = [];
 
