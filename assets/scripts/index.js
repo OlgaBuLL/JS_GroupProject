@@ -1,19 +1,66 @@
+
 // Изменить шрифт
 
 document.addEventListener("DOMContentLoaded", function () {
-  let font = document.getElementById("font");
-  let body = document.querySelector(".body");
+    let font = document.getElementById("font");
+    let body = document.querySelector(".body");
 
-  if (localStorage.getItem("font") !== null) {
-    font.value = localStorage.getItem("font");
-    body.style.fontFamily = font.value;
-  }
+    if (localStorage.getItem("font") !== null) {
+        font.value = localStorage.getItem("font");
+        body.style.fontFamily = font.value;
+    }
 
-  font.addEventListener("change", () => {
-    body.style.fontFamily = font.value;
-    localStorage.setItem("font", font.value);
-  });
+    font.addEventListener("change", () => {
+        body.style.fontFamily = font.value;
+        localStorage.setItem("font", font.value);
+    });
 });
+
+
+
+// ----- BudgetTracker-----
+
+import BudgetTracker from "./BudgetTracker.js";
+new BudgetTracker("#app");
+
+// ------- библиотека INTERACT ------
+// const interact = require("interactjs");
+
+// ------- библиотека ANIME-----------
+//const anime = require("animejs");
+
+anime({
+    targets: 'div',
+    scale: [{
+        value: .1,
+        easing: 'easeOutSine',
+        duration: 500
+    }
+        ,
+    {
+        value: 1,
+        easing: 'easeInOutQuad',
+        duration: 1200
+    }
+    ],
+    delay: anime.stagger(200, {
+        grid: [14, 5],
+        from: 'center'
+    }
+    )
+}
+);
+
+var animateBackground = anime({
+    targets: '.animatebackground',
+    backgroundColor: '#ffffff',
+    borderColor: '#5dd176',
+    autoplay: false
+}
+);
+
+document.querySelector('.play-background').onclick = animateBackground.restart;
+
 
 // ------- библиотека MOMENT ---------
 
@@ -43,20 +90,27 @@ const dateSr = document.querySelector(".date-sr");
 require("moment/locale/sr");
 dateSr.innerHTML = momentTz.tz("Europe/Belgrade").format("LLLL");
 
-// ----- BudgetTracker-----
-
-import BudgetTracker from "./BudgetTracker.js";
-new BudgetTracker("#app");
-
-// ------- библиотека INTERACT ------
-// const interact = require("interactjs");
-
-// ------- библиотека ANIME-----------
-// const anime = require("animejs");
-
 // ДНИ НЕДЕЛИ
 
 let weekDaysJson = `[
+    {
+        "day": "Monday",
+        "date": "input",
+        "summ": "input",
+        "income": ["input", "input", "input"],
+        "expense": {
+            "food": "input",
+            "transport": "input",
+            "clothes": "input",
+            "appliance": "input",
+            "hygiene": "input",
+            "leisure": "input",
+            "utilities": "input",
+            "another": "input"},
+        "total": {
+              "spent": "input",
+              "balance": "input"}
+        },
     {
       "day": "Tuesday",
       "date": "input",
@@ -74,16 +128,106 @@ let weekDaysJson = `[
       "total": {
             "spent": "input",
             "balance": "input"}
-      }
+      },
+      {
+        "day": "Wendesday",
+        "date": "input",
+        "summ": "input",
+        "income": ["input", "input", "input"],
+        "expense": {
+            "food": "input",
+            "transport": "input",
+            "clothes": "input",
+            "appliance": "input",
+            "hygiene": "input",
+            "leisure": "input",
+            "utilities": "input",
+            "another": "input"},
+        "total": {
+              "spent": "input",
+              "balance": "input"}
+        },
+        {
+            "day": "Tuersday",
+            "date": "input",
+            "summ": "input",
+            "income": ["input", "input", "input"],
+            "expense": {
+                "food": "input",
+                "transport": "input",
+                "clothes": "input",
+                "appliance": "input",
+                "hygiene": "input",
+                "leisure": "input",
+                "utilities": "input",
+                "another": "input"},
+            "total": {
+                  "spent": "input",
+                  "balance": "input"}
+            },
+            {
+                "day": "Friday",
+                "date": "input",
+                "summ": "input",
+                "income": ["input", "input", "input"],
+                "expense": {
+                    "food": "input",
+                    "transport": "input",
+                    "clothes": "input",
+                    "appliance": "input",
+                    "hygiene": "input",
+                    "leisure": "input",
+                    "utilities": "input",
+                    "another": "input"},
+                "total": {
+                      "spent": "input",
+                      "balance": "input"}
+                },
+                {
+                    "day": "Subbsday",
+                    "date": "input",
+                    "summ": "input",
+                    "income": ["input", "input", "input"],
+                    "expense": {
+                        "food": "input",
+                        "transport": "input",
+                        "clothes": "input",
+                        "appliance": "input",
+                        "hygiene": "input",
+                        "leisure": "input",
+                        "utilities": "input",
+                        "another": "input"},
+                    "total": {
+                          "spent": "input",
+                          "balance": "input"}
+                    },
+                    {
+                        "day": "Sunday",
+                        "date": "input",
+                        "summ": "input",
+                        "income": ["input", "input", "input"],
+                        "expense": {
+                            "food": "input",
+                            "transport": "input",
+                            "clothes": "input",
+                            "appliance": "input",
+                            "hygiene": "input",
+                            "leisure": "input",
+                            "utilities": "input",
+                            "another": "input"},
+                        "total": {
+                              "spent": "input",
+                              "balance": "input"}
+                        }
   ]`;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  let weekDays = JSON.parse(weekDaysJson);
-  console.log(weekDays);
+    let weekDays = JSON.parse(weekDaysJson);
+    console.log(weekDays);
 
-  let weekDaysContent = "";
-  for (let weekDay of weekDays) {
-    weekDaysContent += `<div class="weekDay">
+    let weekDaysContent = "";
+    for (let weekDay of weekDays) {
+        weekDaysContent += `<div class="weekDay">
     <div class="date-info">
         <div class="date"><span>Day:</span>${weekDay.day}</div>
         <div class="date"><input id="date" type="date"></div>
@@ -178,41 +322,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 </div>`;
-  }
-  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
-
-  let countBtn = document.querySelector("#count");
-
-  countBtn.addEventListener("click", () => {
-    let date = document.querySelector("#date");
-    console.log(date.value);
-    let money = document.querySelector("#money");
-
-    let income = document.getElementsByClassName("income-input");
-    let incomes = 0;
-    for (let i = 0; i < income.length; i++) {
-      incomes += +income[i].value;
     }
+    document.querySelector(".weekday-info").innerHTML = weekDaysContent;
 
-    let expense = document.getElementsByClassName("expense-input");
-    let expenses = 0;
-    for (let i = 0; i < expense.length; i++) {
-      expenses += +expense[i].value;
-      console.log(expense[i].value);
-    }
+    let countBtn = document.querySelector("#count");
 
-    let totalSpent = document.querySelector("#spent");
-    let totalBalance = document.querySelector("#balance");
+    countBtn.addEventListener("click", () => {
+        let date = document.querySelector("#date");
+        console.log(date.value);
+        let money = document.querySelector("#money");
 
-    totalSpent.innerHTML = +expenses + " ＄";
-    totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
+        let income = document.getElementsByClassName("income-input");
+        let incomes = 0;
+        for (let i = 0; i < income.length; i++) {
+            incomes += +income[i].value;
+        }
 
-    // let moneyArray = [];
+        let expense = document.getElementsByClassName("expense-input");
+        let expenses = 0;
+        for (let i = 0; i < expense.length; i++) {
+            expenses += +expense[i].value;
+            console.log(expense[i].value);
+        }
 
-    // if (localStorage.getItem("date") !== null) {
-    //   moneyArray = JSON.parse(
-    //     localStorage.getItem("date", "summ", "income", "expense", "total")
-    //   );
-    // }
-  });
+        let totalSpent = document.querySelector("#spent");
+        let totalBalance = document.querySelector("#balance");
+
+        totalSpent.innerHTML = +expenses + " ＄";
+        totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
+
+        //let divide = (Number(money.value) + Number(incomes) - Number(expenses));
+        //balance.innerHTML = sum;
+
+        // let moneyArray = [];
+
+        // if (localStorage.getItem("date") !== null) {
+        //   moneyArray = JSON.parse(
+        //     localStorage.getItem("date", "summ", "income", "expense", "total")
+        //   );
+        // }
+    });
 });
