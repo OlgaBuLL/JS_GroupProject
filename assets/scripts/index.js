@@ -184,7 +184,7 @@ let weekDaysJson = `[
                       "balance": "input"}
                 },
                 {
-                    "day": "Subbsday",
+                    "day": "Sutterday",
                     "date": "input",
                     "summ": "input",
                     "income": ["input", "input", "input"],
