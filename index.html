@@ -13,7 +13,9 @@
 <body class="body">
     <header>
         <div>Some icon or animation</div>
-        <h1 class="h1">Finance organizer</h1>
+        <div>
+            <h1 class="h1">Finance organizer</h1>
+        </div>
         <div class="settings">Settings <!-- Выбор шрифта --><select name="font" id="font">
                 <option value="default" disabled selected hidden>Choose Font</option>
                 <option value="Arial">Arial</option>
@@ -26,6 +28,7 @@
                 <option value="Koulen">Koulen</option>
                 <option value="Vollkorn SC">Vollkorn SC</option>
             </select></div>
+        <button style="height: 3.5rem;" class="play-background">Animate Background</button>
     </header>
     <main class="container">
         <div class="user">
@@ -57,17 +60,18 @@
         <hr>
         <div class="content">
             <div class="left-wrapper">
-                <form action="" class="form">
+                <form action="" class="form animatebackground">
                     <h2>Registration</h2><label for="userName">Your name:</label><input type="text" id="userName"
                         placeholder="Your name..."><label for="avatar">Avatar link:</label><input type="text"
                         id="avatar" placeholder="Place here the URL..."><button>Submit</button>
                 </form>
-                <div class="financial-literacy">
+                <div class="financial-literacy animatebackground">
                     <h2>What is Financial Literacy for?</h2>
                     <div class="gallery"></div>
                     <div class="gallery-buttons"><button>⟵</button><button>⟶</button></div>
                 </div>
             </div>
+
             <div class="weekday-info">
                 <!-- ПОНЕДЕЛЬНИК -->
                 <!-- <div class="weekDay">
@@ -132,6 +136,7 @@
                 </div>--><!-- Конец ПОНЕДЕЛЬНИКА -->
                 <!-- ВТОРНИК... -->
             </div>
+
             <div class="calculator">
                 <h2>Calculator</h2><input type="number" class="calculator-number" placeholder="First number">
                 <div class="calculate-buttons"><button id="sum">+</button><button id="minus">-</button><button
@@ -139,15 +144,15 @@
                     class="calculator-number" placeholder="Second number"><button id="result-button">=</button><input
                     type="number" id="result" class="calculator-number" placeholder="Result">
             </div>
+        </div>
     </main>
     <footer class="footer">
         <!-- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik </a>from <a
                     href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
     </footer>
-    </div>
-    <!-- <script type="module" src="./assets/scripts/index.js">
-            </script>-->
+
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script type="module" src="./assets/scripts/index.js"></script>
     <script src="./assets/scripts/dist/bundle.js"></script>
 </body>
 

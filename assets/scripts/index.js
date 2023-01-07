@@ -1,3 +1,4 @@
+
 // Изменить шрифт
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,6 +15,52 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("font", font.value);
     });
 });
+
+
+
+// ----- BudgetTracker-----
+
+import BudgetTracker from "./BudgetTracker.js";
+new BudgetTracker("#app");
+
+// ------- библиотека INTERACT ------
+// const interact = require("interactjs");
+
+// ------- библиотека ANIME-----------
+//const anime = require("animejs");
+
+anime({
+    targets: 'div',
+    scale: [{
+        value: .1,
+        easing: 'easeOutSine',
+        duration: 500
+    }
+        ,
+    {
+        value: 1,
+        easing: 'easeInOutQuad',
+        duration: 1200
+    }
+    ],
+    delay: anime.stagger(200, {
+        grid: [14, 5],
+        from: 'center'
+    }
+    )
+}
+);
+
+var animateBackground = anime({
+    targets: '.animatebackground',
+    backgroundColor: '#ffffff',
+    borderColor: '#5dd176',
+    autoplay: false
+}
+);
+
+document.querySelector('.play-background').onclick = animateBackground.restart;
+
 
 // ------- библиотека MOMENT ---------
 
@@ -42,43 +89,6 @@ dateEn.innerHTML = momentTz.tz("America/Toronto").format("LLLL");
 const dateSr = document.querySelector(".date-sr");
 require("moment/locale/sr");
 dateSr.innerHTML = momentTz.tz("Europe/Belgrade").format("LLLL");
-
-// ----- BudgetTracker-----
-
-import BudgetTracker from "./BudgetTracker.js";
-new BudgetTracker("#app");
-
-// ------- библиотека INTERACT ------
-// const interact = require("interactjs");
-
-// ------- библиотека ANIME-----------
-// const anime = require("animejs");
-
-anime({
-
-    targets: 'div',
-    scale: [{
-        value: .1,
-        easing: 'easeOutSine',
-        duration: 500
-    }
-
-        ,
-    {
-        value: 1,
-        easing: 'easeInOutQuad',
-        duration: 1200
-    }
-
-    ],
-    delay: anime.stagger(200, {
-        grid: [14, 5],
-        from: 'center'
-    }
-
-    )
-}
-);
 
 // ДНИ НЕДЕЛИ
 
