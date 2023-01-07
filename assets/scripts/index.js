@@ -1,67 +1,94 @@
-
 // Изменить шрифт
 
 document.addEventListener("DOMContentLoaded", function () {
-    let font = document.getElementById("font");
-    let body = document.querySelector(".body");
+  let font = document.getElementById("font");
+  let body = document.querySelector(".body");
 
-    if (localStorage.getItem("font") !== null) {
-        font.value = localStorage.getItem("font");
-        body.style.fontFamily = font.value;
-    }
+  if (localStorage.getItem("font") !== null) {
+    font.value = localStorage.getItem("font");
+    body.style.fontFamily = font.value;
+  }
 
-    font.addEventListener("change", () => {
-        body.style.fontFamily = font.value;
-        localStorage.setItem("font", font.value);
-    });
+  font.addEventListener("change", () => {
+    body.style.fontFamily = font.value;
+    localStorage.setItem("font", font.value);
+  });
 });
 
+// Изменить цветовю тему
+let body = document.querySelector(".body");
+let colorThemes = document.getElementsByClassName("theme");
+// // let colorThemes = document.querySelector("input[name = theme]:checked").value;
+console.log(colorThemes);
 
+for (let color of colorThemes) {
+  color.addEventListener("click", function () {
+    let theme = this.value;
+    console.log(theme);
 
-// ----- BudgetTracker-----
+    switch (theme) {
+      case "Dark":
+        body.classList.remove("skyblue", "bubble-gum");
+        body.classList.add("dark-theme");
 
-import BudgetTracker from "./BudgetTracker.js";
-new BudgetTracker("#app");
+        break;
 
-// ------- библиотека INTERACT ------
-// const interact = require("interactjs");
+      case "Skyblue":
+        body.classList.remove("dark-theme", "bubble-gum");
+        body.classList.add("skyblue");
+        break;
 
-// ------- библиотека ANIME-----------
-//const anime = require("animejs");
+      case "Bubble Gum":
+        body.classList.remove("dark-theme", "skyblue");
+        body.classList.add("bubble-gum");
+        break;
 
-anime({
-    targets: 'div',
-    scale: [{
-        value: .1,
-        easing: 'easeOutSine',
-        duration: 500
+      // if (theme == "Dark") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/dark-theme.scss";
+      // } else if (theme == "Skyblue") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/skyblue.scss";
+      // } else if (theme == "Bubble Gum") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/bubble-gum.scss";
+      // }
+
+      //   case "Dark":
+      //     body.style.removeProperty("$background-color", "skyblue");
+      //     body.style.removeProperty("$background-color", "pink");
+      //     body.style.setProperty("$background-color", "grey");
+      //     break;
+
+      //   case "Skyblue":
+      //     body.style.removeProperty("$background-color", "grey");
+      //     body.style.removeProperty("$background-color", "pink");
+      //     body.style.setProperty("$background-color", "skyblue");
+      //     break;
+
+      //   case "Bubble Gum":
+      //     body.style.removeProperty("$background-color", "grey");
+      //     body.style.removeProperty("$background-color", "skyblue");
+      //     body.style.setProperty("$background-color", "pink");
+      //     break;
+
+      //   case "Dark":
+      //     body.classList.remove("skyblue", "bubble-gum");
+      //     body.classList.add("dark-theme");
+      //     break;
+
+      //   case "Skyblue":
+      //     body.classList.remove("dark-theme", "bubble-gum");
+      //     body.classList.add("skyblue");
+      //     break;
+
+      //   case "Bubble Gum":
+      //     body.classList.remove("dark-theme", "skyblue");
+      //     body.classList.add("bubble-gum");
+      //     break;
     }
-        ,
-    {
-        value: 1,
-        easing: 'easeInOutQuad',
-        duration: 1200
-    }
-    ],
-    delay: anime.stagger(200, {
-        grid: [14, 5],
-        from: 'center'
-    }
-    )
+  });
 }
-);
-
-var animateBackground = anime({
-    targets: '.animatebackground',
-    backgroundColor: '#ffffff',
-    borderColor: '#5dd176',
-    autoplay: false
-}
-);
-
-document.querySelector('.play-background').onclick = animateBackground.restart;
-
-
 // ------- библиотека MOMENT ---------
 
 // Default - dateUser;
@@ -222,12 +249,12 @@ let weekDaysJson = `[
   ]`;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    let weekDays = JSON.parse(weekDaysJson);
-    console.log(weekDays);
+  let weekDays = JSON.parse(weekDaysJson);
+  console.log(weekDays);
 
-    let weekDaysContent = "";
-    for (let weekDay of weekDays) {
-        weekDaysContent += `<div class="weekDay">
+  let weekDaysContent = "";
+  for (let weekDay of weekDays) {
+    weekDaysContent += `<div class="weekDay">
     <div class="date-info">
         <div class="date"><span>Day:</span>${weekDay.day}</div>
         <div class="date"><input id="date" type="date"></div>
@@ -322,44 +349,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 </div>`;
+  }
+  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
+
+  let countBtn = document.querySelector("#count");
+
+  countBtn.addEventListener("click", () => {
+    let date = document.querySelector("#date");
+    console.log(date.value);
+    let money = document.querySelector("#money");
+
+    let income = document.getElementsByClassName("income-input");
+    let incomes = 0;
+    for (let i = 0; i < income.length; i++) {
+      incomes += +income[i].value;
     }
-    document.querySelector(".weekday-info").innerHTML = weekDaysContent;
 
-    let countBtn = document.querySelector("#count");
+    let expense = document.getElementsByClassName("expense-input");
+    let expenses = 0;
+    for (let i = 0; i < expense.length; i++) {
+      expenses += +expense[i].value;
+      console.log(expense[i].value);
+    }
 
-    countBtn.addEventListener("click", () => {
-        let date = document.querySelector("#date");
-        console.log(date.value);
-        let money = document.querySelector("#money");
+    let totalSpent = document.querySelector("#spent");
+    let totalBalance = document.querySelector("#balance");
 
-        let income = document.getElementsByClassName("income-input");
-        let incomes = 0;
-        for (let i = 0; i < income.length; i++) {
-            incomes += +income[i].value;
-        }
+    totalSpent.innerHTML = +expenses + " ＄";
+    totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
 
-        let expense = document.getElementsByClassName("expense-input");
-        let expenses = 0;
-        for (let i = 0; i < expense.length; i++) {
-            expenses += +expense[i].value;
-            console.log(expense[i].value);
-        }
+    // let moneyArray = [];
 
-        let totalSpent = document.querySelector("#spent");
-        let totalBalance = document.querySelector("#balance");
-
-        totalSpent.innerHTML = +expenses + " ＄";
-        totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
-
-        //let divide = (Number(money.value) + Number(incomes) - Number(expenses));
-        //balance.innerHTML = sum;
-
-        // let moneyArray = [];
-
-        // if (localStorage.getItem("date") !== null) {
-        //   moneyArray = JSON.parse(
-        //     localStorage.getItem("date", "summ", "income", "expense", "total")
-        //   );
-        // }
-    });
+    // if (localStorage.getItem("date") !== null) {
+    //   moneyArray = JSON.parse(
+    //     localStorage.getItem("date", "summ", "income", "expense", "total")
+    //   );
+    // }
+  });
 });
