@@ -1029,4 +1029,17 @@ input::placeholder {
   min-height: 34px;
 }
 
+.dark-theme {
+  background: grey;
+  color: #fff;
+}
+
+.skyblue {
+  background: skyblue;
+}
+
+.bubble-gum {
+  background: pink;
+}
+
 /*# sourceMappingURL=style.css.map */

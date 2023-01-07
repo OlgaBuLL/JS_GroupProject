@@ -15,6 +15,80 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Изменить цветовю тему
+let body = document.querySelector(".body");
+let colorThemes = document.getElementsByClassName("theme");
+// // let colorThemes = document.querySelector("input[name = theme]:checked").value;
+console.log(colorThemes);
+
+for (let color of colorThemes) {
+  color.addEventListener("click", function () {
+    let theme = this.value;
+    console.log(theme);
+
+    switch (theme) {
+      case "Dark":
+        body.classList.remove("skyblue", "bubble-gum");
+        body.classList.add("dark-theme");
+
+        break;
+
+      case "Skyblue":
+        body.classList.remove("dark-theme", "bubble-gum");
+        body.classList.add("skyblue");
+        break;
+
+      case "Bubble Gum":
+        body.classList.remove("dark-theme", "skyblue");
+        body.classList.add("bubble-gum");
+        break;
+
+      // if (theme == "Dark") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/dark-theme.scss";
+      // } else if (theme == "Skyblue") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/skyblue.scss";
+      // } else if (theme == "Bubble Gum") {
+      //   document.getElementById("switcher-id").href =
+      //     "/JavaScript-GroupProject/assets/styles/scss/bubble-gum.scss";
+      // }
+
+      //   case "Dark":
+      //     body.style.removeProperty("$background-color", "skyblue");
+      //     body.style.removeProperty("$background-color", "pink");
+      //     body.style.setProperty("$background-color", "grey");
+      //     break;
+
+      //   case "Skyblue":
+      //     body.style.removeProperty("$background-color", "grey");
+      //     body.style.removeProperty("$background-color", "pink");
+      //     body.style.setProperty("$background-color", "skyblue");
+      //     break;
+
+      //   case "Bubble Gum":
+      //     body.style.removeProperty("$background-color", "grey");
+      //     body.style.removeProperty("$background-color", "skyblue");
+      //     body.style.setProperty("$background-color", "pink");
+      //     break;
+
+      //   case "Dark":
+      //     body.classList.remove("skyblue", "bubble-gum");
+      //     body.classList.add("dark-theme");
+      //     break;
+
+      //   case "Skyblue":
+      //     body.classList.remove("dark-theme", "bubble-gum");
+      //     body.classList.add("skyblue");
+      //     break;
+
+      //   case "Bubble Gum":
+      //     body.classList.remove("dark-theme", "skyblue");
+      //     body.classList.add("bubble-gum");
+      //     break;
+    }
+  });
+}
 // ------- библиотека MOMENT ---------
 
 // Default - dateUser;
