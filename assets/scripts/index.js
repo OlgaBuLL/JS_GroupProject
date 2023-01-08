@@ -1,20 +1,19 @@
 // Изменить шрифт
 
 document.addEventListener("DOMContentLoaded", function () {
-    let font = document.getElementById("font");
-    let body = document.querySelector(".body");
+  let font = document.getElementById("font");
+  let body = document.querySelector(".body");
 
-    if (localStorage.getItem("font") !== null) {
-        font.value = localStorage.getItem("font");
-        body.style.fontFamily = font.value;
-    }
+  if (localStorage.getItem("font") !== null) {
+    font.value = localStorage.getItem("font");
+    body.style.fontFamily = font.value;
+  }
 
-    font.addEventListener("change", () => {
-        body.style.fontFamily = font.value;
-        localStorage.setItem("font", font.value);
-    });
+  font.addEventListener("change", () => {
+    body.style.fontFamily = font.value;
+    localStorage.setItem("font", font.value);
+  });
 });
-
 
 // ----- BudgetTracker-----
 
@@ -28,110 +27,131 @@ new BudgetTracker("#app");
 //const anime = require("animejs");
 
 anime({
-    targets: 'div',
-    scale: [{
-        value: .1,
-        easing: 'easeOutSine',
-        duration: 500
-    }
-        ,
+  targets: "div",
+  scale: [
     {
-        value: 1,
-        easing: 'easeInOutQuad',
-        duration: 1200
-    }
-    ],
-    delay: anime.stagger(200, {
-        grid: [14, 5],
-        from: 'center'
-    }
-    )
-}
-);
+      value: 0.1,
+      easing: "easeOutSine",
+      duration: 500,
+    },
+    {
+      value: 1,
+      easing: "easeInOutQuad",
+      duration: 1200,
+    },
+  ],
+  delay: anime.stagger(200, {
+    grid: [14, 5],
+    from: "center",
+  }),
+});
 
 var animateBackground = anime({
-    targets: '.animatebackground',
-    backgroundColor: '#ffffff',
-    borderColor: '#5dd176',
-    autoplay: false
-}
-);
+  targets: ".animatebackground",
+  backgroundColor: "#ffffff",
+  borderColor: "#5dd176",
+  autoplay: false,
+});
 
-document.querySelector('.play-background').onclick = animateBackground.restart;
+document.querySelector(".play-background").onclick = animateBackground.restart;
 
 // Изменить цветовю тему
 let body = document.querySelector(".body");
 let colorThemes = document.getElementsByClassName("theme");
-// // let colorThemes = document.querySelector("input[name = theme]:checked").value;
-console.log(colorThemes);
+let boxes = document.getElementsByClassName("box");
+let titles = document.getElementsByClassName("title");
+let buttons = document.getElementsByTagName("button");
+console.log(buttons);
 
 for (let color of colorThemes) {
-    color.addEventListener("click", function () {
-        let theme = this.value;
-        console.log(theme);
+  color.addEventListener("click", function () {
+    let theme = this.value;
+    console.log(theme);
 
-        switch (theme) {
-            case "Dark":
-                body.classList.remove("skyblue", "bubble-gum");
-                body.classList.add("dark-theme");
-
-                break;
-
-            case "Skyblue":
-                body.classList.remove("dark-theme", "bubble-gum");
-                body.classList.add("skyblue");
-                break;
-
-            case "Bubble Gum":
-                body.classList.remove("dark-theme", "skyblue");
-                body.classList.add("bubble-gum");
-                break;
-
-            // if (theme == "Dark") {
-            //   document.getElementById("switcher-id").href =
-            //     "/JavaScript-GroupProject/assets/styles/scss/dark-theme.scss";
-            // } else if (theme == "Skyblue") {
-            //   document.getElementById("switcher-id").href =
-            //     "/JavaScript-GroupProject/assets/styles/scss/skyblue.scss";
-            // } else if (theme == "Bubble Gum") {
-            //   document.getElementById("switcher-id").href =
-            //     "/JavaScript-GroupProject/assets/styles/scss/bubble-gum.scss";
-            // }
-
-            //   case "Dark":
-            //     body.style.removeProperty("$background-color", "skyblue");
-            //     body.style.removeProperty("$background-color", "pink");
-            //     body.style.setProperty("$background-color", "grey");
-            //     break;
-
-            //   case "Skyblue":
-            //     body.style.removeProperty("$background-color", "grey");
-            //     body.style.removeProperty("$background-color", "pink");
-            //     body.style.setProperty("$background-color", "skyblue");
-            //     break;
-
-            //   case "Bubble Gum":
-            //     body.style.removeProperty("$background-color", "grey");
-            //     body.style.removeProperty("$background-color", "skyblue");
-            //     body.style.setProperty("$background-color", "pink");
-            //     break;
-
-            //   case "Dark":
-            //     body.classList.remove("skyblue", "bubble-gum");
-            //     body.classList.add("dark-theme");
-            //     break;
-
-            //   case "Skyblue":
-            //     body.classList.remove("dark-theme", "bubble-gum");
-            //     body.classList.add("skyblue");
-            //     break;
-
-            //   case "Bubble Gum":
-            //     body.classList.remove("dark-theme", "skyblue");
-            //     body.classList.add("bubble-gum");
-            //     break;
+    switch (theme) {
+      case "Dark":
+        body.classList.remove(
+          "skyblue",
+          "bubble-gum-body",
+          "underground-body",
+          "bubble-gum-body"
+        );
+        body.classList.add("dark-body");
+        for (let box of boxes) {
+          box.classList.remove("underground-box", "bubble-gum-box");
+          box.classList.add("dark-box");
+          for (let title of titles) {
+            title.classList.remove("underground-title", "bubble-gum-title");
+            title.classList.add("dark-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove("underground-button", "bubble-gum-button");
+            button.classList.add("dark-button");
+          }
         }
-    });
+        break;
+
+      case "Underground":
+        body.classList.remove("dark-body", "skyblue", "bubble-gum-body");
+        body.classList.add("underground-body");
+        for (let box of boxes) {
+          box.classList.remove("dark-box", "bubble-gum-box");
+          box.classList.add("underground-box");
+          for (let title of titles) {
+            title.classList.remove("dark-title", "bubble-gum-title");
+            title.classList.add("underground-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove("dark-button", "bubble-gum-button");
+            button.classList.add("underground-button");
+          }
+        }
+        break;
+
+      case "Skyblue":
+        body.classList.remove(
+          "dark-body",
+          "bubble-gum-body",
+          "underground-body"
+        );
+        body.classList.add("skyblue");
+        for (let box of boxes) {
+          box.classList.remove("underground-box", "dark-box", "bubble-gum-box");
+          for (let title of titles) {
+            title.classList.remove(
+              "underground-title",
+              "dark-title",
+              "bubble-gum-title"
+            );
+          }
+          for (let button of buttons) {
+            button.classList.remove(
+              "underground-button",
+              "dark-button",
+              "bubble-gum-button"
+            );
+          }
+        }
+        break;
+
+      case "Bubble Gum":
+        body.classList.remove("dark-body", "underground-body", "skyblue");
+        body.classList.add("bubble-gum-body");
+        for (let box of boxes) {
+          box.classList.remove("underground-box", "dark-box");
+          box.classList.add("bubble-gum-box");
+          for (let title of titles) {
+            title.classList.remove("underground-title", "dark-title");
+            title.classList.add("bubble-gum-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove("underground-button", "dark-button");
+            button.classList.add("bubble-gum-button");
+          }
+        }
+        break;
+    }
+  });
 }
 // ------- библиотека MOMENT ---------
 
@@ -293,19 +313,19 @@ let weekDaysJson = `[
   ]`;
 
 document.addEventListener("DOMContentLoaded", function (event) {
-    let weekDays = JSON.parse(weekDaysJson);
-    console.log(weekDays);
+  let weekDays = JSON.parse(weekDaysJson);
+  console.log(weekDays);
 
-    let weekDaysContent = "";
-    for (let weekDay of weekDays) {
-        weekDaysContent += `<div class="weekDay">
-    <div class="date-info">
-        <div class="date"><span>Day:</span>${weekDay.day}</div>
+  let weekDaysContent = "";
+  for (let weekDay of weekDays) {
+    weekDaysContent += `<div class="weekDay">
+    <div class="date-info box">
+        <div class="date"><span class="title">Day:</span>${weekDay.day}</div>
         <div class="date"><input id="date" type="date"></div>
     </div>
 
-    <div class="current-amount">
-        <h3>Current Amount</h3>
+    <div class="current-amount box">
+        <h3 class="title">Current Amount</h3>
 
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
@@ -313,8 +333,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 
-    <div class="income">
-        <h3>Income</h3>
+    <div class="income box">
+        <h3 class="title">Income</h3>
         <div>
             <img src="./assets/images/income-icon.png" alt="Income">
             <input type="number" id="income1" class="income-input" placeholder="The amount of money">
@@ -329,8 +349,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 
-    <div class="expense">
-        <h3>Expense</h3>
+    <div class="expense box">
+        <h3 class="title">Expense</h3>
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Food</label>
@@ -382,8 +402,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     </div>
 
-    <div class="total-sum">
-        <h3>Total</h3>
+    <div class="total-sum box">
+        <h3 class="title">Total</h3>
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
             <div>
@@ -393,41 +413,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 </div>`;
+  }
+  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
+
+  let countBtn = document.querySelector("#count");
+
+  countBtn.addEventListener("click", () => {
+    let date = document.querySelector("#date");
+    console.log(date.value);
+    let money = document.querySelector("#money");
+
+    let income = document.getElementsByClassName("income-input");
+    let incomes = 0;
+    for (let i = 0; i < income.length; i++) {
+      incomes += +income[i].value;
     }
-    document.querySelector(".weekday-info").innerHTML = weekDaysContent;
 
-    let countBtn = document.querySelector("#count");
+    let expense = document.getElementsByClassName("expense-input");
+    let expenses = 0;
+    for (let i = 0; i < expense.length; i++) {
+      expenses += +expense[i].value;
+      console.log(expense[i].value);
+    }
 
-    countBtn.addEventListener("click", () => {
-        let date = document.querySelector("#date");
-        console.log(date.value);
-        let money = document.querySelector("#money");
+    let totalSpent = document.querySelector("#spent");
+    let totalBalance = document.querySelector("#balance");
 
-        let income = document.getElementsByClassName("income-input");
-        let incomes = 0;
-        for (let i = 0; i < income.length; i++) {
-            incomes += +income[i].value;
-        }
+    totalSpent.innerHTML = +expenses + " ＄";
+    totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
 
-        let expense = document.getElementsByClassName("expense-input");
-        let expenses = 0;
-        for (let i = 0; i < expense.length; i++) {
-            expenses += +expense[i].value;
-            console.log(expense[i].value);
-        }
+    // let moneyArray = [];
 
-        let totalSpent = document.querySelector("#spent");
-        let totalBalance = document.querySelector("#balance");
-
-        totalSpent.innerHTML = +expenses + " ＄";
-        totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
-
-        // let moneyArray = [];
-
-        // if (localStorage.getItem("date") !== null) {
-        //   moneyArray = JSON.parse(
-        //     localStorage.getItem("date", "summ", "income", "expense", "total")
-        //   );
-        // }
-    });
+    // if (localStorage.getItem("date") !== null) {
+    //   moneyArray = JSON.parse(
+    //     localStorage.getItem("date", "summ", "income", "expense", "total")
+    //   );
+    // }
+  });
 });
