@@ -53,9 +53,10 @@ var animateBackground = anime({
   autoplay: false,
 });
 
-document.querySelector(".play-background").onclick = animateBackground.restart;
+document.querySelector(".play-border").onclick = animateBackground.restart;
 
 // Изменить цветовю тему
+
 let body = document.querySelector(".body");
 let colorThemes = document.getElementsByClassName("theme");
 let boxes = document.getElementsByClassName("box");
@@ -69,40 +70,192 @@ for (let color of colorThemes) {
     console.log(theme);
 
     switch (theme) {
-      case "Dark":
+      case "Office":
         body.classList.remove(
-          "skyblue",
+          "skyblue-body",
           "bubble-gum-body",
           "underground-body",
-          "bubble-gum-body"
+          "violet-body",
+          "dark-body",
+          "parking-body",
+          "wildberry-body"
         );
-        body.classList.add("dark-body");
+        body.classList.add("office-body");
         for (let box of boxes) {
-          box.classList.remove("underground-box", "bubble-gum-box");
-          box.classList.add("dark-box");
+          box.classList.remove(
+            "underground-box",
+            "bubble-gum-box",
+            "violet-box",
+            "skyblue-box",
+            "dark-box",
+            "parking-box",
+            "wildberry-box"
+          );
+          box.classList.add("office-box");
           for (let title of titles) {
-            title.classList.remove("underground-title", "bubble-gum-title");
-            title.classList.add("dark-title");
+            title.classList.remove(
+              "underground-title",
+              "bubble-gum-title",
+              "violet-title",
+              "skyblue-title",
+              "dark-title",
+              "parking-title",
+              "wildberry-title"
+            );
+            title.classList.add("office-title");
           }
           for (let button of buttons) {
-            button.classList.remove("underground-button", "bubble-gum-button");
-            button.classList.add("dark-button");
+            button.classList.remove(
+              "underground-button",
+              "bubble-gum-button",
+              "violet-button",
+              "skyblue-button",
+              "dark-button",
+              "parking-button",
+              "wildberry-button"
+            );
+            button.classList.add("office-button");
           }
         }
         break;
 
+      case "Dark":
+        body.classList.remove(
+          "skyblue-body",
+          "bubble-gum-body",
+          "underground-body",
+          "violet-body",
+          "parking-body",
+          "wildberry-body",
+          "office-body"
+        );
+        body.classList.add("dark-body");
+        for (let box of boxes) {
+          box.classList.remove(
+            "underground-box",
+            "bubble-gum-box",
+            "violet-box",
+            "skyblue-box",
+            "parking-box",
+            "office-body",
+            "wildberry-box"
+          );
+          box.classList.add("dark-box");
+          for (let title of titles) {
+            title.classList.remove(
+              "underground-title",
+              "bubble-gum-title",
+              "violet-title",
+              "skyblue-title",
+              "parking-title",
+              "wildberry-title"
+            );
+            title.classList.add("dark-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove(
+              "underground-button",
+              "bubble-gum-button",
+              "violet-button",
+              "skyblue-button",
+              "parking-button",
+              "office-button",
+              "wildberry-button"
+            );
+            button.classList.add("dark-button");
+          }
+        }
+        break;
+      case "Parking":
+        body.classList.remove(
+          "skyblue-body",
+          "bubble-gum-body",
+          "underground-body",
+          "violet-body",
+          "dark-body",
+          "office-body",
+          "wildberry-body"
+        );
+        body.classList.add("parking-body");
+        for (let box of boxes) {
+          box.classList.remove(
+            "underground-box",
+            "bubble-gum-box",
+            "violet-box",
+            "skyblue-box",
+            "dark-box",
+            "office-box",
+            "wildberry-box"
+          );
+          box.classList.add("parking-box");
+          for (let title of titles) {
+            title.classList.remove(
+              "underground-title",
+              "bubble-gum-title",
+              "violet-title",
+              "skyblue-title",
+              "dark-title",
+              "office-title",
+              "wildberry-title"
+            );
+            title.classList.add("parking-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove(
+              "underground-button",
+              "bubble-gum-button",
+              "violet-button",
+              "skyblue-button",
+              "dark-button",
+              "office-button",
+              "wildberry-button"
+            );
+            button.classList.add("parking-button");
+          }
+        }
+        break;
       case "Underground":
-        body.classList.remove("dark-body", "skyblue", "bubble-gum-body");
+        body.classList.remove(
+          "dark-body",
+          "skyblue-body",
+          "bubble-gum-body",
+          "violet-body",
+          "parking-body",
+          "wildberry-body",
+          "office-body"
+        );
         body.classList.add("underground-body");
         for (let box of boxes) {
-          box.classList.remove("dark-box", "bubble-gum-box");
+          box.classList.remove(
+            "dark-box",
+            "bubble-gum-box",
+            "violet-box",
+            "skyblue-box",
+            "parking-box",
+            "wildberry-box"
+          );
           box.classList.add("underground-box");
           for (let title of titles) {
-            title.classList.remove("dark-title", "bubble-gum-title");
+            title.classList.remove(
+              "dark-title",
+              "bubble-gum-title",
+              "violet-title",
+              "skyblue-title",
+              "parking-title",
+              "wildberry-title"
+            );
             title.classList.add("underground-title");
           }
           for (let button of buttons) {
-            button.classList.remove("dark-button", "bubble-gum-button");
+            button.classList.remove(
+              "dark-button",
+              "bubble-gum-button",
+              "violet-button",
+              "skyblue-button",
+              "parking-button",
+              "wildberry-button",
+              "office-button"
+            );
             button.classList.add("underground-button");
           }
         }
@@ -112,41 +265,184 @@ for (let color of colorThemes) {
         body.classList.remove(
           "dark-body",
           "bubble-gum-body",
-          "underground-body"
+          "underground-body",
+          "violet-body",
+          "parking-body",
+          "office-body",
+          "wildberry-body"
         );
-        body.classList.add("skyblue");
+        body.classList.add("skyblue-body");
         for (let box of boxes) {
-          box.classList.remove("underground-box", "dark-box", "bubble-gum-box");
+          box.classList.remove(
+            "underground-box",
+            "dark-box",
+            "bubble-gum-box",
+            "violet-box",
+            "parking-box",
+            "wildberry-box"
+          );
+          box.classList.add("skyblue-box");
           for (let title of titles) {
             title.classList.remove(
               "underground-title",
               "dark-title",
-              "bubble-gum-title"
+              "bubble-gum-title",
+              "violet-title",
+              "parking-title",
+              "wildberry-title"
             );
+            title.classList.add("skyblue-title");
           }
           for (let button of buttons) {
             button.classList.remove(
               "underground-button",
               "dark-button",
-              "bubble-gum-button"
+              "bubble-gum-button",
+              "violet-button",
+              "parking-button",
+              "office-button",
+              "wildberry-button"
             );
+            button.classList.add("skyblue-button");
           }
         }
         break;
 
       case "Bubble Gum":
-        body.classList.remove("dark-body", "underground-body", "skyblue");
+        body.classList.remove(
+          "dark-body",
+          "underground-body",
+          "skyblue-body",
+          "violet-body",
+          "parking-body",
+          "office-body",
+          "wildberry-body"
+        );
         body.classList.add("bubble-gum-body");
         for (let box of boxes) {
-          box.classList.remove("underground-box", "dark-box");
+          box.classList.remove(
+            "underground-box",
+            "dark-box",
+            "violet-box",
+            "skyblue-box",
+            "parking-box",
+            "wildberry-box"
+          );
           box.classList.add("bubble-gum-box");
           for (let title of titles) {
-            title.classList.remove("underground-title", "dark-title");
+            title.classList.remove(
+              "underground-title",
+              "dark-title",
+              "violet-title",
+              "skyblue-title",
+              "parking-title",
+              "wildberry-title"
+            );
             title.classList.add("bubble-gum-title");
           }
           for (let button of buttons) {
-            button.classList.remove("underground-button", "dark-button");
+            button.classList.remove(
+              "underground-button",
+              "dark-button",
+              "violet-button",
+              "skyblue-button",
+              "parking-button",
+              "office-button",
+              "wildberry-button"
+            );
             button.classList.add("bubble-gum-button");
+          }
+        }
+        break;
+      case "Violet":
+        body.classList.remove(
+          "dark-body",
+          "underground-body",
+          "skyblue-body",
+          "bubble-gum-body",
+          "parking-body",
+          "office-body",
+          "wildberry-body"
+        );
+        body.classList.add("violet-body");
+        for (let box of boxes) {
+          box.classList.remove(
+            "underground-box",
+            "dark-box",
+            "bubble-gum-box",
+            "skyblue-box",
+            "parking-box",
+            "wildberry-box"
+          );
+          box.classList.add("violet-box");
+          for (let title of titles) {
+            title.classList.remove(
+              "underground-title",
+              "dark-title",
+              "bubble-gum-title",
+              "skyblue-title",
+              "parking-title",
+              "wildberry-title"
+            );
+            title.classList.add("violet-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove(
+              "underground-button",
+              "dark-button",
+              "bubble-gum-button",
+              "skyblue-button",
+              "parking-button",
+              "office-button",
+              "wildberry-button"
+            );
+            button.classList.add("violet-button");
+          }
+        }
+        break;
+      case "Wildberry":
+        body.classList.remove(
+          "dark-body",
+          "underground-body",
+          "skyblue-body",
+          "bubble-gum-body",
+          "parking-body",
+          "office-body",
+          "violet-body"
+        );
+        body.classList.add("wildberry-body");
+        for (let box of boxes) {
+          box.classList.remove(
+            "underground-box",
+            "dark-box",
+            "bubble-gum-box",
+            "skyblue-box",
+            "parking-box",
+            "violet-box"
+          );
+          box.classList.add("wildberry-box");
+          for (let title of titles) {
+            title.classList.remove(
+              "underground-title",
+              "dark-title",
+              "bubble-gum-title",
+              "skyblue-title",
+              "parking-title",
+              "violet-title"
+            );
+            title.classList.add("wildberry-title");
+          }
+          for (let button of buttons) {
+            button.classList.remove(
+              "underground-button",
+              "dark-button",
+              "bubble-gum-button",
+              "skyblue-button",
+              "parking-button",
+              "office-button",
+              "violet-button"
+            );
+            button.classList.add("wildberry-button");
           }
         }
         break;
@@ -221,7 +517,7 @@ let weekDaysJson = `[
             "balance": "input"}
       },
       {
-        "day": "Wendesday",
+        "day": "Wednesday",
         "date": "input",
         "summ": "input",
         "income": ["input", "input", "input"],
@@ -239,7 +535,7 @@ let weekDaysJson = `[
               "balance": "input"}
         },
         {
-            "day": "Tuersday",
+            "day": "Thursday",
             "date": "input",
             "summ": "input",
             "income": ["input", "input", "input"],
@@ -275,7 +571,7 @@ let weekDaysJson = `[
                       "balance": "input"}
                 },
                 {
-                    "day": "Subbsday",
+                    "day": "Saturday",
                     "date": "input",
                     "summ": "input",
                     "income": ["input", "input", "input"],
@@ -439,8 +735,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     let totalSpent = document.querySelector("#spent");
     let totalBalance = document.querySelector("#balance");
 
-    totalSpent.innerHTML = +expenses + " ＄";
-    totalBalance.innerHTML = +money.value + +incomes - +expenses + " ＄";
+    totalSpent.innerHTML = Number(expenses) + " ＄";
+    totalBalance.innerHTML =
+      Number(money.value) + Number(incomes) - Number(expenses) + " ＄";
 
     // let moneyArray = [];
 

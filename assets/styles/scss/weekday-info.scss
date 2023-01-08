@@ -1,4 +1,5 @@
 .weekday-info {
+  // width: 100%;
   display: flex;
   flex-direction: column;
   height: fit-content;
@@ -10,17 +11,19 @@
   row-gap: 2rem;
 }
 .date-info {
+  // width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 2rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   box-shadow: 0 0 10px 6px rgb(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .date {
   display: flex;
   flex-direction: column;
+  row-gap: 1rem;
 }
 
 h3 {
@@ -38,21 +41,23 @@ input::placeholder {
 .current-amount,
 .income,
 .total-sum {
+  // width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   box-shadow: 0 0 10px 6px rgb(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .expense {
+  // width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem 2rem 1.5rem;
   box-shadow: 0 0 10px 6px rgb(0, 0, 0, 0.2);
-  border-radius: 6px;
+  border-radius: 4px;
 }
 .current-amount > div,
 .income > div,
@@ -69,9 +74,11 @@ input::placeholder {
 }
 .expense > button {
   width: 50%;
-  min-height: 34px;
+  min-height: 44px;
   align-self: center;
-  margin: 1rem auto;
+  margin: 1rem auto 0.5rem;
+  font-size: larger;
+  // border-radius: 2px;
 }
 .total-sum > div > div {
   display: flex;

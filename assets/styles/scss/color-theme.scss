@@ -1,3 +1,29 @@
+/* ----- Office ----- */
+
+.office-body {
+  background: rgb(245, 245, 248);
+}
+.office-box {
+  background: linear-gradient(
+    rgb(249, 245, 248),
+    rgb(252, 255, 255),
+    rgb(249, 245, 248)
+  );
+}
+.office-title {
+  color: rgb(27, 54, 151);
+}
+.office-button {
+  background: rgb(125, 143, 205);
+  color: #fff;
+  border: none;
+  border-bottom: 6px solid rgb(82, 97, 149);
+}
+.office-button:hover {
+  border-bottom: 3px solid rgb(82, 97, 149);
+  background: rgb(112, 132, 205);
+}
+
 /* ----- Dark-Theme ----- */
 
 .dark-body {
@@ -5,23 +31,62 @@
   color: rgb(237, 233, 233);
 }
 .dark-box {
-  background: rgba(57, 55, 55);
-  /* color: rgba(19, 18, 18); */
+  background: linear-gradient(
+    rgba(57, 55, 55),
+    rgb(64, 62, 62),
+    rgb(68, 66, 66),
+    rgb(64, 62, 62),
+    rgba(57, 55, 55)
+  );
   box-shadow: 0 0 10px 6px rgb(15, 14, 14);
-  /* box-shadow: 0 0 10px 6px rgba(128, 80, 43, 0.8); */
 }
 .dark-title {
   color: rgb(59, 205, 253);
 }
 .dark-button {
   background: rgb(59, 205, 253);
-  /* color: #fff; */
-  border: 1px solid rgb(15, 14, 14, 0.5);
+  border: none;
   border-bottom: 6px solid rgba(15, 14, 14, 0.5);
 }
 .dark-button:hover {
   border-bottom: 3px solid rgb(15, 14, 14, 0.5);
   background: rgb(56, 193, 239);
+}
+
+/* ----- Parking ----- */
+
+.parking-body {
+  background: linear-gradient(
+    rgb(22, 19, 19),
+    rgb(37, 37, 37),
+    rgb(49, 49, 49),
+    rgb(37, 37, 37),
+    rgb(22, 19, 19)
+  );
+  color: #fdfd30;
+}
+.parking-box {
+  background: linear-gradient(
+    rgb(56, 59, 59),
+    rgb(65, 62, 62),
+    rgb(71, 66, 66),
+    rgb(65, 62, 62),
+    rgb(56, 59, 59)
+  );
+  color: #fff;
+  box-shadow: 0 0 10px 6px rgb(3, 3, 3);
+}
+.parking-title {
+  color: #fdfd30;
+}
+.parking-button {
+  background: #fdfd30;
+  border: none;
+  border-bottom: 6px solid #afaf25;
+}
+.parking-button:hover {
+  border-bottom: 3px solid #afaf25;
+  background: #e0e013;
 }
 
 /* ----- Underground ----- */
@@ -31,10 +96,14 @@
   color: #f16506;
 }
 .underground-box {
-  background: rgb(45, 31, 30);
-  /* color: #80502b; */
+  background: linear-gradient(
+    rgb(45, 31, 30),
+    rgb(52, 37, 36),
+    rgb(57, 41, 40),
+    rgb(52, 37, 36),
+    rgb(45, 31, 30)
+  );
   color: #9e9997;
-  /* box-shadow: 0 0 10px 6px rgba(131, 129, 129, 0.5); */
   box-shadow: 0 0 10px 6px rgba(128, 80, 43, 0.8);
 }
 .underground-title {
@@ -43,7 +112,7 @@
 .underground-button {
   background: #f16506;
   color: #fff;
-  border: 1px solid #5e3b21;
+  border: none;
   border-bottom: 6px solid #80502b;
 }
 .underground-button:hover {
@@ -52,11 +121,44 @@
 }
 
 /* ----- Skyblue ----- */
-.skyblue {
-  background: skyblue;
+
+.skyblue-body {
+  background: linear-gradient(
+    skyblue,
+    rgb(170, 219, 239),
+    rgb(237, 241, 243),
+    rgb(170, 219, 239),
+    skyblue
+  );
+  color: #083b49;
+}
+.skyblue-box {
+  background: linear-gradient(
+    rgb(213, 232, 247),
+    rgb(221, 236, 247),
+    rgb(228, 238, 245),
+    rgb(221, 236, 247),
+    rgb(213, 232, 247)
+  );
+  color: #383635;
+  box-shadow: 0 0 10px 6px rgba(19, 90, 117, 0.5);
+}
+.skyblue-title {
+  color: rgb(6, 126, 159);
+}
+.skyblue-button {
+  background: rgb(20, 167, 208);
+  color: #fff;
+  border: none;
+  border-bottom: 6px solid rgb(11, 115, 143);
+}
+.skyblue-button:hover {
+  border-bottom: 3px solid rgb(9, 96, 120);
+  background: rgb(15, 148, 185);
 }
 
 /* ----- Bubble-Gum ----- */
+
 .bubble-gum-body {
   background: linear-gradient(
     rgb(254, 174, 187),
@@ -65,25 +167,101 @@
     #cce4f0,
     rgb(254, 174, 187)
   );
-  color: #383635;
+  color: rgb(150, 66, 80);
 }
 .bubble-gum-box {
-  background: rgb(247, 213, 219);
-  /* color: #80502b; */
-  /* color: #383635; */
-  /* box-shadow: 0 0 10px 6px rgba(131, 129, 129, 0.5); */
+  background: linear-gradient(
+    rgb(247, 213, 219),
+    rgb(246, 217, 222),
+    rgb(245, 223, 227),
+    rgb(246, 217, 222),
+    rgb(247, 213, 219)
+  );
+  color: #383635;
   box-shadow: 0 0 10px 6px rgba(197, 81, 100, 0.5);
 }
 .bubble-gum-title {
-  color: rgb(163, 69, 85);
+  color: rgb(207, 54, 80);
 }
 .bubble-gum-button {
-  background: rgb(163, 69, 85);
+  background: rgb(214, 94, 114);
   color: #fff;
-  border: 1px solid rgba(197, 81, 100, 0.5);
-  border-bottom: 6px rgba(197, 81, 100, 0.5);
+  border: none;
+  border-bottom: 6px solid rgb(150, 66, 80);
 }
 .bubble-gum-button:hover {
-  border-bottom: 3px solid rgba(197, 81, 100, 0.5);
-  background: rgba(185, 77, 95, 0.5);
+  border-bottom: 3px solid rgb(150, 66, 80);
+  background: rgb(202, 91, 109);
+}
+
+/* ----- Violet ----- */
+
+.violet-body {
+  background: linear-gradient(
+    rgb(85, 39, 154),
+    rgb(166, 132, 215),
+    #fff,
+    rgb(166, 132, 215),
+    rgb(85, 39, 154)
+  );
+  color: #fff;
+}
+.violet-box {
+  background: linear-gradient(
+    rgb(204, 183, 237),
+    rgb(208, 195, 235),
+    rgb(209, 206, 233),
+    rgb(208, 195, 235),
+    rgb(204, 183, 237)
+  );
+  color: #383635;
+  box-shadow: 0 0 10px 6px rgba(58, 51, 63, 0.5);
+}
+.violet-title {
+  color: rgb(85, 39, 154);
+}
+.violet-button {
+  background: rgb(124, 57, 225);
+  color: #fff;
+  border: none;
+  border-bottom: 6px solid rgb(100, 53, 169);
+}
+.violet-button:hover {
+  border-bottom: 3px solid rgb(85, 39, 154);
+  background: rgb(121, 56, 218);
+}
+
+/* ----- Wildberry ----- */
+
+.wildberry-body {
+  background: linear-gradient(
+    rgb(252, 147, 228),
+    rgb(121, 248, 208),
+    #fff,
+    rgb(121, 248, 208),
+    rgb(252, 147, 228)
+  );
+  color: #fff;
+}
+.wildberry-box {
+  background: linear-gradient(
+    rgb(255, 220, 247),
+    rgb(255, 229, 249),
+    rgb(255, 220, 247)
+  );
+  color: #383635;
+  box-shadow: 0 0 10px 6px rgb(103, 216, 181);
+}
+.wildberry-title {
+  color: #383635;
+}
+.wildberry-button {
+  background: rgb(121, 248, 208);
+  // color: #fff;
+  border: none;
+  border-bottom: 6px solid rgb(101, 203, 171);
+}
+.wildberry-button:hover {
+  border-bottom: 3px solid rgb(101, 203, 171);
+  background: rgb(110, 226, 190);
 }
