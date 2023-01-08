@@ -8,61 +8,86 @@
     <title>JS Group Project</title>
     <link rel="shortcut icon" href="./assets/images/js.png" type="image/svg" />
     <link rel="stylesheet" href="./assets/styles/css/style.css">
-    <link rel="stylesheet" id="switcher-id" href="">
 
 </head>
 
 <body class="body">
     <header>
-        <div>Some icon or animation</div>
+        <div class="userData">
+            <img src="" id="userAvatar" alt="My avatar">
+            <p id="userName"></p>
+        </div>
         <div>
             <h1 class="h1">Finance organizer</h1>
         </div>
-        <div class="settings">Settings
-            <!-- Выбор шрифта -->
-            <select name="font" id="font">
-                <option value="default" disabled selected hidden>Choose Font</option>
-                <option value="Arial">Arial</option>
-                <option value="Red Hat Display">Red Hat Display</option>
-                <option value="Montserrat">Montserrat</option>
-                <option value="Lexend">Lexend</option>
-                <option value="Anybody">Anybody</option>
-                <option value="Space Grotesk">Space Grotesk</option>
-                <option value="Architects Daughter">Architects Daughter</option>
-                <option value="Koulen">Koulen</option>
-                <option value="Vollkorn SC">Vollkorn SC</option>
-            </select>
+        <div class="settings">
+            <h3>Settings</h3>
+            <div>
+                <img src="./assets/images/settings.svg" alt="Settings">
+            </div>
         </div>
+
+        <!-- Выбор шрифта -->
+        <select name="font" id="font">
+            <option value="default" disabled selected hidden>Choose Font</option>
+            <option value="Arial">Arial</option>
+            <option value="Red Hat Display">Red Hat Display</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Lexend">Lexend</option>
+            <option value="Anybody">Anybody</option>
+            <option value="Space Grotesk">Space Grotesk</option>
+            <option value="Architects Daughter">Architects Daughter</option>
+            <option value="Koulen">Koulen</option>
+            <option value="Vollkorn SC">Vollkorn SC</option>
+        </select>
+
+        <!-- Выбор темы -->
         <div class="color-theme">
             <h3>Color Theme</h3>
             <div>
-                <input type="radio" name="theme" data-theme="dark" id="dark" class="theme" value="Dark" checked>
+                <input type="radio" name="theme" id="office" class="theme" value="Office">
+                <label for="office">Office</label>
+            </div>
+            <div>
+                <input type="radio" name="theme" id="dark" class="theme" value="Dark" checked>
                 <label for="dark">Dark</label>
             </div>
             <div>
-                <input type="radio" name="theme" data-theme="underground" id="underground" class="theme"
-                    value="Underground">
+                <input type="radio" name="theme" id="parking" class="theme" value="Parking">
+                <label for="parking">Parking</label>
+            </div>
+            <div>
+                <input type="radio" name="theme" id="underground" class="theme" value="Underground">
                 <label for="underground">Underground</label>
             </div>
             <div>
-                <input type="radio" name="theme" data-theme="skyblue" id="skyblue" class="theme" value="Skyblue">
+                <input type="radio" name="theme" id="skyblue" class="theme" value="Skyblue">
                 <label for="skyblue">Skyblue</label>
             </div>
             <div>
-                <input type="radio" name="theme" data-theme="bubble-gum" id="bubble-gum" class="theme"
-                    value="Bubble Gum">
+                <input type="radio" name="theme" id="bubble-gum" class="theme" value="Bubble Gum">
                 <label for="bubble-gum">Bubble Gum</label>
             </div>
+            <div>
+                <input type="radio" name="theme" id="violet" class="theme" value="Violet">
+                <label for="violet">Violet</label>
+            </div>
+            <div>
+                <input type="radio" name="theme" id="wildberry" class="theme" value="Wildberry">
+                <label for="wildberry">Wildberry</label>
+            </div>
         </div>
-        <div><button style="height: 3.5rem;" class="play-background">Animate Background</button></div>
+
+        <!-- Кнопка анимации -->
+        <div>
+            <button style="height: 2.5rem;" class="play-border">Animate border</button>
+        </div>
     </header>
+
     <main class="container">
 
-        <div class="user">
-            <div class="userData">
-                <img src="" id="userAvatar" alt="My avatar">
-                <p id="userName"></p>
-            </div>
+        <div class="finance-moment">
+            <div id="app"></div>
             <!-- moment js -->
             <div class="moment">
                 <h2>World Clock🕒</h2>
@@ -84,9 +109,7 @@
                 </div>
             </div>
         </div>
-        <hr>
-        <div id="app"></div>
-        <hr>
+
 
         <div class="content">
             <div class="left-wrapper">
