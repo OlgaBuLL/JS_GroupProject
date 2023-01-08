@@ -1,22 +1,89 @@
-// $background-color: grey;
-// $font-color: #fff;
-// $font-weight: bold;
+/* ----- Dark-Theme ----- */
 
-// .dark-theme {
-//   background: $background-color;
-//   color: $font-color;
-//   font-weight: $font-weight;
-// }
-
-.dark-theme {
-  background: grey;
-  color: #fff;
+.dark-body {
+  background: rgb(34, 33, 33);
+  color: rgb(237, 233, 233);
+}
+.dark-box {
+  background: rgba(57, 55, 55);
+  /* color: rgba(19, 18, 18); */
+  box-shadow: 0 0 10px 6px rgb(15, 14, 14);
+  /* box-shadow: 0 0 10px 6px rgba(128, 80, 43, 0.8); */
+}
+.dark-title {
+  color: rgb(59, 205, 253);
+}
+.dark-button {
+  background: rgb(59, 205, 253);
+  /* color: #fff; */
+  border: 1px solid rgb(15, 14, 14, 0.5);
+  border-bottom: 6px solid rgba(15, 14, 14, 0.5);
+}
+.dark-button:hover {
+  border-bottom: 3px solid rgb(15, 14, 14, 0.5);
+  background: rgb(56, 193, 239);
 }
 
+/* ----- Underground ----- */
+
+.underground-body {
+  background: #110602;
+  color: #f16506;
+}
+.underground-box {
+  background: rgb(45, 31, 30);
+  /* color: #80502b; */
+  color: #9e9997;
+  /* box-shadow: 0 0 10px 6px rgba(131, 129, 129, 0.5); */
+  box-shadow: 0 0 10px 6px rgba(128, 80, 43, 0.8);
+}
+.underground-title {
+  color: #f16506;
+}
+.underground-button {
+  background: #f16506;
+  color: #fff;
+  border: 1px solid #5e3b21;
+  border-bottom: 6px solid #80502b;
+}
+.underground-button:hover {
+  border-bottom: 3px solid #80502b;
+  background: #e45e05;
+}
+
+/* ----- Skyblue ----- */
 .skyblue {
   background: skyblue;
 }
 
-.bubble-gum {
-  background: pink;
+/* ----- Bubble-Gum ----- */
+.bubble-gum-body {
+  background: linear-gradient(
+    rgb(254, 174, 187),
+    #cce4f0,
+    #fff,
+    #cce4f0,
+    rgb(254, 174, 187)
+  );
+  color: #383635;
+}
+.bubble-gum-box {
+  background: rgb(247, 213, 219);
+  /* color: #80502b; */
+  /* color: #383635; */
+  /* box-shadow: 0 0 10px 6px rgba(131, 129, 129, 0.5); */
+  box-shadow: 0 0 10px 6px rgba(197, 81, 100, 0.5);
+}
+.bubble-gum-title {
+  color: rgb(163, 69, 85);
+}
+.bubble-gum-button {
+  background: rgb(163, 69, 85);
+  color: #fff;
+  border: 1px solid rgba(197, 81, 100, 0.5);
+  border-bottom: 6px rgba(197, 81, 100, 0.5);
+}
+.bubble-gum-button:hover {
+  border-bottom: 3px solid rgba(197, 81, 100, 0.5);
+  background: rgba(185, 77, 95, 0.5);
 }
