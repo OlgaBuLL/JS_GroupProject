@@ -962,6 +962,14 @@ h3 {
   padding: 2rem 2rem 2rem 2rem;
 }
 
+.weekday-info_3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 4rem;
+  padding: 2rem 16rem 2rem 16rem;
+}
+
 .weekDay {
   display: flex;
   flex-direction: column;
