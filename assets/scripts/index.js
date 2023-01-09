@@ -605,7 +605,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             <label for="food">Another</label>
             <input type="number" id="another" class="expense-input">
         </div>
-        <button id="count">Count</button>
+        <button id="count" class="click_me1 click_me2">Count</button>
 
     </div>
 
