@@ -846,7 +846,7 @@ h3 {
 }
 
 .container {
-  max-width: 1550px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -919,15 +919,17 @@ h3 {
 .financial-literacy {
   display: flex;
   flex-direction: column;
-  align-items: center;
   row-gap: 2rem;
 }
 
 .form,
 .financial-literacy {
+  display: flex;
+  align-items: center;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   padding: 2rem 1.5rem 2rem 1.5rem;
   border-radius: 4px;
+  max-width: 238px;
 }
 
 .form > button {
@@ -971,9 +973,10 @@ h3 {
   align-items: center;
   justify-content: center;
   column-gap: 2rem;
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  padding: 2rem 2rem 2rem 2rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  max-width: 40vw;
 }
 
 .date {
@@ -990,6 +993,7 @@ h3 {
 input {
   text-align: center;
   height: 28px;
+  width: 10vw;
   font-weight: bold;
 }
 
@@ -1007,6 +1011,7 @@ input::placeholder {
   padding: 2rem 1.5rem 2rem 1.5rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  max-width: 40vw;
 }
 
 .expense {
@@ -1025,7 +1030,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 1.5rem;
+  column-gap: 1rem;
 }
 
 .expense > div > img {
@@ -1054,9 +1059,10 @@ input::placeholder {
   align-items: center;
   row-gap: 2rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
-  padding: 2rem 1.5rem 2.5rem 1.5rem;
+  padding: 2rem 2rem 2.5rem 2rem;
   height: fit-content;
   border-radius: 4px;
+  max-width: fit-content;
 }
 
 .calculate-buttons {
