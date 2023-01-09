@@ -1,8 +1,17 @@
 .weekday-info {
   // width: 100%;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
+  display: grid;
+  grid-area: weekday-info;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem ;
+  row-gap: 2rem;
+}
+.weekday-info_2 {
+  // width: 100%;
+  display: grid;
+  grid-area: weekday-info;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem ;
   row-gap: 2rem;
 }
 .weekDay {
