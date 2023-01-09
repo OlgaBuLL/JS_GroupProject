@@ -827,7 +827,9 @@ span {
 }
 
 .content {
-  display: flex;
+  display: grid;
+  grid-template-areas: "left-wrapper weekday-info calculator";
+  grid-template-columns: 1fr 2fr 1fr;
   column-gap: 2rem;
   padding: 1rem;
   margin-top: 4rem;
@@ -844,7 +846,7 @@ h3 {
 }
 
 .container {
-  max-width: 1270px;
+  max-width: 1550px;
   margin: 0 auto;
 }
 
@@ -908,6 +910,10 @@ h3 {
   text-align: right;
 }
 
+.left-wrapper {
+  grid-area: left-wrapper;
+}
+
 .left-wrapper,
 .form,
 .financial-literacy {
@@ -939,9 +945,18 @@ h3 {
 }
 
 .weekday-info {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
+  display: grid;
+  grid-area: weekday-info;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+.weekday-info_2 {
+  display: grid;
+  grid-area: weekday-info;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 2rem;
   row-gap: 2rem;
 }
 
@@ -1034,6 +1049,7 @@ input::placeholder {
 
 .calculator {
   display: flex;
+  grid-area: calculator;
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
