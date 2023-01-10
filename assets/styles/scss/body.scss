@@ -6,10 +6,11 @@
 }
 
 header {
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 3rem auto 5rem;
 }
 
 h1 {
@@ -38,15 +39,17 @@ h1 {
   text-align: right;
   row-gap: 10px;
   font-size: small;
-  // color: #9e9997;
+}
+.moment > h2 {
+  text-align: right;
 }
 span {
   font-weight: bold;
 }
 .content {
   display: grid;
-    grid-template-areas: "left-wrapper weekday-info calculator";
-    grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "left-wrapper weekday-info calculator";
+  grid-template-columns: 1fr 2fr 1fr;
   column-gap: 2rem;
   padding: 1rem;
   margin-top: 4rem;
