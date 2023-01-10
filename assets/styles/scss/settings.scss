@@ -25,6 +25,7 @@ label[for="nav-trigger"] {
   width: 60px;
   cursor: pointer;
   background: white;
+  border-radius: 22px;
   background-image: url(/JavaScript-GroupProject/assets/images/settings.svg);
   background-size: contain;
 }
@@ -36,17 +37,16 @@ label[for="nav-trigger"] {
   top: 0;
   background: rgb(115, 114, 114);
   z-index: 2;
-  padding: 0 1rem 2rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   display: none;
 }
 
 .choose-font {
   height: 220px;
 }
-
 .choose-font,
 .color-theme {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .choose-font,

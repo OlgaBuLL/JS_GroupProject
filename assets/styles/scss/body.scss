@@ -10,7 +10,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin: 3rem auto 5rem;
 }
 
 h1 {
@@ -39,7 +39,9 @@ h1 {
   text-align: right;
   row-gap: 10px;
   font-size: small;
-  // color: #9e9997;
+}
+.moment > h2 {
+  text-align: right;
 }
 span {
   font-weight: bold;
