@@ -21,66 +21,72 @@
             <h1 class="h1">Finance organizer</h1>
         </div>
         <div class="settings">
-            <h3>Settings</h3>
+            <h4>Settings</h4>
             <div>
-                <img src="./assets/images/settings.svg" alt="Settings">
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger"></label>
             </div>
         </div>
 
-        <!-- Выбор шрифта -->
-        <select name="font" id="font">
-            <option value="default" disabled selected hidden>Choose Font</option>
-            <option value="Arial">Arial</option>
-            <option value="Red Hat Display">Red Hat Display</option>
-            <option value="Montserrat">Montserrat</option>
-            <option value="Lexend">Lexend</option>
-            <option value="Anybody">Anybody</option>
-            <option value="Space Grotesk">Space Grotesk</option>
-            <option value="Architects Daughter">Architects Daughter</option>
-            <option value="Koulen">Koulen</option>
-            <option value="Vollkorn SC">Vollkorn SC</option>
-        </select>
+        <div class="prefferencies">
+            <!-- Выбор шрифта -->
+            <div class="choose-font">
+                <h3>Choose Font ✎ </h3>
+                <select name="font" id="font">
+                    <option value="default" disabled selected hidden>Choose Font</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Red Hat Display">Red Hat Display</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Lexend">Lexend</option>
+                    <option value="Anybody">Anybody</option>
+                    <option value="Space Grotesk">Space Grotesk</option>
+                    <option value="Architects Daughter">Architects Daughter</option>
+                    <option value="Koulen">Koulen</option>
+                    <option value="Vollkorn SC">Vollkorn SC</option>
+                </select>
+            </div>
+            <!-- Выбор темы -->
+            <div class="color-theme">
+                <h3>🎨 Color Theme</h3>
+                <div>
+                    <input type="radio" name="theme" id="office" class="theme" value="Office" checked>
+                    <label for="office">Office</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="dark" class="theme" value="Dark">
+                    <label for="dark">Dark</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="parking" class="theme" value="Parking">
+                    <label for="parking">Parking</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="underground" class="theme" value="Underground">
+                    <label for="underground">Underground</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="skyblue" class="theme" value="Skyblue">
+                    <label for="skyblue">Skyblue</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="bubble-gum" class="theme" value="Bubble Gum">
+                    <label for="bubble-gum">Bubble Gum</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="violet" class="theme" value="Violet">
+                    <label for="violet">Violet</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="wildberry" class="theme" value="Wildberry">
+                    <label for="wildberry">Wildberry</label>
+                </div>
+            </div>
 
-        <!-- Выбор темы -->
-        <div class="color-theme">
-            <h3>Color Theme</h3>
-            <div>
-                <input type="radio" name="theme" id="office" class="theme" value="Office">
-                <label for="office">Office</label>
+            <!-- Кнопка анимации -->
+            <div class="button-animate">
+                <h3>Push the button to see some magic🔮</h3>
+                <button style="height: 2.5rem;" class="play-border">Animate border</button>
             </div>
-            <div>
-                <input type="radio" name="theme" id="dark" class="theme" value="Dark" checked>
-                <label for="dark">Dark</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="parking" class="theme" value="Parking">
-                <label for="parking">Parking</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="underground" class="theme" value="Underground">
-                <label for="underground">Underground</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="skyblue" class="theme" value="Skyblue">
-                <label for="skyblue">Skyblue</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="bubble-gum" class="theme" value="Bubble Gum">
-                <label for="bubble-gum">Bubble Gum</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="violet" class="theme" value="Violet">
-                <label for="violet">Violet</label>
-            </div>
-            <div>
-                <input type="radio" name="theme" id="wildberry" class="theme" value="Wildberry">
-                <label for="wildberry">Wildberry</label>
-            </div>
-        </div>
-
-        <!-- Кнопка анимации -->
-        <div>
-            <button style="height: 2.5rem;" class="play-border">Animate border</button>
         </div>
     </header>
 
@@ -263,7 +269,6 @@
             href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
     </footer>
     </div>
-    <!-- <script type="module" src="./assets/scripts/index.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="./assets/scripts/dist/bundle.js"></script>
 
