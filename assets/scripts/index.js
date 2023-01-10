@@ -497,25 +497,7 @@ let weekDaysJson = `[
         "total": {
               "spent": "input",
               "balance": "input"}
-        },
-    {
-      "day": "Tuesday",
-      "date": "input",
-      "summ": "input",
-      "income": ["input", "input", "input"],
-      "expense": {
-          "food": "input",
-          "transport": "input",
-          "clothes": "input",
-          "appliance": "input",
-          "hygiene": "input",
-          "leisure": "input",
-          "utilities": "input",
-          "another": "input"},
-      "total": {
-            "spent": "input",
-            "balance": "input"}
-      }
+        }
                         
   ]`;
 
@@ -536,7 +518,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
-            <input type="number" id="money" placeholder="Money in my pocket...">
+            <input type="number" id="money" name="name" placeholder="Money in my pocket...">
         </div>
     </div>
 
@@ -544,15 +526,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         <h3 class="title">Income</h3>
         <div>
             <img src="./assets/images/income-icon.png" alt="Income">
-            <input type="number" id="income1" class="income-input" placeholder="The amount of money">
+            <input type="number" id="income1" class="income-input" name="name" placeholder="The amount of money">
         </div>
         <div>
             <img src="./assets/images/income-icon.png" alt="Income">
-            <input type="number" id="income2" class="income-input" placeholder="The amount of money">
+            <input type="number" id="income2" class="income-input" name="name" placeholder="The amount of money">
         </div>
         <div>
             <img src="./assets/images/income-icon.png" alt="Income">
-            <input type="number" id="income3" class="income-input" placeholder="The amount of money">
+            <input type="number" id="income3" class="income-input" name="name" placeholder="The amount of money">
         </div>
     </div>
 
@@ -561,51 +543,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Food</label>
-            <input type="number" id="food" class="expense-input">
+            <input type="number" id="food" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Transport</label>
-            <input type="number" id="transport" class="expense-input">
+            <input type="number" id="transport" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Clothes</label>
-            <input type="number" id="clothes" class="expense-input">
+            <input type="number" id="clothes" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Appliance</label>
-            <input type="number" id="appliance" class="expense-input">
+            <input type="number" id="appliance" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Hygiene</label>
-            <input type="number" id="hygiene" class="expense-input">
+            <input type="number" id="hygiene" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Leisure</label>
-            <input type="number" id="leisure" class="expense-input">
+            <input type="number" id="leisure" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Utilities</label>
-            <input type="number" id="utilities" class="expense-input">
+            <input type="number" id="utilities" name="name" class="expense-input">
         </div>
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Another</label>
-            <input type="number" id="another" class="expense-input">
+            <input type="number" id="another" name="name" class="expense-input">
         </div>
-        <button id="count" class="click_me1 click_me2">Count</button>
 
     </div>
 
@@ -614,21 +595,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
             <div>
-                <div>Spent: <span id="spent"> ... </span></div>
-                <div>Balance: <span id="balance"> ... </span></div>
+                <div>Spent: <span id="spent" class="spent"> ... </span></div>
+                <div>Balance: <span id="balance" class="balance"> ... </span></div>
             </div>
         </div>
     </div>
 </div>`;
   }
-  document.querySelector(".weekday-info").innerHTML = weekDaysContent;
+  document.querySelector(".weekday-info_monday").innerHTML = weekDaysContent;
 
-  let countBtn = document.querySelector("#count");
+  showRatings();
 
-  countBtn.addEventListener("click", () => {
-    let date = document.querySelector("#date");
-    console.log(date.value);
-    let money = document.querySelector("#money");
+});
+
+let countBtn = document.getElementById("count1");
+
+//let date = document.querySelector("#date");
+
+let ratings = [];
+
+const showRatings = () => {
+
+
+  if (localStorage.getItem('ratings') !== null) {
+    ratings = JSON.parse(localStorage.getItem('ratings'));
+
+    let money = document.querySelector("#money").value;
 
     let income = document.getElementsByClassName("income-input");
     let incomes = 0;
@@ -643,22 +635,356 @@ document.addEventListener("DOMContentLoaded", function (event) {
       console.log(expense[i].value);
     }
 
-    let totalSpent = document.querySelector("#spent");
-    let totalBalance = document.querySelector("#balance");
+    //totalSpent.innerHTML = Number(expenses) + " ＄";
+    //totalBalance.innerHTML = Number(money.value) + Number(incomes) - Number(expenses) + " ＄";
 
-    totalSpent.innerHTML = Number(expenses) + " ＄";
-    totalBalance.innerHTML =
-      Number(money.value) + Number(incomes) - Number(expenses) + " ＄";
+    let totalSpent = document.querySelectorAll(".spent");
 
-    // let moneyArray = [];
+    for (let i = 0; i < totalSpent.length; i++) {
+      totalSpent[i].innerHTML = Number(expenses);
+    }
 
-    // if (localStorage.getItem("date") !== null) {
-    //   moneyArray = JSON.parse(
-    //     localStorage.getItem("date", "summ", "income", "expense", "total")
-    //   );
-    // }
-  });
+    let totalBalance = document.querySelectorAll(".balance");
+
+    for (let i = 0; i < totalBalance.length; i++) {
+      totalBalance[i].innerHTML = Number(money) + Number(incomes) - Number(expenses);
+    }
+
+    /*let rating2 = document.querySelectorAll('.spent');
+
+    for (let i = 0; i < rating2.length; i++) {
+      for (let i = 0; i < ratings.length; i++) {
+        rating2[i].innerHTML = `${ratings[i]}`;
+      }
+    }
+
+    let rating3 = document.querySelectorAll('.balance');
+
+    for (let i = 0; i < rating3.length; i++) {
+      for (let i = 0; i < ratings.length; i++) {
+        rating3[i].innerHTML = `${ratings[i]}`;
+      }
+    }*/
+  }
+};
+
+countBtn.addEventListener('click', () => {
+
+  ratings = [];
+
+  let inputs = document.getElementsByName('name');
+
+  for (let input of inputs) {
+    if (!input.value) {
+      ratings.push(0);
+    } else {
+      ratings.push(input.value);
+    }
+  }
+
+  /*countBtn.addEventListener('click', () => {
+    ratings = [];
+    const inputs = document.getElementsByName('money');
+  
+    for (const input of inputs) {
+      if (!input.value) {
+        ratings.push(0);
+      } else {
+        ratings.push(input.value);
+      }
+    }*/
+
+
+  localStorage.setItem("ratings", JSON.stringify(ratings));
+
+  showRatings();
 });
+
+
+
+
+/*countBtn.addEventListener("click", () => {
+  let date = document.querySelector("#date");
+
+  let money = document.querySelector("#money").value;
+
+  let income = document.getElementsByClassName("income-input");
+  let incomes = 0;
+  for (let i = 0; i < income.length; i++) {
+    incomes += +income[i].value;
+  }
+
+  let expense = document.getElementsByClassName("expense-input");
+  let expenses = 0;
+  for (let i = 0; i < expense.length; i++) {
+    expenses += +expense[i].value;
+    console.log(expense[i].value);
+  }
+
+  let totalSpent = document.querySelector("#spent");
+  let totalBalance = document.querySelector("#balance");
+
+  totalSpent.innerHTML = Number(expenses) + " ＄";
+  totalBalance.innerHTML =
+    Number(money.value) + Number(incomes) - Number(expenses) + " ＄";
+
+  // let moneyArray = [];
+
+  // if (localStorage.getItem("date") !== null) {
+  //   moneyArray = JSON.parse(
+  //     localStorage.getItem("date", "summ", "income", "expense", "total")
+  //   );
+  // }
+});*/
+
+
+
+
+
+
+/*function calcSum() {
+  let first_number = document.getElementById('first_number').value;
+  let second_number = document.getElementById('second_number').value;
+
+  let html = +first_number + +second_number;
+
+  document.getElementById('result2').innerHTML = html;
+}
+
+document.getElementById('click_me2').addEventListener('click', calcSum);*/
+
+let weekDaysJson1 = `[
+  {
+    "day": "Tuesday",
+    "date": "input",
+    "summ": "input",
+    "income": ["input", "input", "input"],
+    "expense": {
+        "food": "input",
+        "transport": "input",
+        "clothes": "input",
+        "appliance": "input",
+        "hygiene": "input",
+        "leisure": "input",
+        "utilities": "input",
+        "another": "input"},
+    "total": {
+          "spent": "input",
+          "balance": "input"}
+    }
+                      
+]`;
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  let weekDays = JSON.parse(weekDaysJson1);
+  //console.log(weekDays);
+
+  let weekDaysContent = "";
+  for (let weekDay of weekDays) {
+    weekDaysContent += `<div class="weekDay">
+  <div class="date-info box">
+      <div class="date"><span class="title">Day:</span>${weekDay.day}</div>
+      <div class="date"><input id="date" type="date"></div>
+  </div>
+
+  <div class="current-amount box">
+      <h3 class="title">Current Amount</h3>
+
+      <div>
+          <img src="./assets/images/cash-icon.png" alt="Cash">
+          <input type="number" id="money1" name="name" placeholder="Money in my pocket...">
+      </div>
+  </div>
+
+  <div class="income box">
+      <h3 class="title">Income</h3>
+      <div>
+          <img src="./assets/images/income-icon.png" alt="Income">
+          <input type="number" id="income1" class="income-input1" name="name" placeholder="The amount of money">
+      </div>
+      <div>
+          <img src="./assets/images/income-icon.png" alt="Income">
+          <input type="number" id="income2" class="income-input1" name="name" placeholder="The amount of money">
+      </div>
+      <div>
+          <img src="./assets/images/income-icon.png" alt="Income">
+          <input type="number" id="income3" class="income-input1" name="name" placeholder="The amount of money">
+      </div>
+  </div>
+
+  <div class="expense box">
+      <h3 class="title">Expense</h3>
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Food</label>
+          <input type="number" id="food" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Transport</label>
+          <input type="number" id="transport" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Clothes</label>
+          <input type="number" id="clothes" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Appliance</label>
+          <input type="number" id="appliance" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Hygiene</label>
+          <input type="number" id="hygiene" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Leisure</label>
+          <input type="number" id="leisure" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Utilities</label>
+          <input type="number" id="utilities" name="name" class="expense-input1">
+      </div>
+
+      <div>
+          <img src="./assets/images/card-icon.png" alt="Card">
+          <label for="food">Another</label>
+          <input type="number" id="another" name="name" class="expense-input1">
+      </div>
+      
+
+  </div>
+
+  <div class="total-sum box">
+      <h3 class="title">Total</h3>
+      <div>
+          <img src="./assets/images/cash-icon.png" alt="Cash">
+          <div>
+              <div>Spent: <span id="spent" class="spent1"> ... </span></div>
+              <div>Balance: <span id="balance" class="balance1"> ... </span></div>
+          </div>
+      </div>
+  </div>
+</div>`;
+  }
+  document.querySelector(".weekday-info_thuesday").innerHTML = weekDaysContent;
+
+  showRatings1();
+
+});
+
+let countBtn1 = document.getElementById("count2");
+
+//let date = document.querySelector("#date");
+
+let ratings1 = [];
+
+const showRatings1 = () => {
+
+
+  if (localStorage.getItem('ratings1') !== null) {
+    ratings1 = JSON.parse(localStorage.getItem('ratings1'));
+
+    let money = document.querySelector("#money1").value;
+
+    let income = document.getElementsByClassName("income-input1");
+    let incomes = 0;
+    for (let i = 0; i < income.length; i++) {
+      incomes += +income[i].value;
+    }
+
+    let expense = document.getElementsByClassName("expense-input1");
+    let expenses = 0;
+    for (let i = 0; i < expense.length; i++) {
+      expenses += +expense[i].value;
+      console.log(expense[i].value);
+    }
+
+    //totalSpent.innerHTML = Number(expenses) + " ＄";
+    //totalBalance.innerHTML = Number(money.value) + Number(incomes) - Number(expenses) + " ＄";
+
+    let totalSpent = document.querySelectorAll(".spent1");
+
+    for (let i = 0; i < totalSpent.length; i++) {
+      totalSpent[i].innerHTML = Number(expenses);
+    }
+
+    let totalBalance = document.querySelectorAll(".balance1");
+
+    for (let i = 0; i < totalBalance.length; i++) {
+      totalBalance[i].innerHTML = Number(money) + Number(incomes) - Number(expenses);
+    }
+
+    /*let rating2 = document.querySelectorAll('.spent');
+  
+    for (let i = 0; i < rating2.length; i++) {
+      for (let i = 0; i < ratings.length; i++) {
+        rating2[i].innerHTML = `${ratings[i]}`;
+      }
+    }
+  
+    let rating3 = document.querySelectorAll('.balance');
+  
+    for (let i = 0; i < rating3.length; i++) {
+      for (let i = 0; i < ratings.length; i++) {
+        rating3[i].innerHTML = `${ratings[i]}`;
+      }
+    }*/
+  }
+};
+
+countBtn1.addEventListener('click', () => {
+
+  ratings1 = [];
+
+  let inputs = document.getElementsByName('name');
+
+  for (let input of inputs) {
+    if (!input.value) {
+      ratings1.push(0);
+    } else {
+      ratings1.push(input.value);
+    }
+  }
+
+
+
+  /*countBtn.addEventListener('click', () => {
+    ratings = [];
+    const inputs = document.getElementsByName('money');
+  
+    for (const input of inputs) {
+      if (!input.value) {
+        ratings.push(0);
+      } else {
+        ratings.push(input.value);
+      }
+    }*/
+
+
+  localStorage.setItem("ratings1", JSON.stringify(ratings1));
+
+  showRatings1();
+});
+
+
+
+
+
+
+
+
+
 
 let weekDaysJson2 = `[
     {
