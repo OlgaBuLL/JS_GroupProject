@@ -660,8 +660,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   });
 });
 
-
-
 let weekDaysJson2 = `[
     {
       "day": "Wednesday",
@@ -894,4 +892,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //   );
     // }
   });
+});
+
+// МЕНЮ SETTINGS
+
+let settings = document.querySelector(".settings");
+let settingsCheckbox = document.getElementById("nav-trigger");
+
+settingsCheckbox.addEventListener("click", function () {
+  let prefferencies = document.querySelector(".prefferencies");
+  {
+    if (settingsCheckbox.checked) {
+      settings.style.position = "relative";
+      settings.style.transition = "left ease 0.5s";
+      settings.style.right = "25%";
+      prefferencies.style.display = "block";
+    } else {
+      prefferencies.style.display = "none";
+      settings.style.position = "inherit";
+      settings.style.transition = "right ease 0.9s";
+      settings.style.right = "initial";
+    }
+  }
 });

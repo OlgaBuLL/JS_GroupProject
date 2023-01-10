@@ -6,10 +6,11 @@
 }
 
 header {
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 h1 {
@@ -45,8 +46,8 @@ span {
 }
 .content {
   display: grid;
-    grid-template-areas: "left-wrapper weekday-info calculator";
-    grid-template-columns: 1fr 2fr 1fr;
+  grid-template-areas: "left-wrapper weekday-info calculator";
+  grid-template-columns: 1fr 2fr 1fr;
   column-gap: 2rem;
   padding: 1rem;
   margin-top: 4rem;

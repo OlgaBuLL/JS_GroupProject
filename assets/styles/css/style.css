@@ -788,10 +788,11 @@ template {
 }
 
 header {
-  padding: 2rem;
+  /* padding: 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 3rem;
 }
 
 h1 {
@@ -1288,6 +1289,67 @@ input::placeholder {
 .wildberry-button:hover {
   border-bottom: 3px solid rgb(101, 203, 171);
   background: rgb(110, 226, 190);
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.settings > div {
+  background-color: white;
+  padding: 0.8rem;
+  border-radius: 22px;
+}
+
+.nav-trigger {
+  position: relative;
+  width: 45px;
+  height: 45px;
+}
+
+label[for=nav-trigger] {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  z-index: 10;
+  overflow: hidden;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  background: white;
+  background-image: url(/JavaScript-GroupProject/assets/images/settings.svg);
+  background-size: contain;
+}
+
+.prefferencies {
+  width: 21%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: rgb(115, 114, 114);
+  z-index: 2;
+  padding: 0 1rem 2rem 1rem;
+  display: none;
+}
+
+.choose-font {
+  height: 220px;
+}
+
+.choose-font,
+.color-theme {
+  margin-bottom: 2rem;
+}
+
+.choose-font,
+.button-animate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
