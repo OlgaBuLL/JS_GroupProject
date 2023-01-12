@@ -2073,3 +2073,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
     // }
   });
 });*/
+
+// КАЛЬКУЛЯТОР
+
+let op; 
+
+function Calculator() {
+	let result;
+
+    let number1 = Number(document.getElementById("number1").value);
+    let number2 = Number(document.getElementById("number2").value);
+
+    if (op == '+') {
+        result = number1 + number2;
+    } else if (op == '-') { 
+        result = number1 - number2;
+    }
+    else if (op == '*') { 
+        result = number1 * number2;
+    } else {
+        result = number1 / number2;
+        
+    }
+	document.getElementById("result").value = result;
+}
