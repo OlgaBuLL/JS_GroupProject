@@ -152,16 +152,16 @@
 
             <div class="calculator box">
                 <h2 class="title">Calculator</h2>
-                <input type="number" class="calculator-number" placeholder="First number">
+                <input type="number" class="calculator-number" placeholder="First number" id="number1">
                 <div class="calculate-buttons">
-                    <button id="sum">+</button>
-                    <button id="minus">-</button>
-                    <button id="multiplication">*</button>
-                    <button id="division">/</button>
+                    <button id="sum" onclick="op='+'">+</button>
+                    <button id="minus" onclick="op ='-'">-</button>
+                    <button id="multiplication" onclick="op='*'">*</button>
+                    <button id="division" onclick="op='/'">/</button>
                 </div>
-                <input type="number" class="calculator-number" placeholder="Second number">
-                <button id="result-button">=</button>
-                <input type="number" id="result" class="calculator-number" placeholder="Result">
+                <input type="number" class="calculator-number" placeholder="Second number" id="number2">
+                <button id="result-button" onclick="Calculator()">=</button>
+                <input type="number" id="result" class="calculator-number" placeholder="Result" readonly/>
             </div>
         </div>
         <div class="weekday-info_2">
