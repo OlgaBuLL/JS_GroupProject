@@ -46,409 +46,425 @@ anime({
   }),
 });
 
-var animateBackground = anime({
-  targets: ".animatebackground",
-  backgroundColor: "#ffffff",
-  borderColor: "#5dd176",
-  autoplay: false,
-});
+var animateRadius = anime({
+  targets: '.animateradius',
+  background: '#ffffff',
+  border: '#5dd176',
+  borderRadius: '20px',
+  autoplay: false
+}
+);
 
-document.querySelector(".play-border").onclick = animateBackground.restart;
+document.querySelector(".play-border").onclick = animateRadius.restart;
 
 // Изменить цветовю тему
 
-let body = document.querySelector(".body");
-let colorThemes = document.getElementsByClassName("theme");
-let boxes = document.getElementsByClassName("box");
-let titles = document.getElementsByClassName("title");
-let buttons = document.getElementsByTagName("button");
-console.log(buttons);
+document.addEventListener("DOMContentLoaded", function () {
+  let body = document.querySelector(".body");
+  let colorThemes = document.getElementsByClassName("theme");
 
-for (let color of colorThemes) {
-  color.addEventListener("click", function () {
-    let theme = this.value;
-    console.log(theme);
+  let boxes = document.getElementsByClassName("box");
+  let titles = document.getElementsByClassName("title");
+  let buttons = document.getElementsByTagName("button");
+  console.log(buttons);
+  let theme;
+  if (localStorage.getItem("theme") !== null) {
+    theme = localStorage.getItem("theme");
+    setColorTheme(body, boxes, titles, buttons, theme);
+  }
 
-    switch (theme) {
-      case "Office":
-        body.classList.remove(
-          "skyblue-body",
-          "bubble-gum-body",
-          "underground-body",
-          "violet-body",
-          "dark-body",
-          "parking-body",
-          "wildberry-body"
-        );
-        body.classList.add("office-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "bubble-gum-box",
-            "violet-box",
-            "skyblue-box",
-            "dark-box",
-            "parking-box",
-            "wildberry-box"
-          );
-          box.classList.add("office-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "bubble-gum-title",
-              "violet-title",
-              "skyblue-title",
-              "dark-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("office-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "bubble-gum-button",
-              "violet-button",
-              "skyblue-button",
-              "dark-button",
-              "parking-button",
-              "wildberry-button"
-            );
-            button.classList.add("office-button");
-          }
-        }
-        break;
+  for (let color of colorThemes) {
+    color.addEventListener("click", function () {
+      theme = this.value;
+      setColorTheme(body, boxes, titles, buttons, theme);
+    });
+  }
+});
 
-      case "Dark":
-        body.classList.remove(
-          "skyblue-body",
-          "bubble-gum-body",
-          "underground-body",
-          "violet-body",
-          "parking-body",
-          "wildberry-body",
-          "office-body"
-        );
-        body.classList.add("dark-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "bubble-gum-box",
-            "violet-box",
-            "skyblue-box",
-            "parking-box",
-            "office-body",
-            "wildberry-box"
-          );
-          box.classList.add("dark-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "bubble-gum-title",
-              "violet-title",
-              "skyblue-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("dark-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "bubble-gum-button",
-              "violet-button",
-              "skyblue-button",
-              "parking-button",
-              "office-button",
-              "wildberry-button"
-            );
-            button.classList.add("dark-button");
-          }
-        }
-        break;
-      case "Parking":
-        body.classList.remove(
-          "skyblue-body",
-          "bubble-gum-body",
-          "underground-body",
-          "violet-body",
-          "dark-body",
-          "office-body",
-          "wildberry-body"
-        );
-        body.classList.add("parking-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "bubble-gum-box",
-            "violet-box",
-            "skyblue-box",
-            "dark-box",
-            "office-box",
-            "wildberry-box"
-          );
-          box.classList.add("parking-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "bubble-gum-title",
-              "violet-title",
-              "skyblue-title",
-              "dark-title",
-              "office-title",
-              "wildberry-title"
-            );
-            title.classList.add("parking-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "bubble-gum-button",
-              "violet-button",
-              "skyblue-button",
-              "dark-button",
-              "office-button",
-              "wildberry-button"
-            );
-            button.classList.add("parking-button");
-          }
-        }
-        break;
-      case "Underground":
-        body.classList.remove(
-          "dark-body",
-          "skyblue-body",
-          "bubble-gum-body",
-          "violet-body",
-          "parking-body",
-          "wildberry-body",
-          "office-body"
-        );
-        body.classList.add("underground-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "dark-box",
-            "bubble-gum-box",
-            "violet-box",
-            "skyblue-box",
-            "parking-box",
-            "wildberry-box"
-          );
-          box.classList.add("underground-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "dark-title",
-              "bubble-gum-title",
-              "violet-title",
-              "skyblue-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("underground-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "dark-button",
-              "bubble-gum-button",
-              "violet-button",
-              "skyblue-button",
-              "parking-button",
-              "wildberry-button",
-              "office-button"
-            );
-            button.classList.add("underground-button");
-          }
-        }
-        break;
+function setColorTheme(body, boxes, titles, buttons, theme) {
+  localStorage.setItem("theme", theme);
+  console.log(theme);
 
-      case "Skyblue":
-        body.classList.remove(
-          "dark-body",
-          "bubble-gum-body",
-          "underground-body",
-          "violet-body",
-          "parking-body",
-          "office-body",
-          "wildberry-body"
+  switch (theme) {
+    case "Office":
+      body.classList.remove(
+        "skyblue-body",
+        "bubble-gum-body",
+        "underground-body",
+        "violet-body",
+        "dark-body",
+        "parking-body",
+        "wildberry-body"
+      );
+      body.classList.add("office-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "bubble-gum-box",
+          "violet-box",
+          "skyblue-box",
+          "dark-box",
+          "parking-box",
+          "wildberry-box"
         );
-        body.classList.add("skyblue-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "dark-box",
-            "bubble-gum-box",
-            "violet-box",
-            "parking-box",
-            "wildberry-box"
+        box.classList.add("office-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "bubble-gum-title",
+            "violet-title",
+            "skyblue-title",
+            "dark-title",
+            "parking-title",
+            "wildberry-title"
           );
-          box.classList.add("skyblue-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "dark-title",
-              "bubble-gum-title",
-              "violet-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("skyblue-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "dark-button",
-              "bubble-gum-button",
-              "violet-button",
-              "parking-button",
-              "office-button",
-              "wildberry-button"
-            );
-            button.classList.add("skyblue-button");
-          }
+          title.classList.add("office-title");
         }
-        break;
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "bubble-gum-button",
+            "violet-button",
+            "skyblue-button",
+            "dark-button",
+            "parking-button",
+            "wildberry-button"
+          );
+          button.classList.add("office-button");
+        }
+      }
+      break;
 
-      case "Bubble Gum":
-        body.classList.remove(
-          "dark-body",
-          "underground-body",
-          "skyblue-body",
-          "violet-body",
-          "parking-body",
+    case "Dark":
+      body.classList.remove(
+        "skyblue-body",
+        "bubble-gum-body",
+        "underground-body",
+        "violet-body",
+        "parking-body",
+        "wildberry-body",
+        "office-body"
+      );
+      body.classList.add("dark-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "bubble-gum-box",
+          "violet-box",
+          "skyblue-box",
+          "parking-box",
           "office-body",
-          "wildberry-body"
+          "wildberry-box"
         );
-        body.classList.add("bubble-gum-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "dark-box",
-            "violet-box",
-            "skyblue-box",
-            "parking-box",
-            "wildberry-box"
+        box.classList.add("dark-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "bubble-gum-title",
+            "violet-title",
+            "skyblue-title",
+            "parking-title",
+            "wildberry-title"
           );
-          box.classList.add("bubble-gum-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "dark-title",
-              "violet-title",
-              "skyblue-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("bubble-gum-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "dark-button",
-              "violet-button",
-              "skyblue-button",
-              "parking-button",
-              "office-button",
-              "wildberry-button"
-            );
-            button.classList.add("bubble-gum-button");
-          }
+          title.classList.add("dark-title");
         }
-        break;
-      case "Violet":
-        body.classList.remove(
-          "dark-body",
-          "underground-body",
-          "skyblue-body",
-          "bubble-gum-body",
-          "parking-body",
-          "office-body",
-          "wildberry-body"
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "bubble-gum-button",
+            "violet-button",
+            "skyblue-button",
+            "parking-button",
+            "office-button",
+            "wildberry-button"
+          );
+          button.classList.add("dark-button");
+        }
+      }
+      break;
+    case "Parking":
+      body.classList.remove(
+        "skyblue-body",
+        "bubble-gum-body",
+        "underground-body",
+        "violet-body",
+        "dark-body",
+        "office-body",
+        "wildberry-body"
+      );
+      body.classList.add("parking-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "bubble-gum-box",
+          "violet-box",
+          "skyblue-box",
+          "dark-box",
+          "office-box",
+          "wildberry-box"
         );
-        body.classList.add("violet-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "dark-box",
-            "bubble-gum-box",
-            "skyblue-box",
-            "parking-box",
-            "wildberry-box"
+        box.classList.add("parking-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "bubble-gum-title",
+            "violet-title",
+            "skyblue-title",
+            "dark-title",
+            "office-title",
+            "wildberry-title"
           );
-          box.classList.add("violet-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "dark-title",
-              "bubble-gum-title",
-              "skyblue-title",
-              "parking-title",
-              "wildberry-title"
-            );
-            title.classList.add("violet-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "dark-button",
-              "bubble-gum-button",
-              "skyblue-button",
-              "parking-button",
-              "office-button",
-              "wildberry-button"
-            );
-            button.classList.add("violet-button");
-          }
+          title.classList.add("parking-title");
         }
-        break;
-      case "Wildberry":
-        body.classList.remove(
-          "dark-body",
-          "underground-body",
-          "skyblue-body",
-          "bubble-gum-body",
-          "parking-body",
-          "office-body",
-          "violet-body"
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "bubble-gum-button",
+            "violet-button",
+            "skyblue-button",
+            "dark-button",
+            "office-button",
+            "wildberry-button"
+          );
+          button.classList.add("parking-button");
+        }
+      }
+      break;
+    case "Underground":
+      body.classList.remove(
+        "dark-body",
+        "skyblue-body",
+        "bubble-gum-body",
+        "violet-body",
+        "parking-body",
+        "wildberry-body",
+        "office-body"
+      );
+      body.classList.add("underground-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "dark-box",
+          "bubble-gum-box",
+          "violet-box",
+          "skyblue-box",
+          "parking-box",
+          "wildberry-box"
         );
-        body.classList.add("wildberry-body");
-        for (let box of boxes) {
-          box.classList.remove(
-            "underground-box",
-            "dark-box",
-            "bubble-gum-box",
-            "skyblue-box",
-            "parking-box",
-            "violet-box"
+        box.classList.add("underground-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "dark-title",
+            "bubble-gum-title",
+            "violet-title",
+            "skyblue-title",
+            "parking-title",
+            "wildberry-title"
           );
-          box.classList.add("wildberry-box");
-          for (let title of titles) {
-            title.classList.remove(
-              "underground-title",
-              "dark-title",
-              "bubble-gum-title",
-              "skyblue-title",
-              "parking-title",
-              "violet-title"
-            );
-            title.classList.add("wildberry-title");
-          }
-          for (let button of buttons) {
-            button.classList.remove(
-              "underground-button",
-              "dark-button",
-              "bubble-gum-button",
-              "skyblue-button",
-              "parking-button",
-              "office-button",
-              "violet-button"
-            );
-            button.classList.add("wildberry-button");
-          }
+          title.classList.add("underground-title");
         }
-        break;
-    }
-  });
-}
+        for (let button of buttons) {
+          button.classList.remove(
+            "dark-button",
+            "bubble-gum-button",
+            "violet-button",
+            "skyblue-button",
+            "parking-button",
+            "wildberry-button",
+            "office-button"
+          );
+          button.classList.add("underground-button");
+        }
+      }
+      break;
+
+    case "Skyblue":
+      body.classList.remove(
+        "dark-body",
+        "bubble-gum-body",
+        "underground-body",
+        "violet-body",
+        "parking-body",
+        "office-body",
+        "wildberry-body"
+      );
+      body.classList.add("skyblue-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "dark-box",
+          "bubble-gum-box",
+          "violet-box",
+          "parking-box",
+          "wildberry-box"
+        );
+        box.classList.add("skyblue-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "dark-title",
+            "bubble-gum-title",
+            "violet-title",
+            "parking-title",
+            "wildberry-title"
+          );
+          title.classList.add("skyblue-title");
+        }
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "dark-button",
+            "bubble-gum-button",
+            "violet-button",
+            "parking-button",
+            "office-button",
+            "wildberry-button"
+          );
+          button.classList.add("skyblue-button");
+        }
+      }
+      break;
+
+    case "Bubble Gum":
+      body.classList.remove(
+        "dark-body",
+        "underground-body",
+        "skyblue-body",
+        "violet-body",
+        "parking-body",
+        "office-body",
+        "wildberry-body"
+      );
+      body.classList.add("bubble-gum-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "dark-box",
+          "violet-box",
+          "skyblue-box",
+          "parking-box",
+          "wildberry-box"
+        );
+        box.classList.add("bubble-gum-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "dark-title",
+            "violet-title",
+            "skyblue-title",
+            "parking-title",
+            "wildberry-title"
+          );
+          title.classList.add("bubble-gum-title");
+        }
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "dark-button",
+            "violet-button",
+            "skyblue-button",
+            "parking-button",
+            "office-button",
+            "wildberry-button"
+          );
+          button.classList.add("bubble-gum-button");
+        }
+      }
+      break;
+    case "Violet":
+      body.classList.remove(
+        "dark-body",
+        "underground-body",
+        "skyblue-body",
+        "bubble-gum-body",
+        "parking-body",
+        "office-body",
+        "wildberry-body"
+      );
+      body.classList.add("violet-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "dark-box",
+          "bubble-gum-box",
+          "skyblue-box",
+          "parking-box",
+          "wildberry-box"
+        );
+        box.classList.add("violet-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "dark-title",
+            "bubble-gum-title",
+            "skyblue-title",
+            "parking-title",
+            "wildberry-title"
+          );
+          title.classList.add("violet-title");
+        }
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "dark-button",
+            "bubble-gum-button",
+            "skyblue-button",
+            "parking-button",
+            "office-button",
+            "wildberry-button"
+          );
+          button.classList.add("violet-button");
+        }
+      }
+      break;
+    case "Wildberry":
+      body.classList.remove(
+        "dark-body",
+        "underground-body",
+        "skyblue-body",
+        "bubble-gum-body",
+        "parking-body",
+        "office-body",
+        "violet-body"
+      );
+      body.classList.add("wildberry-body");
+      for (let box of boxes) {
+        box.classList.remove(
+          "underground-box",
+          "dark-box",
+          "bubble-gum-box",
+          "skyblue-box",
+          "parking-box",
+          "violet-box"
+        );
+        box.classList.add("wildberry-box");
+        for (let title of titles) {
+          title.classList.remove(
+            "underground-title",
+            "dark-title",
+            "bubble-gum-title",
+            "skyblue-title",
+            "parking-title",
+            "violet-title"
+          );
+          title.classList.add("wildberry-title");
+        }
+        for (let button of buttons) {
+          button.classList.remove(
+            "underground-button",
+            "dark-button",
+            "bubble-gum-button",
+            "skyblue-button",
+            "parking-button",
+            "office-button",
+            "violet-button"
+          );
+          button.classList.add("wildberry-button");
+        }
+      }
+      break;
+  }
+};
+
 // ------- библиотека MOMENT ---------
 
 // Default - dateUser;
@@ -508,13 +524,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
   let weekDaysContent = "";
   for (let weekDay of weekDays) {
-    weekDaysContent += `<div class="weekDay">
-    <div class="date-info box">
+    weekDaysContent += `<div class="weekDay animateradius">
+    <div class="date-info box animateradius">
         <div class="date"><span class="title">Day:</span>${weekDay.day}</div>
         <div class="date"><input id="date" type="date"></div>
     </div>
 
-    <div class="current-amount box">
+    <div class="current-amount box animateradius">
         <h3 class="title">Current Amount</h3>
 
         <div>
@@ -539,7 +555,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         </div>
     </div>
 
-    <div class="expense box">
+    <div class="expense  box">
         <h3 class="title">Expense</h3>
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
@@ -2076,24 +2092,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // КАЛЬКУЛЯТОР
 
-let op; 
+let op;
 
 function Calculator() {
-	let result;
+  let result;
 
-    let number1 = Number(document.getElementById("number1").value);
-    let number2 = Number(document.getElementById("number2").value);
+  let number1 = Number(document.getElementById("number1").value);
+  let number2 = Number(document.getElementById("number2").value);
 
-    if (op == '+') {
-        result = number1 + number2;
-    } else if (op == '-') { 
-        result = number1 - number2;
-    }
-    else if (op == '*') { 
-        result = number1 * number2;
-    } else {
-        result = number1 / number2;
-        
-    }
-	document.getElementById("result").value = result;
+  if (op == '+') {
+    result = number1 + number2;
+  } else if (op == '-') {
+    result = number1 - number2;
+  }
+  else if (op == '*') {
+    result = number1 * number2;
+  } else {
+    result = number1 / number2;
+
+  }
+  document.getElementById("result").value = result;
 }
