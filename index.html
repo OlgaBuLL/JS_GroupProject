@@ -12,6 +12,7 @@
 </head>
 
 <body class="body">
+    <!-- header -->
     <header>
         <div class="userData">
             <img src="" id="userAvatar" alt="My avatar">
@@ -119,6 +120,8 @@
 
         <div class="content">
             <div class="left-wrapper">
+
+                <!-- форма регистрации -->
                 <form action="" class="form box animateradius">
                     <h2 class="title">Registration</h2>
                     <label for="userName">Your name:</label>
@@ -128,6 +131,7 @@
                     <button>Submit</button>
                 </form>
 
+                <!-- финансовая грамотность -->
                 <div class="financial-literacy box animateradius">
                     <h2 class="title">What is </br> Financial Literacy </br> for?</h2>
                     <div class="gallery">
@@ -140,16 +144,16 @@
                 </div>
             </div>
 
+            <!-- дни недели -->
             <div class="weekday-info">
-                <div class="weekday-info_monday">
-                </div>
-                <div class="weekday-info_thuesday">
-                </div>
+
             </div>
 
-            <button id="count1">Count</button>
-            <button id="count2">Count</button>
+            <!-- <div class="weekday-info_1"></div> -->
+            <!-- <div class="weekday-info_2"></div> -->
+            <!-- <div class="weekday-info_3"></div> -->
 
+            <!-- калькулятор -->
             <div class="calculator box animateradius">
                 <h2 class="title">Calculator</h2>
                 <input type="number" class="calculator-number" placeholder="First number" id="number1">
@@ -164,28 +168,16 @@
                 <input type="number" id="result" class="calculator-number" placeholder="Result" readonly />
             </div>
         </div>
-        <div class="weekday-info_2">
-            <div class="weekday-info_wednesday">
-            </div>
-            <div class="weekday-info_thursday">
-            </div>
-            <div class="weekday-info_friday">
+
+        <!-- ПОНЧИК ИТОГО потраченная сумма за неделю -->
+        <div class="total-week">
+            <h2>Total amount of money I spent this week (by days)</h2>
+            <button class="total-week-expenses">ПОЛУЧИТЬ РЕЗУЛЬТАТ</button>
+
+            <div>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
-
-        <button id="count3">Count</button>
-        <button id="count4">Count</button>
-        <button id="count5">Count</button>
-
-        <div class="weekday-info_3">
-            <div class="weekday-info_saturday">
-            </div>
-            <div class="weekday-info_sunday">
-            </div>
-        </div>
-
-        <button id="count6">Count</button>
-        <button id="count7">Count</button>
 
     </main>
     <footer class="footer">
@@ -194,6 +186,8 @@
     </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script src="./assets/scripts/dist/bundle.js"></script>
 
 </body>

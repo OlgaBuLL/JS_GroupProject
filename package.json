@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "animejs": "^3.2.1",
+    "chart.js": "^4.1.2",
     "interactjs": "^1.10.17",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
