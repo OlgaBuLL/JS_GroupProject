@@ -17,8 +17,8 @@
 
 label[for="nav-trigger"] {
   position: absolute;
-  left: 8px;
-  top: 8px;
+  left: 6px;
+  top: 7px;
   z-index: 10;
   overflow: hidden;
   height: 60px;
@@ -26,7 +26,7 @@ label[for="nav-trigger"] {
   cursor: pointer;
   background: white;
   border-radius: 22px;
-  background-image: url(/assets/images/settings.svg);
+  background-image: url(../../images/settings.svg);
   background-size: contain;
 }
 
@@ -42,7 +42,7 @@ label[for="nav-trigger"] {
   padding: 2rem 1rem 2rem 1rem;
   display: none;
   border-radius: 6px;
-  border: 3px solid rgb(97, 97, 97) ;
+  border: 3px solid rgb(97, 97, 97);
 }
 
 .choose-font {
@@ -50,7 +50,6 @@ label[for="nav-trigger"] {
 }
 .choose-font,
 .color-theme {
-  
   margin-bottom: 1rem;
   font-size: 0.8vw;
 }
@@ -59,7 +58,6 @@ label[for="nav-trigger"] {
   text-align: center;
   font-size: 1vw;
 }
-
 
 .choose-font,
 .button-animate {
@@ -71,6 +69,6 @@ label[for="nav-trigger"] {
   //row-gap: 1rem;
 }
 
-.play-border{
-border-radius: 6px;
+.play-border {
+  border-radius: 6px;
 }
