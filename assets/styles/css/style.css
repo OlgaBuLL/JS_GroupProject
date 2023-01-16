@@ -737,12 +737,6 @@ template {
 
 @font-face {
   font-family: "Red Hat Display";
-  src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-VariableFont_wght.ttf) format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Red Hat Display";
   src: url(/JavaScript-GroupProject/assets/fonts/RedHatDisplay-Italic-VariableFont_wght.ttf) format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -1340,8 +1334,8 @@ input::placeholder {
 
 label[for=nav-trigger] {
   position: absolute;
-  left: 8px;
-  top: 8px;
+  left: 6px;
+  top: 7px;
   z-index: 10;
   overflow: hidden;
   height: 60px;
@@ -1349,7 +1343,7 @@ label[for=nav-trigger] {
   cursor: pointer;
   background: white;
   border-radius: 22px;
-  background-image: url(/assets/images/settings.svg);
+  background-image: url(../../images/settings.svg);
   background-size: contain;
 }
 
@@ -1394,6 +1388,11 @@ label[for=nav-trigger] {
 
 .play-border {
   border-radius: 6px;
+}
+
+.total-week {
+  margin: 0 auto;
+  width: 35%;
 }
 
 /*# sourceMappingURL=style.css.map */
