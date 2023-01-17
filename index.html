@@ -12,13 +12,15 @@
 </head>
 
 <body class="body">
+
     <!-- header -->
     <header>
-        <div class="userData">
-            <div>My Avatar 😊
+        <div class="userData" id="userData">
+            My Avatar 😊:
+            <!-- div> 
                 <img src="" id="userAvatar">
-            </div>
-            <p id="userName"></p>
+            </div -->
+            <!-- p id="userName"></p -->
         </div>
         <div>
             <h1 class="h1">Finance organizer</h1>
@@ -124,13 +126,14 @@
             <div class="left-wrapper">
 
                 <!-- форма регистрации -->
+
                 <form action="" class="form box animateradius">
-                    <h2 class="title">Registration</h2>
-                    <label for="userName">Your name:</label>
-                    <input type="text" id="userName" placeholder="Your name...">
+                    <p class="title">Registration</p>
+                    <label for="author">Your name:</label>
+                    <input type="text" id="author" placeholder="Your name..." name="author" value="" required>
                     <label for="avatar">Avatar link:</label>
-                    <input type="text" id="avatar" placeholder="Place here the URL...">
-                    <button>Submit</button>
+                    <input type="text" id="avatar" placeholder="Place here the URL..." name="avatar" value="" required>
+                    <button type="button" id="button" name="button">Submit</button>
                 </form>
 
                 <!-- финансовая грамотность -->
