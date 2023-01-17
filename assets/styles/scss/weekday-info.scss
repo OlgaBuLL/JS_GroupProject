@@ -1,5 +1,4 @@
 .weekday-info {
-  // width: 100%;
   display: grid;
   grid-area: weekday-info;
   grid-template-columns: 1fr 1fr;
@@ -8,7 +7,6 @@
   margin-bottom: 4rem;
 }
 .weekday-info_2 {
-  // width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 4rem;
@@ -16,7 +14,6 @@
   padding: 2rem 2rem 2rem 2rem;
 }
 .weekday-info_3 {
-  // width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
@@ -29,7 +26,6 @@
   row-gap: 2rem;
 }
 .date-info {
-  // width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,11 +53,12 @@ input {
 }
 input::placeholder {
   font-weight: lighter;
+  font-size: small;
+  text-align: center;
 }
 .current-amount,
 .income,
 .total-sum {
-  // width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +69,6 @@ input::placeholder {
   max-width: 40vw;
 }
 .expense {
-  // width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
@@ -93,14 +89,7 @@ input::placeholder {
 .expense > div > img {
   max-width: 30px;
 }
-.expense > button {
-  width: 50%;
-  min-height: 44px;
-  align-self: center;
-  margin: 1rem auto 0.5rem;
-  font-size: larger;
-  // border-radius: 2px;
-}
+
 .total-sum > div > div {
   display: flex;
   flex-direction: column;

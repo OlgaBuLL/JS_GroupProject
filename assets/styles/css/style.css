@@ -912,6 +912,10 @@ footer > div > a:hover {
   padding: 5px;
 }
 
+.new-entry {
+  border-radius: 4px;
+}
+
 .input,
 .delete-entry {
   height: 30px;
@@ -976,17 +980,19 @@ footer > div > a:hover {
 }
 
 .form > button {
-  width: 50%;
+  width: fit-content;
   min-height: 44px;
   align-self: center;
   margin: 1rem auto;
   font-size: large;
+  border-radius: 4px;
 }
 
 .gallery-buttons > button {
   min-width: 44px;
   min-height: 34px;
   font-size: larger;
+  border-radius: 4px;
 }
 
 .weekday-info {
@@ -1051,6 +1057,8 @@ input {
 
 input::placeholder {
   font-weight: lighter;
+  font-size: small;
+  text-align: center;
 }
 
 .current-amount,
@@ -1089,14 +1097,6 @@ input::placeholder {
   max-width: 30px;
 }
 
-.expense > button {
-  width: 50%;
-  min-height: 44px;
-  align-self: center;
-  margin: 1rem auto 0.5rem;
-  font-size: larger;
-}
-
 .total-sum > div > div {
   display: flex;
   flex-direction: column;
@@ -1105,6 +1105,8 @@ input::placeholder {
 }
 
 .calculator {
+  max-width: fit-content;
+  height: fit-content;
   display: flex;
   grid-area: calculator;
   flex-direction: column;
@@ -1112,9 +1114,7 @@ input::placeholder {
   row-gap: 2rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   padding: 1.5rem 2rem 1.5rem 2rem;
-  height: fit-content;
   border-radius: 4px;
-  max-width: fit-content;
 }
 
 .calculate-buttons {
@@ -1129,6 +1129,7 @@ input::placeholder {
   font-size: larger;
   min-width: 44px;
   min-height: 44px;
+  border-radius: 4px;
 }
 
 /* ----- Office ----- */
@@ -1149,7 +1150,6 @@ input::placeholder {
   color: #fff;
   border: none;
   border-bottom: 6px solid rgb(82, 97, 149);
-  border-radius: 5px;
 }
 
 .office-button:hover {
@@ -1160,7 +1160,7 @@ input::placeholder {
 /* ----- Dark-Theme ----- */
 .dark-body {
   background: rgb(34, 33, 33);
-  color: rgb(237, 233, 233);
+  color: rgb(189, 188, 188);
 }
 
 .dark-box {
@@ -1176,7 +1176,6 @@ input::placeholder {
   background: rgb(59, 205, 253);
   border: none;
   border-bottom: 6px solid rgba(15, 14, 14, 0.5);
-  border-radius: 5px;
 }
 
 .dark-button:hover {
@@ -1192,7 +1191,7 @@ input::placeholder {
 
 .parking-box {
   background: linear-gradient(rgb(56, 59, 59), rgb(65, 62, 62), rgb(71, 66, 66), rgb(65, 62, 62), rgb(56, 59, 59));
-  color: #fff;
+  color: rgb(189, 188, 188);
   box-shadow: 0 0 10px 6px rgb(3, 3, 3);
 }
 
@@ -1203,12 +1202,11 @@ input::placeholder {
 .parking-button {
   background: #fdfd30;
   border: none;
-  border-bottom: 6px solid #afaf25;
-  border-radius: 5px;
+  border-bottom: 6px solid #9b9b23;
 }
 
 .parking-button:hover {
-  border-bottom: 3px solid #afaf25;
+  border-bottom: 3px solid #9b9b23;
   background: #e0e013;
 }
 
@@ -1233,7 +1231,6 @@ input::placeholder {
   color: #fff;
   border: none;
   border-bottom: 6px solid #80502b;
-  border-radius: 5px;
 }
 
 .underground-button:hover {
@@ -1262,7 +1259,6 @@ input::placeholder {
   color: #fff;
   border: none;
   border-bottom: 6px solid rgb(11, 115, 143);
-  border-radius: 5px;
 }
 
 .skyblue-button:hover {
@@ -1287,16 +1283,15 @@ input::placeholder {
 }
 
 .bubble-gum-button {
-  background: rgb(214, 94, 114);
+  background: rgb(225, 100, 120);
   color: #fff;
   border: none;
   border-bottom: 6px solid rgb(150, 66, 80);
-  border-radius: 5px;
 }
 
 .bubble-gum-button:hover {
   border-bottom: 3px solid rgb(150, 66, 80);
-  background: rgb(202, 91, 109);
+  background: rgb(221, 100, 120);
 }
 
 /* ----- Violet ----- */
@@ -1312,20 +1307,19 @@ input::placeholder {
 }
 
 .violet-title {
-  color: rgb(85, 39, 154);
+  color: rgb(70, 31, 128);
 }
 
 .violet-button {
-  background: rgb(124, 57, 225);
+  background: rgb(103, 46, 188);
   color: #fff;
   border: none;
-  border-bottom: 6px solid rgb(100, 53, 169);
-  border-radius: 5px;
+  border-bottom: 6px solid rgb(67, 35, 116);
 }
 
 .violet-button:hover {
-  border-bottom: 3px solid rgb(85, 39, 154);
-  background: rgb(121, 56, 218);
+  border-bottom: 3px solid rgb(67, 35, 116);
+  background: rgb(97, 43, 178);
 }
 
 /* ----- Wildberry ----- */
@@ -1345,14 +1339,13 @@ input::placeholder {
 }
 
 .wildberry-button {
-  background: rgb(121, 248, 208);
+  background: rgb(114, 240, 201);
   border: none;
-  border-bottom: 6px solid rgb(101, 203, 171);
-  border-radius: 5px;
+  border-bottom: 6px solid rgb(92, 182, 153);
 }
 
 .wildberry-button:hover {
-  border-bottom: 3px solid rgb(101, 203, 171);
+  border-bottom: 3px solid rgb(92, 182, 153);
   background: rgb(110, 226, 190);
 }
 
@@ -1455,12 +1448,13 @@ label[for=nav-trigger] {
 
 .total-week-expenses {
   padding: 1rem 2rem;
+  border-radius: 4px;
 }
 
 .chart {
-  background: white;
-  width: 50%;
-  min-height: 300px;
+  background: rgb(255, 252, 252);
+  width: 40%;
+  height: fit-content;
   padding: 0.8rem;
   border-radius: 22px;
 }
