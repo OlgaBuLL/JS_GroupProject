@@ -819,42 +819,115 @@ settingsCheckbox.addEventListener("click", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function (event) {
+// ------------- ГАЛЕРЕЯ ----------- //
 
+let images = [
+  "assets/images/dollar-on-the-ground.jpg",
+  "assets/images/dori.jpg",
+  "assets/images/false-money.jpg",
+  "assets/images/have-no-money.jpg",
+  "assets/images/take-my-money.jpg",
+  "assets/images/time-is-money.jpg",
+];
+
+let num = 0;
+
+let nextBtn = document.querySelector(".next");
+let prevBtn = document.querySelector(".prev");
+
+nextBtn.addEventListener("click", function () {
+  let slider = document.getElementById("slider");
+  num++;
+  if (num >= images.length) {
+    num = 0;
+  }
+  slider.src = images[num];
+});
+
+prevBtn.addEventListener("click", function () {
+  let slider = document.getElementById("slider");
+  num--;
+  if (num < 0) {
+    num = images.length - 1;
+  }
+  slider.src = images[num];
+});
+
+// ------------- КАЛЬКУЛЯТОР ------------- //
+
+let op;
+let sum = document.querySelector("#sum");
+let minus = document.querySelector("#minus");
+let multiplication = document.querySelector("#multiplication");
+let division = document.querySelector("#division");
+let resultBtn = document.querySelector("#result-button");
+
+sum.addEventListener("click", function () {
+  op = "+";
+});
+minus.addEventListener("click", function () {
+  op = "-";
+});
+multiplication.addEventListener("click", function () {
+  op = "*";
+});
+division.addEventListener("click", function () {
+  op = "/";
+});
+
+resultBtn.addEventListener("click", function () {
+  let number1 = Number(document.getElementById("number1").value);
+  let number2 = Number(document.getElementById("number2").value);
+  let result;
+
+  if (op == "+") {
+    result = number1 + number2;
+  } else if (op == "-") {
+    result = number1 - number2;
+  } else if (op == "*") {
+    result = number1 * number2;
+  } else {
+    result = number1 / number2;
+  }
+  document.getElementById("result").value = result;
+});
+
+// ----------- REGISTRATION  -------------------//
+
+document.addEventListener("DOMContentLoaded", function (event) {
   //event.preventDefault();
 
-  let foto = localStorage.getItem('foto');
-  let nik = localStorage.getItem('nik');
+  let foto = localStorage.getItem("foto");
+  let nik = localStorage.getItem("nik");
 
   if (foto != null) {
-    document.getElementById('avatar').value = foto;
-  };
+    document.getElementById("avatar").value = foto;
+  }
 
   if (nik != null) {
-    document.getElementById('author').value = nik;
-  };
-
+    document.getElementById("author").value = nik;
+  }
 });
 
 function sendMessage(avatar, author) {
-  document.getElementById("userData").innerHTML += `<img width=80vw height=80vh src="${avatar}" alt="user Icon"><span>${author}</span>`;
-};
+  document.getElementById(
+    "userData"
+  ).innerHTML += `<img width=80vw height=80vh src="${avatar}" alt="user Icon"><span>${author}</span>`;
+}
 
 function checkMessage() {
+  let avatar = document.getElementById("avatar").value;
+  let author = document.getElementById("author").value;
 
-  let avatar = document.getElementById('avatar').value;
-  let author = document.getElementById('author').value;
+  if (localStorage.getItem("foto") == null) {
+    localStorage.setItem("foto", avatar);
+  }
 
-  if (localStorage.getItem('foto') == null) {
-    localStorage.setItem('foto', avatar);
-  };
-
-  if (localStorage.getItem('nik') == null) {
-    localStorage.setItem('nik', author);
-  };
-
+  if (localStorage.getItem("nik") == null) {
+    localStorage.setItem("nik", author);
+  }
 
   sendMessage(avatar, author);
-};
+}
 
-document.getElementById('button').addEventListener('click', checkMessage)
+document.getElementById("button").addEventListener("click", checkMessage);
