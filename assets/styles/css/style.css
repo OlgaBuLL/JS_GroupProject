@@ -1389,7 +1389,7 @@ label[for=nav-trigger] {
   max-height: 100vh;
   right: 0;
   top: 0;
-  background: rgba(136, 135, 135, 0.9);
+  background: rgba(136, 135, 135, 0.98);
   color: #ffffff;
   z-index: 2;
   padding: 2rem 1rem 2rem 1rem;
