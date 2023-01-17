@@ -15,7 +15,9 @@
     <!-- header -->
     <header>
         <div class="userData">
-            <img src="" id="userAvatar" alt="My avatar">
+            <div>My Avatar 😊
+                <img src="" id="userAvatar">
+            </div>
             <p id="userName"></p>
         </div>
         <div>
@@ -32,7 +34,7 @@
         <div class="prefferencies">
             <!-- Выбор шрифта -->
             <div class="choose-font">
-                <p>Choose Font ✎ </p>
+                <p><span>Choose Font ✎</span></p>
                 <select name="font" id="font">
                     <option value="default" disabled selected hidden>Choose Font</option>
                     <option value="Arial">Arial</option>
@@ -48,7 +50,7 @@
             </div>
             <!-- Выбор темы -->
             <div class="color-theme">
-                <p>🎨 Color Theme</p>
+                <p><span>🎨 Color Theme</span></p>
                 <div>
                     <input type="radio" name="theme" id="office" class="theme" value="Office" checked>
                     <label for="office">Office</label>
@@ -85,13 +87,13 @@
 
             <!-- Кнопка анимации -->
             <div class="button-animate">
-                <p>Push the button to see some magic🔮</p>
+                <p><span>Push the button to see some magic🔮</span></p>
                 <button style="height: 2.5rem;" class="play-border">Animate border</button>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <div class="container">
 
         <div class="finance-moment">
             <div id="app"></div>
@@ -172,19 +174,23 @@
         <!-- ПОНЧИК ИТОГО потраченная сумма за неделю -->
         <div class="total-week">
             <h2>Total amount of money I spent this week (by days)</h2>
-            <button class="total-week-expenses">ПОЛУЧИТЬ РЕЗУЛЬТАТ</button>
+            <button class="total-week-expenses">GET WEEK EXPENSES</button>
 
-            <div>
+            <div class="chart">
                 <canvas id="myChart"></canvas>
             </div>
         </div>
 
-    </main>
-    <footer class="footer">
-        <!-- <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
-            href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div> -->
-    </footer>
+        <hr>
+        <footer class="footer">
+            <div class="rights">&copy; All rights reserved</div>
+            <div>2023</div>
+            <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
+                    href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+            </div>
+        </footer>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

@@ -253,52 +253,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Вывод данных в бублик
 
-console.log(weekExpenses);
-
 let totalWeekExpensesBtn = document.querySelector(".total-week-expenses");
 
 totalWeekExpensesBtn.onclick = () => {
+  weekExpenses = [];
   for (let i = 0; i < spendResults.length; i++) {
     weekExpenses.push(+spendResults[i][0].innerHTML);
-    console.log(weekExpenses);
   }
+  console.log(weekExpenses);
+
+  // библиотека CHART js Бублик
+
+  const ctx = document.getElementById("myChart").getContext("2d");
+
+  const chartDoughnut = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      datasets: [
+        {
+          label: "Week expenses",
+          backgroundColor: [
+            "rgb(189, 18, 138)",
+            "rgb(59, 205, 253)",
+            "orangered",
+            "#fdfd30",
+            "rgb(253, 166, 181)",
+            "rgb(103, 47, 187)",
+            "rgb(125, 248, 209)",
+          ],
+          data: weekExpenses,
+        },
+      ],
+    },
+    options: {},
+  });
 };
-
-// библиотека CHART js Бублик
-
-const ctx = document.getElementById("myChart").getContext("2d");
-
-const chartDoughnut = new Chart(ctx, {
-  type: "doughnut",
-  data: {
-    labels: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday",
-    ],
-    datasets: [
-      {
-        label: "Week expenses",
-        backgroundColor: [
-          "rgb(135, 206, 250)",
-          "rgb(238, 130, 238)",
-          "rgb(210, 180, 140)",
-          "rgb(152, 251, 152)",
-          "rgb(211, 211, 211)",
-          "orangered",
-          "rgb(72, 61, 139)",
-        ],
-        // data: [62, 30, 93, 24, 30, 16, 31],
-        data: weekExpenses,
-      },
-    ],
-  },
-  options: {},
-});
 
 // ------------------ (все дни выводятся в одной структуре)-----------------//
 
@@ -809,8 +807,8 @@ settingsCheckbox.addEventListener("click", function () {
   {
     if (settingsCheckbox.checked) {
       settings.style.position = "relative";
-      settings.style.transition = "left ease 0.5s";
-      settings.style.right = "25%";
+      settings.style.transition = "left ease 0.9s";
+      settings.style.right = "24%";
       prefferencies.style.display = "block";
     } else {
       prefferencies.style.display = "none";
@@ -820,39 +818,3 @@ settingsCheckbox.addEventListener("click", function () {
     }
   }
 });
-
-// // библиотека CHART js Бублик
-
-// const ctx = document.getElementById("myChart").getContext("2d");
-
-// const chartDoughnut = new Chart(ctx, {
-//   type: "doughnut",
-//   data: {
-//     labels: [
-//       "Monday",
-//       "Tuesday",
-//       "Wednesday",
-//       "Thursday",
-//       "Friday",
-//       "Saturday",
-//       "Sunday",
-//     ],
-//     datasets: [
-//       {
-//         label: "Week expenses",
-//         backgroundColor: [
-//           "rgb(135, 206, 250)",
-//           "rgb(238, 130, 238)",
-//           "rgb(210, 180, 140)",
-//           "rgb(152, 251, 152)",
-//           "rgb(211, 211, 211)",
-//           "orangered",
-//           "rgb(72, 61, 139)",
-//         ],
-//         data: [62, 30, 93, 24, 30, 16, 31],
-//         // data: weekExpenses,
-//       },
-//     ],
-//   },
-//   options: {},
-// });

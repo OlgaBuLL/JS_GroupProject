@@ -1,5 +1,6 @@
 .calculator {
-  // width: 100%;
+  max-width: fit-content;
+  height: fit-content;
   display: flex;
   grid-area: calculator;
   flex-direction: column;
@@ -7,10 +8,7 @@
   row-gap: 2rem;
   box-shadow: 0 0 10px 6px rgb(0, 0, 0, 0.2);
   padding: 1.5rem 2rem 1.5rem 2rem;
-  height: fit-content;
   border-radius: 4px;
-  max-width: fit-content;
-  //margin-top: 59vh;
 }
 
 .calculate-buttons {
@@ -24,5 +22,5 @@
   font-size: larger;
   min-width: 44px;
   min-height: 44px;
-  // border-radius: 2px;
+  border-radius: 4px;
 }
