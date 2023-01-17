@@ -1,4 +1,23 @@
 .total-week {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  margin-bottom: 4rem;
+}
+.total-week-expenses {
+  padding: 1rem 2rem;
+}
+.chart {
+  background: white;
+  width: 50%;
+  min-height: 300px;
+
+  padding: 0.8rem;
+  border-radius: 22px;
+}
+
+.chart > canvas {
   margin: 0 auto;
-  width: 35%;
+  width: 100%;
 }
