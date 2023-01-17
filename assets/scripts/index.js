@@ -891,3 +891,43 @@ resultBtn.addEventListener("click", function () {
   }
   document.getElementById("result").value = result;
 });
+
+// ----------- REGISTRATION  -------------------//
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  //event.preventDefault();
+
+  let foto = localStorage.getItem("foto");
+  let nik = localStorage.getItem("nik");
+
+  if (foto != null) {
+    document.getElementById("avatar").value = foto;
+  }
+
+  if (nik != null) {
+    document.getElementById("author").value = nik;
+  }
+});
+
+function sendMessage(avatar, author) {
+  document.getElementById(
+    "userData"
+  ).innerHTML += `<img width=80vw height=80vh src="${avatar}" alt="user Icon"><span>${author}</span>`;
+}
+
+function checkMessage() {
+  let avatar = document.getElementById("avatar").value;
+  let author = document.getElementById("author").value;
+
+  if (localStorage.getItem("foto") == null) {
+    localStorage.setItem("foto", avatar);
+  }
+
+  if (localStorage.getItem("nik") == null) {
+    localStorage.setItem("nik", author);
+  }
+
+  sendMessage(avatar, author);
+}
+
+document.getElementById("button").addEventListener("click", checkMessage);
