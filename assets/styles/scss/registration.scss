@@ -10,7 +10,6 @@
   //justify-content: space-around;
   flex-direction: column;
   row-gap: 2rem;
-  
 }
 .form,
 .financial-literacy {
@@ -23,17 +22,17 @@
   max-width: 238px;
 }
 .form > button {
-  width: 50%;
+  width: fit-content;
   min-height: 44px;
   align-self: center;
   margin: 1rem auto;
   font-size: large;
-  // border-radius: 2px;
+  border-radius: 4px;
 }
 
 .gallery-buttons > button {
   min-width: 44px;
   min-height: 34px;
   font-size: larger;
-  // border-radius: 2px;
+  border-radius: 4px;
 }
