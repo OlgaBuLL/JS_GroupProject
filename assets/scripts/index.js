@@ -889,6 +889,9 @@ resultBtn.addEventListener("click", function () {
   } else {
     result = number1 / number2;
   }
+  if (number2 === 0) {
+    document.querySelector(".error").innerHTML = `You can't devide by "0"!`;
+  }
   document.getElementById("result").value = result;
 });
 
@@ -911,8 +914,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 function sendMessage(avatar, author) {
   document.getElementById(
-    "userData"
-  ).innerHTML += `<img width=80vw height=80vh src="${avatar}" alt="user Icon"><span>${author}</span>`;
+    "userAvatar"
+  ).innerHTML = `<img width=fit-content src="${avatar}" alt="user Icon">`;
+  document.getElementById("userName").innerHTML = `<span>${author}</span>`;
 }
 
 function checkMessage() {
