@@ -18,7 +18,9 @@ let expenseArray = [];
 let spendResults = [];
 let balanceResults = [];
 
-// --------------- JSON и структура --------------
+let chartDoughnut;
+
+// --- JSON и структура ---
 
 let weekDaysJson = `[
   {
@@ -43,7 +45,7 @@ class weekDay {
     let weekDaysContent = "";
     weekDaysContent += `<div class="weekDay">
     <div class="date-info box">
-        <div class="date"><span class="title">Day:</span>${Dayname.day}</div>
+        <div class="date"><span class="title">Day: </span><span>${Dayname.day}</span></div>
         <div class="date"><input class="date${numb}" name="name" type="date"></div>
     </div>
 
@@ -251,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Вывод данных в бублик
+// --- Вывод данных в бублик ---
 
 let totalWeekExpensesBtn = document.querySelector(".total-week-expenses");
 
@@ -262,11 +264,18 @@ totalWeekExpensesBtn.onclick = () => {
   }
   console.log(weekExpenses);
 
-  // библиотека CHART js Бублик
+  //------------------ библиотека CHART js Диаграмма ------------------//
 
-  const ctx = document.getElementById("myChart").getContext("2d");
+  document.querySelector(".chartText").innerHTML = "";
 
-  const chartDoughnut = new Chart(ctx, {
+  let ctx = document.getElementById("myChart").getContext("2d");
+
+  if (chartDoughnut) {
+    chartDoughnut.clear();
+    chartDoughnut.destroy();
+  }
+
+  chartDoughnut = new Chart(ctx, {
     type: "bar",
     data: {
       labels: [
@@ -300,12 +309,12 @@ totalWeekExpensesBtn.onclick = () => {
 
 // ------------------ (все дни выводятся в одной структуре)-----------------//
 
-// ----- BudgetTracker-----
+// --------------------- BudgetTracker --------------------- //
 
 import BudgetTracker from "./BudgetTracker.js";
 new BudgetTracker("#app");
 
-// --- Изменить шрифт --- //
+// --------------------- Изменить шрифт --------------------- //
 
 document.addEventListener("DOMContentLoaded", function () {
   let font = document.getElementById("font");
@@ -322,10 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// ------- библиотека INTERACT ------
-// const interact = require("interactjs");
-
-// ------- библиотека ANIME-----------
+// --------------------- библиотека ANIME JS ---------------------//
 // const anime = require("animejs");
 
 anime({
@@ -358,7 +364,7 @@ let animateRadius = anime({
 
 document.querySelector(".play-border").onclick = animateRadius.restart;
 
-// --- Изменить цветовую тему --- //
+// --------------------- Изменить цветовую тему --------------------- //
 
 document.addEventListener("DOMContentLoaded", function () {
   let body = document.querySelector(".body");
@@ -769,7 +775,8 @@ function setColorTheme(body, boxes, titles, buttons, theme) {
       break;
   }
 }
-// ------- библиотека MOMENT ---------
+
+// --------------------- библиотека MOMENT --------------------- //
 
 // Default - dateUser;
 const moment = require("moment");
@@ -797,7 +804,7 @@ const dateSr = document.querySelector(".date-sr");
 require("moment/locale/sr");
 dateSr.innerHTML = momentTz.tz("Europe/Belgrade").format("LLLL");
 
-// ------------------------ МЕНЮ SETTINGS------------------------
+// ------------------------ МЕНЮ SETTINGS------------------------ //
 
 let settings = document.querySelector(".settings");
 let settingsCheckbox = document.getElementById("nav-trigger");
@@ -819,7 +826,7 @@ settingsCheckbox.addEventListener("click", function () {
   }
 });
 
-// ------------- ГАЛЕРЕЯ ----------- //
+// --------------------- ГАЛЕРЕЯ --------------------- //
 
 let images = [
   "assets/images/dollar-on-the-ground.jpg",
@@ -853,7 +860,7 @@ prevBtn.addEventListener("click", function () {
   slider.src = images[num];
 });
 
-// ------------- КАЛЬКУЛЯТОР ------------- //
+// --------------------- КАЛЬКУЛЯТОР --------------------- //
 
 let op;
 let sum = document.querySelector("#sum");
@@ -876,8 +883,11 @@ division.addEventListener("click", function () {
 });
 
 resultBtn.addEventListener("click", function () {
+  let error = document.querySelector(".error");
+  error.innerHTML = "";
   let number1 = Number(document.getElementById("number1").value);
   let number2 = Number(document.getElementById("number2").value);
+
   let result;
 
   if (op == "+") {
@@ -890,25 +900,21 @@ resultBtn.addEventListener("click", function () {
     result = number1 / number2;
   }
   if (number2 === 0) {
-    document.querySelector(".error").innerHTML = `You can't devide by "0"!`;
+    error.innerHTML = `You can't devide by "0"`;
   }
   document.getElementById("result").value = result;
 });
 
-// ----------- REGISTRATION  -------------------//
+// --------------------- REGISTRATION  --------------------- //
+
+let foto = localStorage.getItem("foto");
+let nik = localStorage.getItem("nik");
 
 document.addEventListener("DOMContentLoaded", function (event) {
-  //event.preventDefault();
-
-  let foto = localStorage.getItem("foto");
-  let nik = localStorage.getItem("nik");
-
-  if (foto != null) {
+  if (foto != null && nik != null) {
     document.getElementById("avatar").value = foto;
-  }
-
-  if (nik != null) {
     document.getElementById("author").value = nik;
+    checkMessage();
   }
 });
 
@@ -923,13 +929,8 @@ function checkMessage() {
   let avatar = document.getElementById("avatar").value;
   let author = document.getElementById("author").value;
 
-  if (localStorage.getItem("foto") == null) {
-    localStorage.setItem("foto", avatar);
-  }
-
-  if (localStorage.getItem("nik") == null) {
-    localStorage.setItem("nik", author);
-  }
+  localStorage.setItem("foto", avatar);
+  localStorage.setItem("nik", author);
 
   sendMessage(avatar, author);
 }
