@@ -5,99 +5,100 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Group Project</title>
-    <link rel="shortcut icon" href="./assets/images/js.png" type="image/svg" />
+    <title>Finance organizer</title>
+    <link rel="shortcut icon" href="./assets/images/calculator.png" type="image/svg" />
     <link rel="stylesheet" href="./assets/styles/css/style.css">
 
 </head>
 
 <body class="body">
-    <div class="container">
-        <!-- header -->
-        <header>
-            <div class="userData" id="userData">
-                <div id="userAvatar">
-                    My Avatar 😊
-                </div>
-                <p id="userName"></p>
-            </div>
 
+    <!-- header -->
+    <header>
+        <div class="userData" id="userData">
+            <div id="userAvatar">
+                My Avatar 😊
+            </div>
+            <p id="userName"></p>
+        </div>
+
+        <div>
+            <h1 class="h1">Finance organizer</h1>
+        </div>
+        <div class="settings">
+            <h4>Settings</h4>
             <div>
-                <h1 class="h1">Finance organizer</h1>
+                <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+                <label for="nav-trigger"></label>
             </div>
-            <div class="settings">
-                <h4>Settings</h4>
+        </div>
+
+        <div class="prefferencies">
+            <!-- Выбор шрифта -->
+            <div class="choose-font">
+                <p><span>Choose Font ✎</span></p>
+                <select name="font" id="font">
+                    <option value="default" disabled selected hidden>Choose Font</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Red Hat Display">Red Hat Display</option>
+                    <option value="Montserrat">Montserrat</option>
+                    <option value="Lexend">Lexend</option>
+                    <option value="Anybody">Anybody</option>
+                    <option value="Space Grotesk">Space Grotesk</option>
+                    <option value="Architects Daughter">Architects Daughter</option>
+                    <option value="Koulen">Koulen</option>
+                    <option value="Vollkorn SC">Vollkorn SC</option>
+                </select>
+            </div>
+            <!-- Выбор темы -->
+            <div class="color-theme">
+                <p><span>🎨 Color Theme</span></p>
                 <div>
-                    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-                    <label for="nav-trigger"></label>
+                    <input type="radio" name="theme" id="office" class="theme" value="Office" checked>
+                    <label for="office">Office</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="dark" class="theme" value="Dark">
+                    <label for="dark">Dark</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="parking" class="theme" value="Parking">
+                    <label for="parking">Parking</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="underground" class="theme" value="Underground">
+                    <label for="underground">Underground</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="skyblue" class="theme" value="Skyblue">
+                    <label for="skyblue">Skyblue</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="bubble-gum" class="theme" value="Bubble Gum">
+                    <label for="bubble-gum">Bubble Gum</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="violet" class="theme" value="Violet">
+                    <label for="violet">Violet</label>
+                </div>
+                <div>
+                    <input type="radio" name="theme" id="wildberry" class="theme" value="Wildberry">
+                    <label for="wildberry">Wildberry</label>
                 </div>
             </div>
 
-            <div class="prefferencies">
-                <!-- Выбор шрифта -->
-                <div class="choose-font">
-                    <p><span>Choose Font ✎</span></p>
-                    <select name="font" id="font">
-                        <option value="default" disabled selected hidden>Choose Font</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Red Hat Display">Red Hat Display</option>
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Lexend">Lexend</option>
-                        <option value="Anybody">Anybody</option>
-                        <option value="Space Grotesk">Space Grotesk</option>
-                        <option value="Architects Daughter">Architects Daughter</option>
-                        <option value="Koulen">Koulen</option>
-                        <option value="Vollkorn SC">Vollkorn SC</option>
-                    </select>
-                </div>
-                <!-- Выбор темы -->
-                <div class="color-theme">
-                    <p><span>🎨 Color Theme</span></p>
-                    <div>
-                        <input type="radio" name="theme" id="office" class="theme" value="Office" checked>
-                        <label for="office">Office</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="dark" class="theme" value="Dark">
-                        <label for="dark">Dark</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="parking" class="theme" value="Parking">
-                        <label for="parking">Parking</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="underground" class="theme" value="Underground">
-                        <label for="underground">Underground</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="skyblue" class="theme" value="Skyblue">
-                        <label for="skyblue">Skyblue</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="bubble-gum" class="theme" value="Bubble Gum">
-                        <label for="bubble-gum">Bubble Gum</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="violet" class="theme" value="Violet">
-                        <label for="violet">Violet</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="theme" id="wildberry" class="theme" value="Wildberry">
-                        <label for="wildberry">Wildberry</label>
-                    </div>
-                </div>
-
-                <!-- Кнопка анимации -->
-                <div class="button-animate">
-                    <p><span>Push the button to see some magic🔮</span></p>
-                    <button style="height: 2.5rem;" class="play-border">Animate border</button>
-                </div>
+            <!-- Кнопка анимации -->
+            <div class="button-animate">
+                <p><span>Push the button to see some magic🔮</span></p>
+                <button style="height: 2.5rem;" class="play-border">Animate border</button>
             </div>
-        </header>
+        </div>
+    </header>
 
 
-
+    <div class="container">
         <div class="finance-moment">
+            <!-- приложение -->
             <div id="app"></div>
             <!-- moment js -->
             <div class="moment">
@@ -133,7 +134,7 @@
                     <input type="text" id="author" placeholder="Your name..." name="author" value="" required>
                     <label for="avatar">Avatar link:</label>
                     <input type="text" id="avatar" placeholder="Place here the URL..." name="avatar" value="" required>
-                    <button type="button" id="button" name="button">Submit</button>
+                    <button type="button" id="button">Submit</button>
                 </form>
 
                 <!-- финансовая грамотность -->
@@ -177,23 +178,66 @@
             </div>
         </div>
 
-        <!-- ПОНЧИК ИТОГО потраченная сумма за неделю -->
+        <!-- Диаграмма ИТОГО потраченная сумма за неделю -->
         <div class="total-week">
             <h2>Total amount of money I spent this week (by days)</h2>
             <button class="total-week-expenses">GET WEEK EXPENSES</button>
 
             <div class="chart">
+                <p class="chartText">no data yet</p>
                 <canvas id="myChart"></canvas>
             </div>
         </div>
 
         <hr>
-        <footer class="footer">
+        <!-- <footer class="footer">
             <div class="rights">&copy; All rights reserved</div>
             <div>2023</div>
             <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
                     href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
             </div>
+        </footer> -->
+        <footer class="footer">
+            <div class="contacts">
+                <p>OUR TEAM:</p>
+                <div>
+                    <div>Olga</div>
+                    <div>
+                        <a href="https://t.me/bio_ol23"><img src="./assets/images/telegram.png" alt="Telegram"></a>
+                    </div>
+                    <div class="email">
+                        <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
+                    </div>
+                </div>
+
+                <div>
+                    <div>Anastasiya</div>
+                    <div>
+                        <a href="https://t.me/Nemezida_ok"><img src="./assets/images/telegram.png" alt="Telegram"></a>
+                    </div>
+                    <div class="email">
+                        <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
+                    </div>
+                </div>
+
+                <div>
+                    <div>Julia</div>
+                    <div>
+                        <a href="https://t.me/JuliaMichaela"><img src="./assets/images/telegram.png" alt="Telegram"></a>
+                    </div>
+                    <div class="email">
+                        <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rights">
+                <div>&copy; All rights reserved 2023</div>
+                <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
+                        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </div>
+            </div>
+
         </footer>
     </div>
 
