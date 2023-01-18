@@ -1,17 +1,13 @@
 .body {
-  //background-color: linear-gradient(90deg, rgb(72, 1, 40), rgb(32, 1, 16));
-  // color: #fff;
-  // background-image: url(/JavaScript-GroupProject/assets/images/body.png);
   height: 100%;
 }
 
 header {
-  /* padding: 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 3rem auto 5rem;
-  // max-width: 1200px;
+  max-width: 1200px;
 }
 
 .userData {
@@ -92,17 +88,39 @@ hr {
   color: rgb(164, 163, 163);
   margin: 4rem auto 4rem;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   row-gap: 1rem;
   font-size: small;
 }
-footer > div > a {
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+.contacts > div > div > a > img {
+  object-fit: cover;
+  max-width: 30px;
+}
+// .email > img {
+//   max-width: 20px;
+// }
+.contacts > div {
+  display: flex;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.rights {
+  align-self: flex-start;
+  text-align: right;
+}
+.rights > div > a {
   color: gray;
   text-decoration: none;
   cursor: pointer;
 }
-footer > div > a:hover {
+.rights > div > a:hover {
   color: rgb(151, 149, 149);
 }
