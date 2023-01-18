@@ -11,15 +11,22 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 3rem auto 5rem;
-  max-width: 1200px;
+  // max-width: 1200px;
 }
-.userData > div {
+
+.userData {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  font-size: larger;
+}
+#userAvatar {
+  max-width: 70px;
+  min-height: 70px;
   background: white;
   color: #383635;
   border-radius: 22px;
-  padding: 0.8rem;
-  max-width: 60px;
-  min-height: 60px;
+  padding: 0.5rem;
   text-align: center;
 }
 .userData > div > img {

@@ -6,19 +6,21 @@
 }
 .settings > div {
   background-color: white;
-  padding: 0.8rem;
+  padding: 0.9rem;
   border-radius: 22px;
 }
 .nav-trigger {
+  // position: fixed;
   position: relative;
   width: 45px;
   height: 45px;
 }
 
 label[for="nav-trigger"] {
+  // position: fixed;
   position: absolute;
   left: 6px;
-  top: 7px;
+  top: 8px;
   z-index: 10;
   overflow: hidden;
   height: 60px;
@@ -37,7 +39,7 @@ label[for="nav-trigger"] {
   max-height: 100vh;
   right: 0;
   top: 0;
-  background: rgba(136, 135, 135, 0.9);
+  background: rgba(136, 135, 135, 98%);
   color: #ffffff;
   z-index: 2;
   padding: 2rem 1rem 2rem 1rem;
