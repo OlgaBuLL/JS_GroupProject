@@ -7,7 +7,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 3rem auto 5rem;
-  max-width: 1200px;
+  max-width: 1250px;
 }
 
 .userData {
@@ -67,8 +67,8 @@ span {
 .content {
   display: grid;
   grid-template-areas: "left-wrapper weekday-info calculator";
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 2rem;
+  grid-template-columns: 1.3fr 4.6fr 1.1fr;
+  column-gap: 0.9rem;
   padding: 1rem;
   margin-top: 4rem;
 }

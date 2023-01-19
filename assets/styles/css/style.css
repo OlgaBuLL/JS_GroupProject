@@ -786,7 +786,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 3rem auto 5rem;
-  max-width: 1200px;
+  max-width: 1250px;
 }
 
 .userData {
@@ -853,8 +853,8 @@ span {
 .content {
   display: grid;
   grid-template-areas: "left-wrapper weekday-info calculator";
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 2rem;
+  grid-template-columns: 1.3fr 4.6fr 1.1fr;
+  column-gap: 0.9rem;
   padding: 1rem;
   margin-top: 4rem;
 }
@@ -915,7 +915,7 @@ hr {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1270px;
   margin: 0 auto;
 }
 
@@ -986,6 +986,7 @@ hr {
 
 .left-wrapper {
   grid-area: left-wrapper;
+  max-width: fit-content;
 }
 
 .left-wrapper,
@@ -1001,9 +1002,8 @@ hr {
   display: flex;
   align-items: center;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   border-radius: 4px;
-  max-width: 238px;
 }
 
 .form > button {
@@ -1024,10 +1024,11 @@ hr {
 
 .weekday-info {
   display: grid;
+  justify-content: center;
   grid-area: weekday-info;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
-  row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, 18vw);
+  column-gap: 1rem;
+  row-gap: 6rem;
   margin-bottom: 4rem;
 }
 
@@ -1057,8 +1058,8 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 2rem;
-  padding: 1.5rem 2rem 1.5rem 2rem;
+  column-gap: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   max-width: 40vw;
@@ -1078,7 +1079,7 @@ h3 {
 input {
   text-align: center;
   height: 28px;
-  width: 10vw;
+  max-width: 7vw;
   font-weight: bold;
 }
 
@@ -1095,7 +1096,7 @@ input::placeholder {
   flex-direction: column;
   align-items: center;
   row-gap: 1rem;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  padding: 1rem 1rem 1rem 1rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   max-width: 40vw;
@@ -1104,8 +1105,8 @@ input::placeholder {
 .expense {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  row-gap: 0.7rem;
+  padding: 2rem 0.8rem 2rem 0.8rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
@@ -1117,7 +1118,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 1rem;
+  column-gap: 0.6rem;
 }
 
 .expense > div > img {
