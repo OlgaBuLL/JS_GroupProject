@@ -36,3 +36,10 @@
   font-size: larger;
   border-radius: 4px;
 }
+.item {
+  height: 130px;
+}
+.item img {
+  object-fit: cover;
+  max-width: 200px;
+}
