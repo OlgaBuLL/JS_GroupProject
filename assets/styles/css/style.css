@@ -881,16 +881,20 @@ hr {
 .footer {
   color: #808080;
   margin: 4rem auto 4rem;
-  display: flex;
+  display: grid;
+  grid-template-areas: "contacts rights .";
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-around;
+  justify-items: center;
   font-size: small;
 }
 
 .contacts {
   display: flex;
+  grid-area: contacts;
   flex-direction: column;
-  row-gap: 0.2rem;
+  row-gap: 1rem;
+  padding-top: 2%;
 }
 
 .contacts > div > div > a > img {
@@ -905,6 +909,7 @@ hr {
 
 .rights {
   display: flex;
+  grid-area: rights;
   flex-direction: column;
   row-gap: 1rem;
   text-align: center;
@@ -921,17 +926,31 @@ hr {
 }
 
 .btn-up {
-  padding: 5px;
-  border-radius: 50%;
-}
-
-.btn-up > img {
-  max-width: 50px;
-}
-
-.btn-up > img:hover {
+  position: fixed;
+  z-index: 2;
   cursor: pointer;
-  transform: scale(1.1);
+  bottom: 7vh;
+  right: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vw;
+  height: 9vh;
+}
+
+.btn-up::before {
+  content: "";
+  cursor: pointer;
+  width: 8vw;
+  height: 9vh;
+  margin-left: 4vw;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url("../../images/arrow.png");
+}
+
+.btn-up2 {
+  display: none;
 }
 
 .container {
@@ -1022,7 +1041,7 @@ hr {
   display: flex;
   align-items: center;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
-  padding: 1rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   border-radius: 4px;
 }
 
@@ -1147,7 +1166,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 0.6rem;
+  column-gap: 0.4rem;
 }
 
 .expense > div > img {
