@@ -50,7 +50,7 @@ class weekDay {
     </div>
 
     <div class="current-amount box">
-        <h3 class="title">Current Amount</h3>
+        <h4 class="title">Current Amount</h4>
 
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
@@ -60,7 +60,7 @@ class weekDay {
 
 
     <div class="income box">
-        <h3 class="title">Income</h3>
+        <h4 class="title">Income</h4>
         <div>
             <img src="./assets/images/income-icon.png" alt="Income">
             <input type="number" class="income-input${numb}" name="name" placeholder="The amount of money">
@@ -76,7 +76,7 @@ class weekDay {
     </div>
 
     <div class="expense box">
-        <h3 class="title">Expense</h3>
+        <h4 class="title">Expense</h4>
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
             <label for="food">Food</label>
@@ -128,7 +128,7 @@ class weekDay {
     </div>
 
     <div class="total-sum box">
-        <h3 class="title">Total</h3>
+        <h4 class="title">Total</h4>
         <div>
             <img src="./assets/images/cash-icon.png" alt="Cash">
             <div>
@@ -829,12 +829,13 @@ settingsCheckbox.addEventListener("click", function () {
 // --------------------- ГАЛЕРЕЯ --------------------- //
 
 let images = [
+  "assets/images/Make-More-Money.png",
   "assets/images/dollar-on-the-ground.jpg",
-  "assets/images/dori.jpg",
-  "assets/images/false-money.jpg",
   "assets/images/have-no-money.jpg",
   "assets/images/take-my-money.jpg",
   "assets/images/time-is-money.jpg",
+  "assets/images/false-money.jpg",
+  "assets/images/dori.jpg",
 ];
 
 let num = 0;
