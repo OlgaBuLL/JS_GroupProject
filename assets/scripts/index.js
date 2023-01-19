@@ -937,3 +937,63 @@ function checkMessage() {
 }
 
 document.getElementById("button").addEventListener("click", checkMessage);
+
+
+//-----------------BUTTON-UP----------------//
+
+const btnUp = {
+
+  el: document.querySelector('.btn-up'),
+  show() {
+    this.el.classList.remove('btn-up2');
+  }
+
+  ,
+  hide() {
+    this.el.classList.add('btn-up2');
+  }
+
+  ,
+  addEventListener() {
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      scrollY > 900 ? this.show() : this.hide();
+    }
+
+    );
+
+    document.querySelector('.btn-up').onclick = () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      }
+
+      );
+    }
+  }
+}
+
+btnUp.addEventListener();
+
+
+//-----------------------POST----------------//
+
+
+
+button.addEventListener("click", function () {
+
+  fetch('https://httpbin.org/post', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+    },
+  })
+    .then(responce => responce.json())
+    .catch(err => console.error(err))
+
+});
+

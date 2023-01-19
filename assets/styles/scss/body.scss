@@ -7,7 +7,7 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 3rem auto 5rem;
-  max-width: 1200px;
+  max-width: 1250px;
 }
 
 .userData {
@@ -67,8 +67,8 @@ span {
 .content {
   display: grid;
   grid-template-areas: "left-wrapper weekday-info calculator";
-  grid-template-columns: 1fr 2fr 1fr;
-  column-gap: 2rem;
+  grid-template-columns: 1.3fr 4.6fr 1.1fr;
+  column-gap: 0.9rem;
   padding: 1rem;
   margin-top: 4rem;
 }
@@ -91,16 +91,20 @@ hr {
 .footer {
   color: #808080;
   margin: 4rem auto 4rem;
-  display: flex;
+  display: grid;
+  grid-template-areas: "contacts rights .";
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  justify-content: space-around;
+  justify-items: center;
   font-size: small;
 }
 
 .contacts {
   display: flex;
+  grid-area: contacts;
   flex-direction: column;
-  row-gap: 0.2rem;
+  row-gap: 1rem;
+  padding-top: 2%;
 }
 .contacts > div > div > a > img {
   object-fit: cover;
@@ -116,6 +120,7 @@ hr {
 
 .rights {
   display: flex;
+  grid-area: rights;
   flex-direction: column;
   row-gap: 1rem;
   text-align: center;
@@ -129,14 +134,31 @@ hr {
   color: rgb(151, 149, 149);
 }
 
+
 .btn-up {
-  padding: 5px;
-  border-radius: 50%;
-}
-.btn-up > img {
-  max-width: 50px;
-}
-.btn-up > img:hover {
+  position: fixed;
+  z-index: 2;
   cursor: pointer;
-  transform: scale(1.1);
+  bottom: 7vh;
+  right: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vw;
+  height: 9vh;
+}
+
+.btn-up::before {
+  content: "";
+  cursor: pointer;
+  width: 8vw;
+  height: 9vh;
+  margin-left: 4vw;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+  background-image: url('../../images/arrow.png');
+}
+
+.btn-up2 {
+  display: none;
 }

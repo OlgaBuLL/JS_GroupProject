@@ -15,6 +15,8 @@
 
     <!-- header -->
     <header>
+
+
         <div class="userData" id="userData">
             <div id="userAvatar">
                 My Avatar 😊
@@ -95,8 +97,14 @@
         </div>
     </header>
 
+    <div class="btn-up btn-up2">
+    </div>
+
 
     <div class="container">
+
+
+
         <div class="finance-moment">
             <!-- приложение -->
             <div id="app"></div>
@@ -128,13 +136,13 @@
 
                 <!-- форма регистрации -->
 
-                <form action="" class="form box animateradius">
+                <form class="form box animateradius" method="post" action="/post" id="form">
                     <h3 class="title">Registration</h3>
                     <label for="author">Your name:</label>
                     <input type="text" id="author" placeholder="Your name..." name="author" value="" required>
                     <label for="avatar">Avatar link:</label>
-                    <input type="text" id="avatar" placeholder="Place here the URL..." name="avatar" value="" required>
-                    <button type="button" id="button">Submit</button>
+                    <input type="url" id="avatar" placeholder="Place here the URL..." name="avatar" value="" required>
+                    <button type="button" id="button" class="button">Submit</button>
                 </form>
 
                 <!-- финансовая мотивация -->
@@ -200,30 +208,11 @@
         <footer class="footer">
             <div class="contacts">
                 <p>CONTACTS</p>
+                <div>Flamingo</div>
+                <div>Frontend-developers</div>
                 <div>
-                    <div>Olga</div>
                     <div>
                         <a href="https://t.me/bio_ol23"><img src="./assets/images/telegram.png" alt="Telegram"></a>
-                    </div>
-                    <div class="email">
-                        <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
-                    </div>
-                </div>
-
-                <div>
-                    <div>Anastasiya</div>
-                    <div>
-                        <a href="https://t.me/Nemezida_ok"><img src="./assets/images/telegram.png" alt="Telegram"></a>
-                    </div>
-                    <div class="email">
-                        <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
-                    </div>
-                </div>
-
-                <div>
-                    <div>Julia</div>
-                    <div>
-                        <a href="https://t.me/JuliaMichaela"><img src="./assets/images/telegram.png" alt="Telegram"></a>
                     </div>
                     <div class="email">
                         <a href="mailto:oska43@mail.ru"><img src="./assets/images/mail.png" alt="E-mail"></a>
@@ -232,16 +221,14 @@
             </div>
 
             <div class="rights">
-                <h2>Finance tracker</h2>
+                <h2>Finance tracker is your best decision</h2>
                 <div>&copy; All rights reserved</div>
                 <div>2023</div>
                 <div> Icons made by <a href="https://www.freepik.com" title="Freepik"> Freepik </a> from <a
                         href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
                 </div>
             </div>
-            <div class="btn-up">
-                <img src="./assets/images/arrow.png" alt="up">
-            </div>
+
 
         </footer>
     </div>
