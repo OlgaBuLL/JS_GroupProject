@@ -1,26 +1,23 @@
 .left-wrapper {
-  // width: 100%;
   grid-area: left-wrapper;
   max-width: fit-content;
+  height: fit-content;
 }
 
 .left-wrapper,
 .form,
 .financial-literacy {
   display: flex;
-  //justify-content: space-around;
   flex-direction: column;
   row-gap: 2rem;
 }
 .form,
 .financial-literacy {
-  // width: 100%;
   display: flex;
   align-items: center;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   padding: 2rem 1rem 2rem 1rem;
   border-radius: 4px;
-  //max-width: 200px;
 }
 .form > button {
   width: fit-content;
@@ -38,9 +35,6 @@
   border-radius: 4px;
 }
 
-//.gallery {
-  //width: 9vw;
-//}
 .item {
   height: 130px;
 }
