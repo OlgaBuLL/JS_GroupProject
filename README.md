@@ -8,7 +8,7 @@ as well as the ability to `track the balance of your account`.**
 
 **3.** **For usability, the user has the ability to set fonts or color design of the site, and also to `change the background to white` in some sections.**    
 
-**4.** **You can also get some motivation to earn more money by scrolling through the slides with memes ;)**
+**4.** **You can also get some motivation to earn more money by scrolling through the `slides with memes` ;)**
 
 
 
