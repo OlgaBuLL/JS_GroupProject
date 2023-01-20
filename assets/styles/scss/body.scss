@@ -65,12 +65,12 @@ span {
   font-weight: bold;
 }
 .content {
+  height: fit-content;
   display: grid;
-  grid-template-areas: "left-wrapper weekday-info calculator";
-  grid-template-columns: 1.3fr 4.6fr 1.1fr;
-  column-gap: 0.9rem;
+  grid-template-areas: "left-wrapper weekday-info_1 calculator";
   padding: 1rem;
   margin-top: 4rem;
+  justify-items: center;
 }
 h2 {
   font-size: large;
@@ -110,9 +110,7 @@ hr {
   object-fit: cover;
   max-width: 30px;
 }
-// .email > img {
-//   max-width: 20px;
-// }
+
 .contacts > div {
   display: flex;
   align-items: center;
@@ -133,7 +131,6 @@ hr {
 .rights > div > a:hover {
   color: rgb(151, 149, 149);
 }
-
 
 .btn-up {
   position: fixed;
@@ -156,7 +153,7 @@ hr {
   margin-left: 4vw;
   background: transparent no-repeat center center;
   background-size: 100% 100%;
-  background-image: url('../../images/arrow.png');
+  background-image: url("../../images/arrow.png");
 }
 
 .btn-up2 {

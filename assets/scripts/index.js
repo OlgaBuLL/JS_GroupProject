@@ -115,7 +115,7 @@ class weekDay {
 
         <div>
             <img src="./assets/images/card-icon.png" alt="Card">
-            <label for="utilities">Utilities</label>
+            <label for="utilities">Utility</label>
             <input type="number" id="utilities" name="name" class="expense-input${numb}">
         </div>
 
@@ -138,7 +138,11 @@ class weekDay {
         </div>
     </div>
 </div>`;
-    document.querySelector(".weekday-info").innerHTML += weekDaysContent;
+    if (numb < 2)
+      document.querySelector(".weekday-info_1").innerHTML += weekDaysContent;
+    else if (numb < 5)
+      document.querySelector(".weekday-info_2").innerHTML += weekDaysContent;
+    else document.querySelector(".weekday-info_3").innerHTML += weekDaysContent;
   }
 }
 
@@ -938,62 +942,46 @@ function checkMessage() {
 
 document.getElementById("button").addEventListener("click", checkMessage);
 
-
 //-----------------BUTTON-UP----------------//
 
 const btnUp = {
-
-  el: document.querySelector('.btn-up'),
+  el: document.querySelector(".btn-up"),
   show() {
-    this.el.classList.remove('btn-up2');
-  }
+    this.el.classList.remove("btn-up2");
+  },
 
-  ,
   hide() {
-    this.el.classList.add('btn-up2');
-  }
+    this.el.classList.add("btn-up2");
+  },
 
-  ,
   addEventListener() {
-
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
       scrollY > 900 ? this.show() : this.hide();
-    }
+    });
 
-    );
-
-    document.querySelector('.btn-up').onclick = () => {
-
+    document.querySelector(".btn-up").onclick = () => {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'smooth'
-      }
-
-      );
-    }
-  }
-}
+        behavior: "smooth",
+      });
+    };
+  },
+};
 
 btnUp.addEventListener();
 
-
 //-----------------------POST----------------//
 
-
-
 button.addEventListener("click", function () {
-
-  fetch('https://httpbin.org/post', {
-    method: 'POST',
+  fetch("https://httpbin.org/post", {
+    method: "POST",
     body: new FormData(form),
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
     },
   })
-    .then(responce => responce.json())
-    .catch(err => console.error(err))
-
+    .then((responce) => responce.json())
+    .catch((err) => console.error(err));
 });
-

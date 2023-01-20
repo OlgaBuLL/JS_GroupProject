@@ -851,12 +851,12 @@ span {
 }
 
 .content {
+  height: fit-content;
   display: grid;
-  grid-template-areas: "left-wrapper weekday-info calculator";
-  grid-template-columns: 1.3fr 4.6fr 1.1fr;
-  column-gap: 0.9rem;
+  grid-template-areas: "left-wrapper weekday-info_1 calculator";
   padding: 1rem;
   margin-top: 4rem;
+  justify-items: center;
 }
 
 h2 {
@@ -1026,6 +1026,7 @@ hr {
 .left-wrapper {
   grid-area: left-wrapper;
   max-width: fit-content;
+  height: fit-content;
 }
 
 .left-wrapper,
@@ -1070,33 +1071,35 @@ hr {
   max-width: 200px;
 }
 
-.weekday-info {
-  display: grid;
-  justify-content: center;
-  grid-area: weekday-info;
-  grid-template-columns: repeat(auto-fill, 18vw);
-  column-gap: 1rem;
-  row-gap: 6rem;
+.weekday-info_1 {
+  grid-area: weekday-info_1;
+  column-gap: 4rem;
   margin-bottom: 4rem;
 }
 
 .weekday-info_2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 4rem;
-  row-gap: 4rem;
-  padding: 2rem 2rem 2rem 2rem;
+  grid-area: weekday-info_2;
+  column-gap: 6rem;
+  margin: 0 auto 5rem;
 }
 
 .weekday-info_3 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 2rem;
-  row-gap: 4rem;
-  padding: 2rem 16rem 2rem 16rem;
+  grid-area: weekday-info_3;
+  margin: 0 auto;
+  column-gap: 4rem;
+  margin: 0 auto 5rem;
+}
+
+.weekday-info_1,
+.weekday-info_2,
+.weekday-info_3 {
+  max-width: fit-content;
+  display: flex;
+  justify-items: center;
 }
 
 .weekDay {
+  max-width: fit-content;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -1154,7 +1157,7 @@ input::placeholder {
   display: flex;
   flex-direction: column;
   row-gap: 0.7rem;
-  padding: 2rem 0.8rem 2rem 0.8rem;
+  padding: 2rem 1rem 2rem 1rem;
   box-shadow: 0 0 10px 6px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
@@ -1166,7 +1169,7 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  column-gap: 0.4rem;
+  column-gap: 0.6rem;
 }
 
 .expense > div > img {
@@ -1181,10 +1184,10 @@ input::placeholder {
 }
 
 .calculator {
-  max-width: fit-content;
+  grid-area: calculator;
+  max-width: max-content;
   height: fit-content;
   display: flex;
-  grid-area: calculator;
   flex-direction: column;
   align-items: center;
   row-gap: 2rem;
