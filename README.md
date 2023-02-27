@@ -61,3 +61,6 @@ https://user-images.githubusercontent.com/108359930/214659111-a9972617-afc7-4317
 
 **Olga Bulgakova** – (LinkedIn) *https://www.linkedin.com/in/olga-bulgakova-014254243/* – (E-mail) - oska43@mai.ru*
 
+## Thanks to all Contributors
+[![Contributors](https://contrib.rocks/image?repo=OlgaBuLL/JS_GroupProject)](https://github.com/OlgaBuLL/JS_GroupProject/graphs/contributors)
+
